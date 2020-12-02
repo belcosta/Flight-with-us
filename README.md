@@ -19,18 +19,21 @@
 
 - Bel, later Willy (after finishing database)
 
-- PORT 3500
+- [x] PORT 3500 
+
+- install mysql
 
 - create route flights
 
-1. allow cors
+- [x] allow cors
 
+- [x]
 2. router for request for cities (for select) - return all city names from city table
 
    ```
    select cityNames from city
    ```
-
+ [x]
 3. router for request for companies (for checkboxes) - return all companies names from company table
 
 ```
@@ -48,7 +51,7 @@
 select cityNames, cityCode companyName, companyLogo,.... from flights natural join city natural join company where start=? and destination=?
 ```
 
-5. later added filters - stops, price and companies (on thursday)
+5. later added filters - stops, price and companies (on thursday) - not in backend
 
 # Frontend
 
@@ -56,7 +59,11 @@ select cityNames, cityCode companyName, companyLogo,.... from flights natural jo
 
 - PORT 3000
 
-- data from inputs to lowercase
+- data from inputs to lowercase - not necessary, predefined values will be in lower case
+
+- using React Hooks & Context
+
+- Bootstrap for styling
 
 - components:
 
