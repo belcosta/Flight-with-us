@@ -8,14 +8,34 @@ function App() {
   const [filter, setFilter] = useState({});
   const [results, setResults] = useState([]);
 
-  const [cities, getCities] = useState({});
+  const [cities, setCities] = useState([]);
+  const [companies, setCompanies] = useState([]);
+
+  //useEffect for cities -> for the Form component
 
   // useEffect(() => {
   //   Axios({
   //     method: "GET",
   //     url: "http://localhost:3500/flights/get/cities",
   //   })
-  //     .then((res) => console.log(res))
+  //     .then((res) => {
+  //       console.log(res);
+  //       setCities(res.data.cities);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+  //useEffect for companies -> for the Filter component
+
+  // useEffect(() => {
+  //   Axios({
+  //     method: "GET",
+  //     url: "http://localhost:3500/flights/get/companies",
+  //   })
+  //     .then((res) => {
+  //       console.log(res);
+  //       setCompanies(res.data.companies);
+  //     })
   //     .catch((err) => console.log(err));
   // }, []);
 
