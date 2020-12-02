@@ -58,6 +58,10 @@ select cityNames, cityCode companyName, companyLogo,.... from flights natural jo
 
 - data from inputs to lowercase
 
+- using React Hooks & Context
+
+- Bootstrap for styling
+
 - components:
 
   1. Form - for the data about flight search (departure/destination selects, date from/to inputs, search button), can be in header
