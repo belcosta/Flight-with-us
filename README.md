@@ -31,7 +31,13 @@
    select cityNames from city
    ```
 
-3. router for request for flights (for results) - return all contain of the flight table
+3. router for request for companies (for checkboxes) - return all companies names from company table
+
+```
+   select companyNames from companies
+```
+
+4. router for request for flights (for results) - return all contain of the flight table
 
    search will be done in 2 steps:
 
@@ -42,10 +48,33 @@
 select cityNames, cityCode companyName, companyLogo,.... from flights natural join city natural join company where start=? and destination=?
 ```
 
-4. later added filters - stops, price and companies (on thursday)
+5. later added filters - stops, price and companies (on thursday)
 
 # Frontend
+
+- David, Alice
 
 - PORT 3000
 
 - data from inputs to lowercase
+
+- components:
+
+  1. Form - for the data about flight search (departure/destination selects, date from/to inputs, search button), can be in header
+
+  2. Results - section for displaying results (container) - contain cards for different flights option
+
+     - cards - like Fahim's mock-up
+
+     - some container for card?
+
+  3. right sidebar - for displaying of the actions, one action = one card
+  4. left sidebar - for the filtering form (how many stops - checkboxes, price - inputs, companies - checkboxes)
+
+  5. main - html wrapping element for the results and sidebars to make layout
+
+- app state :
+
+  1. array for results
+  2. object for filter options
+  3. object with the inputs from search form
