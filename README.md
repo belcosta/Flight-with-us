@@ -56,7 +56,7 @@ select cityNames, cityCode companyName, companyLogo,.... from flights natural jo
 
 - PORT 3000
 
-- data from inputs to lowercase
+- data from inputs to lowercase - not necessary, predefined values will be in lower case
 
 - using React Hooks & Context
 
