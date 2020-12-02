@@ -19,18 +19,21 @@
 
 - Bel, later Willy (after finishing database)
 
-- PORT 3500
+- [x] PORT 3500 
+
+- install mysql
 
 - create route flights
 
-1. allow cors
+- [x] allow cors
 
+- [x]
 2. router for request for cities (for select) - return all city names from city table
 
    ```
    select cityNames from city
    ```
-
+ [x]
 3. router for request for companies (for checkboxes) - return all companies names from company table
 
 ```
