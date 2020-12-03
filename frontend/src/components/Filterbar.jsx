@@ -87,9 +87,9 @@ export default function Filterbar() {
                 <label>From </label>
                 <input
                   type="number"
-                  onClick={(e) => {
+                  onInput={(e) => {
                     e.preventDefault();
-                    setPrice({ from: e.target.value });
+                    setPrice({ ...price, from: +e.target.value });
                   }}
                 />
               </div>
@@ -97,9 +97,9 @@ export default function Filterbar() {
                 <label>To </label>
                 <input
                   type="number"
-                  onClick={(e) => {
+                  onInput={(e) => {
                     e.preventDefault();
-                    setPrice({ to: e.target.value });
+                    setPrice({ ...price, to: +e.target.value });
                   }}
                 />
               </div>
