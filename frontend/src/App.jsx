@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
 import appContext from "./context";
+import FormDisplay from "./components/FormDisplay";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -57,9 +58,7 @@ function App() {
     <appContext.Provider
       value={{ search, setSearch, filter, setFilter, results, setResults }}
     >
-      <div>
-        <p>test</p>
-      </div>
+      <FormDisplay />
     </appContext.Provider>
   );
 }
