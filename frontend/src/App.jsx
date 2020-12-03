@@ -20,6 +20,16 @@ function App() {
         price: "2300",
         logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
       },
+      {
+        departure: "ABC",
+        destination: " DEF",
+        hourOfStart: "9:30",
+        hourOfLanding: "23:00",
+        duration: "13:30",
+        price: "800",
+        logo:
+          "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
+      },
     ],
     backFlights: [
       {
@@ -30,6 +40,16 @@ function App() {
         duration: "13:30",
         price: "1300",
         logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+      },
+      {
+        departure: "DEF",
+        destination: " ABC",
+        hourOfStart: "15:30",
+        hourOfLanding: "5:00",
+        duration: "13:30",
+        price: "800",
+        logo:
+          "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
       },
     ],
   });

@@ -9,7 +9,7 @@ function Results() {
   console.log(results);
   return (
     <React.Fragment>
-      <h2 className="text-center my-5">Direction to the Destination</h2>
+      <h2 className="text-center my-5">To the Destination</h2>
       <Container
         className="card-group bg-light mx-auto px-5 pt-5 border border-light rounded-right-top rounded-left-bottom shadow-sm"
         style={{ maxWidth: "50rem" }}
@@ -21,7 +21,7 @@ function Results() {
         ))}
       </Container>
 
-      <h2 className="text-center my-5">Direction Back</h2>
+      <h2 className="text-center my-5">Back</h2>
       <Container
         className="card-group bg-light mx-auto px-5 pt-5 border border-light rounded-right-top rounded-left-bottom shadow-sm"
         style={{ maxWidth: "50rem" }}

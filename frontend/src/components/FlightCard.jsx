@@ -23,7 +23,10 @@ export default function FlightCard(props) {
                 <p>{flight.departure}</p>
               </Col>
               <Col xs className="justify-content-center">
-                <p>{flight.duration}</p>
+                <p>
+                  {flight.duration.split(":")[0]}h{" "}
+                  {flight.duration.split(":")[1]}m{" "}
+                </p>
                 <IoAirplaneSharp />
               </Col>
               <Col xs id="">
