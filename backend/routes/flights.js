@@ -8,7 +8,7 @@ let poolConnection = mysql.createPool({
   port: "3306",
   user: "root",
   password: "Password123!",
-  database: "flightSearch",
+  database: "flight_search",
   //?
 });
 //request for cities (for select) - return all city names from city table
@@ -46,6 +46,7 @@ router.get("/get/companies", (req, res, next) => {
 router.post("/result", (req, res, err) => {
   let goFlights;
   let backFlights;
+  console.log(req.body);
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
     //destructuring request data
@@ -69,9 +70,9 @@ router.post("/result", (req, res, err) => {
         backFlights = result;
       }
     );
-    res.json({ goFlights, backFlights });
     con.release();
   });
+  res.json({ goFlights, backFlights });
 });
 
 module.exports = router;
