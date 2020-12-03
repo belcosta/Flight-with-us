@@ -1,0 +1,42 @@
+insert into company (companyId, companyLogo, companyName) values (null, 'https://bit.ly/2I364I3', 'british airways')
+
+companyID 1 = british airways = https://bit.ly/2I364I3
+companyID 2 = turkish airlines = https://bit.ly/2JG8nS0
+companyID 3 = air france = https://bit.ly/3g2FKKF
+companyID 4 = alitalia = https://bit.ly/3lAfGb8
+companyID 5 = airberlin = https://bit.ly/3lDJSSt
+companyID 6 = lufthansa = https://bit.ly/2I8rnbo
+companyID 7 = iberia = https://bit.ly/2JDirLq
+companyID 8 = easyjet = https://bit.ly/3mDx67S
+
+insert into city (cityId, cityCode, cityName) values (null, 'LON', london)
+
+cityID 1 = LON = london
+cityID 2 = MAN = manchester
+cityID 3 = GLA = glasgow
+cityID 4 = PAR = paris
+cityID 5 = LYO = lyon
+cityID 6 = MAR = marseille
+cityID 7 = MAD = madrid
+cityID 8 = BCN = barcelona
+cityID 9 = BIL = bilbao
+cityID 10 = LIS = lisabon
+cityID 11 = BRU = brussels
+cityID 12 = AMS = amsterdam
+cityID 13 = STK = stockholm
+cityID 14 = BER = berlin
+cityID 15 = HAM = hamburg
+cityID 16 = CGN = cologne
+cityID 17 = MUN = munich
+cityID 18 = WAR = warsaw
+cityID 19 = PRG = prague
+cityID 20 = VIE = vienna
+cityID 21 = ANK = ankara
+cityID 22 = IST = istambul
+cityID 23 = ROM = rome
+cityID 24 = MIL = milano
+cityID 23 = RDJ = rio de janeiro
+cityID 24 = SAN = satiago de chile
+
+
+insert into flights (flightId, start, destination, hourOfStart, hourOfLanding, companyID, duration, frecuency, price, isSpecialOffer) values (null, 1, 14, '07:00', '08:30', '1:30 h', 'daily', 79,99, false);
