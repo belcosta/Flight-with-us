@@ -69,9 +69,9 @@ router.post("/result", (req, res, err) => {
         backFlights = result;
       }
     );
-    res.json({ goFlights, backFlights });
     con.release();
   });
+  res.json({ goFlights, backFlights });
 });
 
 module.exports = router;

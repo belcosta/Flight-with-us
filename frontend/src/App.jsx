@@ -8,7 +8,7 @@ import Results from "./components/Results";
 function App() {
   const [search, setSearch] = useState({});
   const [filter, setFilter] = useState({});
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState({});
 
   const [companies, setCompanies] = useState([]);
 
@@ -37,7 +37,7 @@ function App() {
     console.log(search);
     // Axios({
     //   method: "GET",
-    //   url: "http://localhost:3500/flights/get/flights",
+    //   url: "http://localhost:3500/flights/results",
     //   data: search,
     // })
     //   .then((res) => {
@@ -60,7 +60,7 @@ function App() {
       }}
     >
       <FormDisplay />
-      {/* <Results /> */}
+      <Results />
     </appContext.Provider>
   );
 }

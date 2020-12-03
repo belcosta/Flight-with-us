@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `air_db`
 --
-CREATE DATABASE IF NOT EXISTS `air_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `flightSearch` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `air_db`;
 
 -- --------------------------------------------------------
