@@ -52,7 +52,17 @@ router.post("/result", (req, res, err) => {
       [departure, destination],
       (err, result, fields) => {
         if (err) throw err;
-        res.json({ flights: result });
+        res.json({ goFlights: result });
+      }
+    );
+
+    // 2 -  use departure from Frontend as ARRIVAL and START as destination
+    con.query(
+      "SELECT cityCode, companyName, companyLogo, hourOfStart, hourOfLanding, duration from flights natural join city natural join company WHERE flights.start = ? AND flights.destination = ?",
+      [destination, departure],
+      (err, result, fields) => {
+        if (err) throw err;
+        res.json({ backFlights: result });
       }
     );
   });
