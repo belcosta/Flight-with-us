@@ -7,11 +7,8 @@ export default function Filterbar() {
   const { filter, setFilter } = useContext(appContext);
   const [stops, setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 50000 });
-  const [companies, setCompanies] = useState([
-    "Latam",
-    "Lufthansa",
-    "Britisch Airlines",
-  ]);
+  const [selectedComp, setSelectedComp] = useState([]);
+  const [companies, setCompanies] = useState([]);
 
   //useEffect for companies -> for the Filter component
 
@@ -116,14 +113,21 @@ export default function Filterbar() {
                 <div className="form-check" key={index}>
                   <input
                     className="form-check-input"
-                    id={companyName}
+                    id={companyName.companyName}
                     type="checkbox"
                     onClick={(e) => {
-                      setCompanies([...companies, e.target.name]);
+                      setSelectedComp([...selectedComp, e.target.id]);
                     }}
                   />
-                  <label className="form-check-label" htmlFor={companyName}>
-                    {companyName}
+                  <label
+                    className="form-check-label"
+                    htmlFor={companyName.companyName}
+                  >
+                    {companyName.companyName.substr(0, 1).toUpperCase() +
+                      companyName.companyName.substr(
+                        1,
+                        companyName.companyName.length - 1
+                      )}
                   </label>
                 </div>
               );
