@@ -22,6 +22,7 @@ router.get("/get/cities", (req, res, next) => {
       }
       res.send({ cities: result });
     });
+    con.release();
   });
 });
 
@@ -35,6 +36,7 @@ router.get("/get/companies", (req, res, next) => {
       }
       res.send({ companies: result });
     });
+    con.release();
   });
 });
 
@@ -42,6 +44,8 @@ router.get("/get/companies", (req, res, next) => {
 
 // 1 -  use departure from Frontend as start and arrival as destination
 router.post("/result", (req, res, err) => {
+  let goFlights;
+  let backFlights;
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
     //destructuring request data
@@ -52,7 +56,7 @@ router.post("/result", (req, res, err) => {
       [departure, destination],
       (err, result, fields) => {
         if (err) throw err;
-        res.json({ goFlights: result });
+        goFlights = result;
       }
     );
 
@@ -62,9 +66,11 @@ router.post("/result", (req, res, err) => {
       [destination, departure],
       (err, result, fields) => {
         if (err) throw err;
-        res.json({ backFlights: result });
+        backFlights = result;
       }
     );
+    res.json({ goFlights, backFlights });
+    con.release();
   });
 });
 
