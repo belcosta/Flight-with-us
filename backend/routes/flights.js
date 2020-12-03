@@ -46,6 +46,7 @@ router.get("/get/companies", (req, res, next) => {
 router.post("/result", (req, res, err) => {
   let goFlights;
   let backFlights;
+  console.log(req.body);
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
     //destructuring request data

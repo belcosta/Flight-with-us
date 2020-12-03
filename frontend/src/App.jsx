@@ -14,17 +14,17 @@ function App() {
 
   //useEffect for companies -> for the Filter component
 
-  // useEffect(() => {
-  //   Axios({
-  //     method: "GET",
-  //     url: "http://localhost:3500/flights/get/companies",
-  //   })
-  //     .then((res) => {
-  //       console.log(res);
-  //       setCompanies(res.data.companies);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
+  useEffect(() => {
+    Axios({
+      method: "GET",
+      url: "http://localhost:3500/flights/get/companies",
+    })
+      .then((res) => {
+        console.log(res);
+        setCompanies(res.data.companies);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const getValueFilter = (e) => {
     setFilter((prevFilter) => {
@@ -35,16 +35,16 @@ function App() {
   const getResults = () => {
     console.log("Calling for results");
     console.log(search);
-    // Axios({
-    //   method: "GET",
-    //   url: "http://localhost:3500/flights/results",
-    //   data: search,
-    // })
-    //   .then((res) => {
-    //     console.log(res);
-    //     setResults(res.data.results);
-    //   })
-    //   .catch((err) => console.log(err));
+    Axios({
+      method: "GET",
+      url: "http://localhost:3500/flights/result",
+      data: search,
+    })
+      .then((res) => {
+        console.log(res);
+        // setResults(res.data.results);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

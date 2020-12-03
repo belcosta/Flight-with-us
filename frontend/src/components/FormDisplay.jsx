@@ -32,7 +32,6 @@ function FormDisplay() {
       .then((res) => {
         console.log(res.data.cities);
         setCities(res.data.cities);
-        console.log(cities);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -59,7 +58,10 @@ function FormDisplay() {
                   <option value="">DEPARTURE</option>
                   {cities.map((city) => (
                     <option value={city.cityName} key={`dep-${city.cityName}`}>
-                      {city.cityName}
+                      {city.cityName.trim().substr(0, 1).toUpperCase() +
+                        city.cityName
+                          .trim()
+                          .substr(1, city.cityName.length - 1)}
                     </option>
                   ))}
                 </Form.Control>
@@ -89,7 +91,10 @@ function FormDisplay() {
                           value={city.cityName}
                           key={`dest-${city.cityName}`}
                         >
-                          {city.cityName}
+                          {city.cityName.trim().substr(0, 1).toUpperCase() +
+                            city.cityName
+                              .trim()
+                              .substr(1, city.cityName.length - 1)}
                         </option>
                       );
                     }
