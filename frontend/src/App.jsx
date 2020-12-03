@@ -2,28 +2,15 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
 import appContext from "./context";
+import FormDisplay from "./components/FormDisplay";
+import Results from "./components/Results";
 
 function App() {
   const [search, setSearch] = useState({});
   const [filter, setFilter] = useState({});
   const [results, setResults] = useState([]);
 
-  const [cities, setCities] = useState([]);
   const [companies, setCompanies] = useState([]);
-
-  //useEffect for cities -> for the Form component
-
-  // useEffect(() => {
-  //   Axios({
-  //     method: "GET",
-  //     url: "http://localhost:3500/flights/get/cities",
-  //   })
-  //     .then((res) => {
-  //       console.log(res);
-  //       setCities(res.data.cities);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
 
   //useEffect for companies -> for the Filter component
 
@@ -39,27 +26,41 @@ function App() {
   //     .catch((err) => console.log(err));
   // }, []);
 
-  const getValueSearch = (e) => {
-    setSearch((prevSearch) => {
-      return { ...prevSearch, [e.target.name]: e.target.value };
-    });
-  };
-
   const getValueFilter = (e) => {
     setFilter((prevFilter) => {
       return { ...prevFilter, [e.target.name]: e.target.value };
     });
   };
 
-  const getResults = () => {};
+  const getResults = () => {
+    console.log("Calling for results");
+    console.log(search);
+    // Axios({
+    //   method: "GET",
+    //   url: "http://localhost:3500/flights/get/flights",
+    //   data: search,
+    // })
+    //   .then((res) => {
+    //     console.log(res);
+    //     setResults(res.data.results);
+    //   })
+    //   .catch((err) => console.log(err));
+  };
 
   return (
     <appContext.Provider
-      value={{ search, setSearch, filter, setFilter, results, setResults }}
+      value={{
+        search,
+        setSearch,
+        filter,
+        setFilter,
+        results,
+        setResults,
+        getResults,
+      }}
     >
-      <div>
-        <p>test</p>
-      </div>
+      <FormDisplay />
+      {/* <Results /> */}
     </appContext.Provider>
   );
 }

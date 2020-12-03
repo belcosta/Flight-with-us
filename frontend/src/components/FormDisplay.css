@@ -1,0 +1,7 @@
+.bgHead {
+  background-image: url("../assets/img/header.svg");
+  min-height: 25vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
