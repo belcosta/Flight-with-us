@@ -4,6 +4,7 @@ import "./App.css";
 import appContext from "./context";
 import FormDisplay from "./components/FormDisplay";
 import Results from "./components/Results";
+import Filterbar from "./components/Filterbar";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -61,6 +62,7 @@ function App() {
     >
       <FormDisplay />
       {/* <Results /> */}
+      <Filterbar/>
     </appContext.Provider>
   );
 }
