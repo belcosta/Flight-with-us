@@ -22,6 +22,7 @@ router.get("/get/cities", (req, res, next) => {
       }
       res.send({ cities: result });
     });
+    con.release();
   });
 });
 
@@ -35,6 +36,7 @@ router.get("/get/companies", (req, res, next) => {
       }
       res.send({ companies: result });
     });
+    con.release();
   });
 });
 
@@ -42,6 +44,8 @@ router.get("/get/companies", (req, res, next) => {
 
 // 1 -  use departure from Frontend as start and arrival as destination
 router.post("/result", (req, res, err) => {
+  let goFlights;
+  let backFlights;
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
     //destructuring request data
@@ -52,9 +56,21 @@ router.post("/result", (req, res, err) => {
       [departure, destination],
       (err, result, fields) => {
         if (err) throw err;
-        res.json({ flights: result });
+        goFlights = result;
       }
     );
+
+    // 2 -  use departure from Frontend as ARRIVAL and START as destination
+    con.query(
+      "SELECT cityCode, companyName, companyLogo, hourOfStart, hourOfLanding, duration from flights natural join city natural join company WHERE flights.start = ? AND flights.destination = ?",
+      [destination, departure],
+      (err, result, fields) => {
+        if (err) throw err;
+        backFlights = result;
+      }
+    );
+    res.json({ goFlights, backFlights });
+    con.release();
   });
 });
 
