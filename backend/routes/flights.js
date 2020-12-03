@@ -8,7 +8,7 @@ let poolConnection = mysql.createPool({
   port: "3306",
   user: "root",
   password: "Password123!",
-  database: "flightSearch",
+  database: "flight_search",
   //?
 });
 //request for cities (for select) - return all city names from city table

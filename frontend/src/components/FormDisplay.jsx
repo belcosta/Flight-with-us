@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import Axios from "axios";
 import "./FormDisplay.css";
 import appContext from "../context";
 import {
@@ -15,7 +16,7 @@ import "./FormDisplay.css";
 function FormDisplay() {
   const { search, setSearch, getResults } = useContext(appContext);
 
-  const [cities, setCities] = useState(["Prague", "Leipzig", "London"]);
+  const [cities, setCities] = useState([]);
 
   const getValue = (e) => {
     setSearch((prevSearch) => {
@@ -23,17 +24,18 @@ function FormDisplay() {
     });
   };
 
-  // useEffect(() => {
-  //   Axios({
-  //     method: "GET",
-  //     url: "http://localhost:3500/flights/get/cities",
-  //   })
-  //     .then((res) => {
-  //       console.log(res);
-  //       setCities(res.data.cities);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
+  useEffect(() => {
+    Axios({
+      method: "GET",
+      url: "http://localhost:3500/flights/get/cities",
+    })
+      .then((res) => {
+        console.log(res.data.cities);
+        setCities(res.data.cities);
+        console.log(cities);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <>
@@ -56,7 +58,9 @@ function FormDisplay() {
                 >
                   <option value="">DEPARTURE</option>
                   {cities.map((city) => (
-                    <option value={`${city.toLowerCase()}`}>{city}</option>
+                    <option value={city.cityName} key={`dep-${city.cityName}`}>
+                      {city.cityName}
+                    </option>
                   ))}
                 </Form.Control>
               </Form.Group>
@@ -79,9 +83,14 @@ function FormDisplay() {
                 >
                   <option value="">DESTINATION</option>
                   {cities.map((city) => {
-                    if (city.toLowerCase() !== search.departure) {
+                    if (city.cityName !== search.departure) {
                       return (
-                        <option value={`${city.toLowerCase()}`}>{city}</option>
+                        <option
+                          value={city.cityName}
+                          key={`dest-${city.cityName}`}
+                        >
+                          {city.cityName}
+                        </option>
                       );
                     }
                     return null;
