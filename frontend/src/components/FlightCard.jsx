@@ -42,7 +42,7 @@ export default function FlightCard(oneflight) {
                 <IoAirplaneSharp />
               </Col>
               <Col xs id="">
-                <h3>{flight.hourOfLandind}</h3>
+                <h3>{flight.hourOfLanding}</h3>
                 <p>{flight.destination}</p>
               </Col>
             </Row>
