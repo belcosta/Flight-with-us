@@ -57,7 +57,7 @@ function FormDisplay() {
                 >
                   <option value="">DEPARTURE</option>
                   {cities.map((city) => (
-                    <option value={city.cityName} key={`dep-${city.cityName}`}>
+                    <option value={city.cityId} key={`dep-${city.cityName}`}>
                       {city.cityName.trim().substr(0, 1).toUpperCase() +
                         city.cityName
                           .trim()
@@ -88,7 +88,7 @@ function FormDisplay() {
                     if (city.cityName !== search.departure) {
                       return (
                         <option
-                          value={city.cityName}
+                          value={city.cityId}
                           key={`dest-${city.cityName}`}
                         >
                           {city.cityName.trim().substr(0, 1).toUpperCase() +
