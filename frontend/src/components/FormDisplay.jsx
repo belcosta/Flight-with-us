@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./FormDisplay.css";
+import appContext from "../context";
 import {
   Button,
   Col,
@@ -7,10 +8,33 @@ import {
   InputGroup,
   Row,
   Spinner,
+  Form,
 } from "react-bootstrap";
 import "./FormDisplay.css";
 
 function FormDisplay() {
+  const { setSearch } = useContext(appContext);
+
+  const [cities, setCities] = useState(["Prague", "Leipzig", "London"]);
+
+  const getValue = (e) => {
+    setSearch((prevSearch) => {
+      return { ...prevSearch, [e.target.name]: e.target.value };
+    });
+  };
+
+  // useEffect(() => {
+  //   Axios({
+  //     method: "GET",
+  //     url: "http://localhost:3500/flights/get/cities",
+  //   })
+  //     .then((res) => {
+  //       console.log(res);
+  //       setCities(res.data.cities);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
+
   return (
     <>
       {/* <Spinner animation="border" role="status">
@@ -19,25 +43,49 @@ function FormDisplay() {
       <header className="bgHead p-5 container-fluid">
         <Row className="m-2 p-2 justify-content-md-center">
           <Col xs md="4">
-            <InputGroup className="mb-3">
-              <FormControl
-                placeholder="Departure"
-                aria-label="from where"
+            <Form className="mb-3 ">
+              <Form.Group
+                controlId="exampleForm.SelectCustom"
                 className="border border-dark"
-              />
-            </InputGroup>
+              >
+                <Form.Control
+                  as="select"
+                  custom
+                  name="departure"
+                  onChange={getValue}
+                >
+                  <option value="">DEPARTURE</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </Form.Control>
+              </Form.Group>
+            </Form>
           </Col>
           <Col md="auto">
             <h1 className="justify-content-center">&#8826; &#8827;</h1>
           </Col>
           <Col xs md="4">
-            <InputGroup className="mb-3">
-              <FormControl
-                placeholder="Destination"
-                aria-label="to where"
+            <Form className="mb-3 ">
+              <Form.Group
+                controlId="exampleForm.SelectCustom"
                 className="border border-dark"
-              />
-            </InputGroup>
+              >
+                <Form.Control
+                  as="select"
+                  custom
+                  name="destination"
+                  onChange={getValue}
+                >
+                  <option value="">DESTINATION</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </Form.Control>
+              </Form.Group>
+            </Form>
           </Col>
         </Row>
         <Row className="m-2 p-2 justify-content-md-center">
@@ -49,6 +97,8 @@ function FormDisplay() {
                 aria-label="from wich date"
                 size="sm"
                 className="border border-dark"
+                name="dateFrom"
+                onChange={getValue}
               />
             </InputGroup>
           </Col>
@@ -61,6 +111,8 @@ function FormDisplay() {
                 aria-label="until when"
                 size="sm"
                 className="border border-dark"
+                name="dateTo"
+                onChange={getValue}
               />
             </InputGroup>
           </Col>

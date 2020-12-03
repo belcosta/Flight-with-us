@@ -3,13 +3,13 @@ import Axios from "axios";
 import "./App.css";
 import appContext from "./context";
 import FormDisplay from "./components/FormDisplay";
+import Results from "./components/Results";
 
 function App() {
   const [search, setSearch] = useState({});
   const [filter, setFilter] = useState({});
   const [results, setResults] = useState([]);
 
-  const [cities, setCities] = useState([]);
   const [companies, setCompanies] = useState([]);
 
   //useEffect for cities -> for the Form component
@@ -59,6 +59,7 @@ function App() {
       value={{ search, setSearch, filter, setFilter, results, setResults }}
     >
       <FormDisplay />
+      <Results />
     </appContext.Provider>
   );
 }
