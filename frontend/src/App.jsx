@@ -57,7 +57,7 @@ function App() {
         setFilter,
         results,
         setResults,
-        getResults,
+        getResults,  //where is getResults defined? (Bel is asking Alice)
       }}
     >
       <FormDisplay />
