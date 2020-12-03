@@ -37,3 +37,6 @@ cityID 23 = ROM = rome
 cityID 24 = MIL = milano
 cityID 23 = RDJ = rio de janeiro
 cityID 24 = SAN = satiago de chile
+
+
+insert into flights (flightId, start, destination, hourOfStart, hourOfLanding, companyID, duration, frecuency, price, isSpecialOffer) values (null, 1, 14, '07:00', '08:30', '1:30 h', 'daily', 79,99, false);
