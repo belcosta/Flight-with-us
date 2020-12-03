@@ -9,7 +9,30 @@ import Filterbar from "./components/Filterbar";
 function App() {
   const [search, setSearch] = useState({});
   const [filter, setFilter] = useState({});
-  const [results, setResults] = useState({});
+  const [results, setResults] = useState({
+    goFlights: [
+      {
+        departure: "ABC",
+        destination: " DEF",
+        hourOfStart: "6:30",
+        hourOfLanding: "20:00",
+        duration: "13:30",
+        price: "2300",
+        logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+      },
+    ],
+    backFlights: [
+      {
+        departure: "DEF",
+        destination: " ABC",
+        hourOfStart: "0:30",
+        hourOfLanding: "14:00",
+        duration: "13:30",
+        price: "1300",
+        logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+      },
+    ],
+  });
 
   const [companies, setCompanies] = useState([]);
 
@@ -57,7 +80,7 @@ function App() {
         setFilter,
         results,
         setResults,
-        getResults,  //where is getResults defined? (Bel is asking Alice)
+        getResults, //where is getResults defined? (Bel is asking Alice)
       }}
     >
       <FormDisplay />

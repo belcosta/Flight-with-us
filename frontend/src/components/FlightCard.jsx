@@ -6,26 +6,11 @@ import { IoAirplaneSharp } from "react-icons/io5";
 
 import box from "../assets/img/box.png";
 
-export default function FlightCard(oneflight) {
-  // const { results } = useContext(appContext);
-  // let {departure, destination, hourOfStart, hourOfLandind, duration, price, logo} = results;
-  let flight = {
-    departure: "ABC",
-    destination: " DEF",
-    hourOfStart: "6:30",
-    hourOfLanding: "20:00",
-    duration: "13:30",
-    price: "2300",
-    logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
-  };
+export default function FlightCard(props) {
+  const flight = props.flight;
 
   return (
     <>
-      {/* <appContext.Provider
-        value={{
-          results,
-        }}
-      > */}
       <Container className="card-group mb-5 col-12">
         <Card>
           <Card.Body className="d-flex justify-content-center">
@@ -62,7 +47,6 @@ export default function FlightCard(oneflight) {
           </Card.Body>
         </Card>
       </Container>
-      {/* </appContext.Provider> */}
     </>
   );
 }
