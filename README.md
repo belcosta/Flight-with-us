@@ -21,9 +21,9 @@
 
 - [x] PORT 3500 
 
-- install mysql
+- [x] install mysql
 
-- create route flights
+- [x] create route flights
 
 - [x] allow cors
 
@@ -44,8 +44,8 @@
 
    search will be done in 2 steps:
 
-   - use departure from Frontend as start and arrival as destination
-   - opposite direction
+   - [x] use departure from Frontend as start and arrival as destination
+   - [x] opposite direction
 
 ```
 select cityNames, cityCode companyName, companyLogo,.... from flights natural join city natural join company where start=? and destination=?
@@ -75,7 +75,7 @@ select cityNames, cityCode companyName, companyLogo,.... from flights natural jo
 
      - some container for card?
 
-  3. right sidebar - for displaying of the actions, one action = one card
+  3. - [x] right sidebar - for displaying of the actions, one action = one card
   4. left sidebar - for the filtering form (how many stops - checkboxes, price - inputs, companies - checkboxes)
 
   5. main - html wrapping element for the results and sidebars to make layout
