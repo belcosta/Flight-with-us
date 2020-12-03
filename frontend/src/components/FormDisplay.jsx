@@ -13,7 +13,7 @@ import {
 import "./FormDisplay.css";
 
 function FormDisplay() {
-  const { setSearch } = useContext(appContext);
+  const { search, setSearch, getResults } = useContext(appContext);
 
   const [cities, setCities] = useState(["Prague", "Leipzig", "London"]);
 
@@ -55,10 +55,9 @@ function FormDisplay() {
                   onChange={getValue}
                 >
                   <option value="">DEPARTURE</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {cities.map((city) => (
+                    <option value={`${city.toLowerCase()}`}>{city}</option>
+                  ))}
                 </Form.Control>
               </Form.Group>
             </Form>
@@ -79,10 +78,14 @@ function FormDisplay() {
                   onChange={getValue}
                 >
                   <option value="">DESTINATION</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  {cities.map((city) => {
+                    if (city.toLowerCase() !== search.departure) {
+                      return (
+                        <option value={`${city.toLowerCase()}`}>{city}</option>
+                      );
+                    }
+                    return null;
+                  })}
                 </Form.Control>
               </Form.Group>
             </Form>
@@ -126,6 +129,7 @@ function FormDisplay() {
               size="md"
               variant="light"
               className="border border-dark justify-content-center"
+              onClick={getResults}
             >
               Search
             </Button>

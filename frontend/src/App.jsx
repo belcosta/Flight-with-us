@@ -12,20 +12,6 @@ function App() {
 
   const [companies, setCompanies] = useState([]);
 
-  //useEffect for cities -> for the Form component
-
-  // useEffect(() => {
-  //   Axios({
-  //     method: "GET",
-  //     url: "http://localhost:3500/flights/get/cities",
-  //   })
-  //     .then((res) => {
-  //       console.log(res);
-  //       setCities(res.data.cities);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   //useEffect for companies -> for the Filter component
 
   // useEffect(() => {
@@ -40,26 +26,41 @@ function App() {
   //     .catch((err) => console.log(err));
   // }, []);
 
-  const getValueSearch = (e) => {
-    setSearch((prevSearch) => {
-      return { ...prevSearch, [e.target.name]: e.target.value };
-    });
-  };
-
   const getValueFilter = (e) => {
     setFilter((prevFilter) => {
       return { ...prevFilter, [e.target.name]: e.target.value };
     });
   };
 
-  const getResults = () => {};
+  const getResults = () => {
+    console.log("Calling for results");
+    console.log(search);
+    // Axios({
+    //   method: "GET",
+    //   url: "http://localhost:3500/flights/get/flights",
+    //   data: search,
+    // })
+    //   .then((res) => {
+    //     console.log(res);
+    //     setResults(res.data.results);
+    //   })
+    //   .catch((err) => console.log(err));
+  };
 
   return (
     <appContext.Provider
-      value={{ search, setSearch, filter, setFilter, results, setResults }}
+      value={{
+        search,
+        setSearch,
+        filter,
+        setFilter,
+        results,
+        setResults,
+        getResults,
+      }}
     >
       <FormDisplay />
-      <Results />
+      {/* <Results /> */}
     </appContext.Provider>
   );
 }
