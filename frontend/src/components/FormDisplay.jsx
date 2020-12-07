@@ -42,6 +42,7 @@ function FormDisplay() {
                 <span className="sr-only">Loading...</span>
             </Spinner> */}
       <header className="bgHead p-5 container-fluid">
+        <h1 className="mb-5">Fly with us</h1>
         <Row className="m-2 p-2 justify-content-md-center">
           <Col xs md="4">
             <Form className="mb-3 ">
@@ -69,7 +70,7 @@ function FormDisplay() {
             </Form>
           </Col>
           <Col md="auto">
-            <h1 className="justify-content-center">&#8826; &#8827;</h1>
+            <p className="justify-content-center">&#8826; &#8827;</p>
           </Col>
           <Col xs md="4">
             <Form className="mb-3 ">
@@ -134,21 +135,16 @@ function FormDisplay() {
             </InputGroup>
           </Col>
         </Row>
-        <Row>
-          <Col></Col>
-          <Col md="auto">
-            <Button
-              type="submit"
-              value="Submit"
-              size="md"
-              variant="light"
-              className="border border-dark justify-content-center"
-              onClick={getResults}
-            >
-              Search
-            </Button>
-          </Col>
-          <Col></Col>
+        <Row className="justify-content-center">
+          <Button
+            type="submit"
+            value="Submit"
+            size="md"
+            className="justify-content-center"
+            onClick={getResults}
+          >
+            Search
+          </Button>
         </Row>
       </header>
     </>

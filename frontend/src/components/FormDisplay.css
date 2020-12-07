@@ -1,7 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarina&display=swap");
+
 .bgHead {
   background-image: url("../assets/img/header.svg");
   min-height: 25vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+header h1 {
+  font-family: "Sarina", cursive;
+  font-size: 5rem;
+  color: #cc5918;
+}
+
+header p {
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+header .btn {
+  color: white;
+  font-weight: 500;
+  background-color: #8e3e10;
 }
