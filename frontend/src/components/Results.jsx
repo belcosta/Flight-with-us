@@ -1,43 +1,38 @@
-// import React, {useContext} from "react";
-import React from "react";
+import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
 import FlightCard from "./FlightCard";
-// import appContext from "../context";
+import appContext from "../context";
 
 function Results() {
-  // const results = useContext(appContext);
-  let results = [1, 2];
+  const { results } = useContext(appContext);
+
+  console.log(results);
   return (
-    // <appContext.Provider
-    //   value={{
-    //     results
-    //   }}>
     <React.Fragment>
-      <h2 className="text-center my-5">Direction to the Destination</h2>
+      <h2 className="text-center my-5">To the Destination</h2>
       <Container
         className="card-group bg-light mx-auto px-5 pt-5 border border-light rounded-right-top rounded-left-bottom shadow-sm"
         style={{ maxWidth: "50rem" }}
       >
-        {results.map((flight, index) => (
+        {results.goFlights.map((flight, index) => (
           <div key={index}>
-            <FlightCard />
+            <FlightCard flight={flight} />
           </div>
         ))}
       </Container>
 
-      <h2 className="text-center my-5">Direction Back</h2>
+      <h2 className="text-center my-5">Back</h2>
       <Container
         className="card-group bg-light mx-auto px-5 pt-5 border border-light rounded-right-top rounded-left-bottom shadow-sm"
         style={{ maxWidth: "50rem" }}
       >
-        {results.map((flight, index) => (
+        {results.backFlights.map((flight, index) => (
           <div key={index}>
-            <FlightCard />
+            <FlightCard flight={flight} />
           </div>
         ))}
       </Container>
     </React.Fragment>
-    // </appContext.Provider>
   );
 }
 
