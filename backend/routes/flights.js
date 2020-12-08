@@ -56,37 +56,39 @@ router.post("/result", (req, res, err) => {
     var resultsTogether = {};
     async.parallel(
       [
-        function () {
+        function (parallel_done) {
           con.query(
             "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
             [Number(departure), Number(destination)],
             (err, result, fields) => {
-              if (err) throw err;
+              if (err) return parallel_done(err);
               goFlights = result;
               console.log("results to", result);
               resultsTogether.goFlights = goFlights;
+              parallel_done();
             }
           );
         },
-        function () {
+        function (parallel_done) {
           con.query(
             "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
             [destination, departure],
             (err, result, fields) => {
-              if (err) throw err;
+              if (err) return parallel_done(err);
               backFlights = result;
               console.log("results back", result);
               resultsTogether.backFlights = backFlights;
               console.log(resultsTogether);
+              parallel_done();
             }
           );
         },
       ],
-      function (err, res) {
+      function (err) {
         if (err) console.log(err);
         console.log("sending results");
-        res.json(resultsTogether);
         con.release();
+        res.json(resultsTogether);
       }
     );
     // con.query(

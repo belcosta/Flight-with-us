@@ -86,7 +86,7 @@ function App() {
     })
       .then((res) => {
         console.log(res);
-        // setResults({ ...results, goFlights: res.data });
+        setResults(res.data);
       })
       .catch((err) => console.log(err));
   };
