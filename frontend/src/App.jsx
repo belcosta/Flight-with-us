@@ -80,7 +80,7 @@ function App() {
     console.log("Calling for results");
     console.log(search);
     Axios({
-      method: "GET",
+      method: "POST",
       url: "http://localhost:3500/flights/result",
       data: search,
     })

@@ -53,26 +53,31 @@ router.post("/result", (req, res, err) => {
     //destructuring request data
     let { departure, destination } = req.body;
     con.query(
-      "select c.citycode, c.cityName, d.citycode, d.cityName, co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where c.cityId =? AND d.cityId=?",
+      "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
       [Number(departure), Number(destination)],
       (err, result, fields) => {
         if (err) throw err;
         goFlights = result;
+        console.log("results to", result);
+        console.log(goFlights);
+        res.json(goFlights);
       }
     );
 
     // 2 -  use departure from Frontend as ARRIVAL and START as destination
-    con.query(
-      "select c.citycode, c.cityName, d.citycode, d.cityName, co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where c.cityId =? AND d.cityId=?",
-      [destination, departure],
-      (err, result, fields) => {
-        if (err) throw err;
-        backFlights = result;
-      }
-    );
+    // con.query(
+    //   "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
+    //   [destination, departure],
+    //   (err, result, fields) => {
+    //     if (err) throw err;
+    //     backFlights = result;
+    //     console.log(result);
+    //     console.log(goFlights);
+    //   }
+    // );
     con.release();
   });
-  res.json({ goFlights, backFlights });
+  // res.json({ goFlights, backFlights });
 });
 
 module.exports = router;
