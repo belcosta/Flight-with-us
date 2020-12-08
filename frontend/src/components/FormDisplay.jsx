@@ -86,7 +86,7 @@ function FormDisplay() {
                 >
                   <option value="">DESTINATION</option>
                   {cities.map((city) => {
-                    if (city.cityName !== search.departure) {
+                    if (city.cityId !== +search.departure) {
                       return (
                         <option
                           value={city.cityId}
