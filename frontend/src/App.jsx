@@ -103,9 +103,17 @@ function App() {
         getResults, //where is getResults defined? (Bel is asking Alice)
       }}
     >
-      <FormDisplay />
-      <Results />
-      <Filterbar />
+      <div className="home">
+        <header>
+          <FormDisplay />
+        </header>
+        <div className="sidebar">
+          <Filterbar />
+        </div>
+        <main>
+          <Results />
+        </main>
+      </div>
     </appContext.Provider>
   );
 }

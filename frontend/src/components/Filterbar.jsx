@@ -79,6 +79,7 @@ export default function Filterbar() {
           <div className="filter-price">
             <div className="priceInput">
               <label>From </label>
+
               <input
                 type="number"
                 onInput={(e) => {
@@ -127,7 +128,9 @@ export default function Filterbar() {
             );
           })}
         </div>
+
       </div>
     </form>
+
   );
 }

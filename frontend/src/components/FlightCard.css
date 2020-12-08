@@ -1,0 +1,47 @@
+.result {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: center;
+  width: 100%;
+  /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-area: 
+    "information buyFlight" */
+}
+.information {
+  /* grid-area: information; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 2fr;
+  grid-template-rows: auto;
+  grid-area: "h31 p1 icon h32 p2"; */
+}
+.buyFlight {
+  /* grid-area: buyFlight; */
+  background-color: aqua;
+}
+/* 
+.row h3:first-of-type {
+    grid-area: h31;
+    color:blue;
+}
+.row p:first-of-type {
+    grid-area: p1;
+    color:red;
+}
+.row span {
+    grid-area: icon;
+}
+.row h3:last-of-type {
+    grid-area: h32;
+    color:green;
+}
+.row p:last-of-type {
+    grid-area: p2;
+    color:yellow;
+} */
