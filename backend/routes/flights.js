@@ -16,7 +16,7 @@ router.get("/get/cities", (req, res, next) => {
   console.log("pool Connection ");
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
-    con.query("SELECT cityName from city", (error, result, fields) => {
+    con.query("SELECT cityName, cityId from city", (error, result, fields) => {
       if (error) {
         res.json({ msg: "cityName was not accessed" });
       }
@@ -30,7 +30,7 @@ router.get("/get/cities", (req, res, next) => {
 router.get("/get/companies", (req, res, next) => {
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
-    con.query("SELECT companyName from company", (error, result, fields) => {
+    con.query("SELECT* from company", (error, result, fields) => {
       if (error) {
         res.json({ msg: "companyName was not accessed" });
       }
@@ -44,6 +44,7 @@ router.get("/get/companies", (req, res, next) => {
 
 // 1 -  use departure from Frontend as start and arrival as destination
 router.post("/result", (req, res, err) => {
+  console.log("server is listening");
   let goFlights;
   let backFlights;
   console.log(req.body);
@@ -51,28 +52,32 @@ router.post("/result", (req, res, err) => {
     if (err) throw err;
     //destructuring request data
     let { departure, destination } = req.body;
-    console.log(departure, destination);
     con.query(
-      "SELECT cityCode, companyName, companyLogo, hourOfStart, hourOfLanding, duration from flights natural join city natural join company WHERE flights.start = ? AND flights.destination = ?",
-      [departure, destination],
+      "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
+      [Number(departure), Number(destination)],
       (err, result, fields) => {
         if (err) throw err;
         goFlights = result;
+        console.log("results to", result);
+        console.log(goFlights);
+        res.json(goFlights);
       }
     );
 
     // 2 -  use departure from Frontend as ARRIVAL and START as destination
-    con.query(
-      "SELECT cityCode, companyName, companyLogo, hourOfStart, hourOfLanding, duration from flights natural join city natural join company WHERE flights.start = ? AND flights.destination = ?",
-      [destination, departure],
-      (err, result, fields) => {
-        if (err) throw err;
-        backFlights = result;
-      }
-    );
+    // con.query(
+    //   "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
+    //   [destination, departure],
+    //   (err, result, fields) => {
+    //     if (err) throw err;
+    //     backFlights = result;
+    //     console.log(result);
+    //     console.log(goFlights);
+    //   }
+    // );
     con.release();
   });
-  res.json({ goFlights, backFlights });
+  // res.json({ goFlights, backFlights });
 });
 
 module.exports = router;
