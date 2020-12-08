@@ -1,0 +1,19 @@
+.home{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header"
+    "sidebar main main " ;
+  }
+  header{
+  grid-area: header;
+  }
+  main {
+  grid-area: main;
+  }
+  .sidebar{
+    grid-area: sidebar;
+  }
+  
+  

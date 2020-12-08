@@ -30,12 +30,6 @@ export default function Filterbar() {
     });
   };
   return (
-    <appContext.Provider
-      value={{
-        filter,
-        setFilter,
-      }}
-    >
       <form className="filter-block">
         <div>
           <div className="filter">
@@ -135,6 +129,5 @@ export default function Filterbar() {
           </div>
         </div>
       </form>
-    </appContext.Provider>
   );
 }
