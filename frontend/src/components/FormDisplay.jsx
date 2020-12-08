@@ -12,6 +12,7 @@ import {
   Form,
 } from "react-bootstrap";
 import "./FormDisplay.css";
+import logo from "../assets/img/logo.svg";
 
 function FormDisplay() {
   const { search, setSearch, getResults } = useContext(appContext);
@@ -42,7 +43,9 @@ function FormDisplay() {
                 <span className="sr-only">Loading...</span>
             </Spinner> */}
       <header className="bgHead p-5 container-fluid">
-        <h1 className="mb-5">Fly with us</h1>
+        <h1 className="mb-5">
+          Fly with us <img src={logo} alt="" />
+        </h1>
         <Row className="m-2 p-2 justify-content-md-center">
           <Col xs md="4">
             <Form className="mb-3 ">
