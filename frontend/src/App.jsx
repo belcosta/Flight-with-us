@@ -18,7 +18,7 @@ function App() {
         hourOfLanding: "20:00",
         duration: "13:30",
         price: "2300",
-        logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+        companyLogo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
       },
       {
         departure: "ABC",
@@ -27,7 +27,7 @@ function App() {
         hourOfLanding: "23:00",
         duration: "13:30",
         price: "800",
-        logo:
+        companyLogo:
           "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
       },
     ],
@@ -39,7 +39,7 @@ function App() {
         hourOfLanding: "14:00",
         duration: "13:30",
         price: "1300",
-        logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+        companyLogo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
       },
       {
         departure: "DEF",
@@ -48,7 +48,7 @@ function App() {
         hourOfLanding: "5:00",
         duration: "13:30",
         price: "800",
-        logo:
+        companyLogo:
           "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
       },
     ],
@@ -100,10 +100,10 @@ function App() {
         setFilter,
         results,
         setResults,
-        getResults, //where is getResults defined? (Bel is asking Alice)
+        getResults, 
       }}
     >
-      <div className="home">
+      <div className="home bg-light">
         <header>
           <FormDisplay />
         </header>
@@ -113,6 +113,9 @@ function App() {
         <main>
           <Results />
         </main>
+        <div className="sidebar2">
+          <Filterbar />
+        </div>
       </div>
     </appContext.Provider>
   );

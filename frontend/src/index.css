@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --mainOrange: #cc5918;
+  --darkOrange: #8e3e10;
+  --darkGrey: rgb(63, 60, 60);
+  --titlesFont: "Sarina", cursive;
+}
 body {
   margin: auto 1rem ;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
