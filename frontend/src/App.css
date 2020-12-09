@@ -1,19 +1,17 @@
-.home{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
+.home {
+  display: grid;
+  grid-template-columns: 18% 64% 18%;
+  grid-template-rows: auto;
+  grid-template-areas:
     "header header header"
-    "sidebar main main " ;
-  }
-  header{
+    "sidebar main sidebar2";
+}
+header {
   grid-area: header;
-  }
-  main {
+}
+main {
   grid-area: main;
-  }
-  .sidebar{
-    grid-area: sidebar;
-  }
-  
-  
+}
+.sidebar {
+  grid-area: sidebar;
+}
