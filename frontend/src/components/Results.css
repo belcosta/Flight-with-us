@@ -5,14 +5,10 @@
   max-width: 85%;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 1);
 }
 .flights h2 {
-    font-family: var(--titlesFont);
-    color: var(--darkGrey);
-    text-align: center;
-    margin: 2rem auto;
-    font-size: 2.6rem;
+  color: var(--darkGrey);
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 2rem;
 }
