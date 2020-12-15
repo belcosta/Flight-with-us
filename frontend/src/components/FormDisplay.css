@@ -14,6 +14,11 @@ header h1 {
   color: #cc5918;
 }
 
+header img {
+  width: 100px;
+  transform: translateY(-15%) translateX(-7%);
+}
+
 header p {
   font-weight: 600;
   font-size: 1.75rem;
@@ -27,4 +32,10 @@ header .btn {
   color: white;
   font-weight: 500;
   background-color: #8e3e10;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    text-align: right;
+  }
 }
