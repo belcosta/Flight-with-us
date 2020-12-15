@@ -5,7 +5,7 @@ import appContext from "./context";
 import FormDisplay from "./components/FormDisplay";
 import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
-import NoResults from "./components/NoResults"
+import NoResults from "./components/NoResults";
 import Pivot from "./components/Pivot";
 
 function App() {
@@ -20,7 +20,8 @@ function App() {
         hourOfLanding: "20:00",
         duration: "13:30",
         price: "2300",
-        companyLogo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+        companyLogo:
+          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
       },
       {
         departure: "ABC",
@@ -41,7 +42,8 @@ function App() {
         hourOfLanding: "14:00",
         duration: "13:30",
         price: "1300",
-        companyLogo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+        companyLogo:
+          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
       },
       {
         departure: "DEF",
@@ -102,7 +104,7 @@ function App() {
         setFilter,
         results,
         setResults,
-        getResults, 
+        getResults,
       }}
     >
       <div className="home bg-light">
@@ -112,14 +114,15 @@ function App() {
         <div className="sidebar">
           <Filterbar />
         </div>
-        
+
         <main>
-          {
-         !results.length 
-          ? <Results/>  
-          : <NoResults/> }
+          {!results.goFlights.length && !results.backFlights.length ? (
+            <Results />
+          ) : (
+            <NoResults />
+          )}
         </main>
-        <div className="special-offers" style= {{border: "solid 3px red"}}>
+        <div className="special-offers" style={{ border: "solid 3px red" }}>
           <Pivot />
         </div>
       </div>
