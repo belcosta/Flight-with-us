@@ -7,7 +7,6 @@
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  
   border: ridge grey 1mm;
 }
 .result h3 {
@@ -50,11 +49,4 @@
   box-shadow: 0 0.2rem 0.9rem var(--mainOrange);
 }
 
-/* @media (max-width: 575.98px) 
 
-@media (max-width: 767.98px) 
-
-@media (max-width: 991.98px) 
-
-
-@media (max-width: 1199.98px) */
