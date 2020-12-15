@@ -5,6 +5,8 @@ import appContext from "./context";
 import FormDisplay from "./components/FormDisplay";
 import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
+import NoResults from "./components/NoResults"
+import Pivot from "./components/Pivot";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -110,11 +112,15 @@ function App() {
         <div className="sidebar">
           <Filterbar />
         </div>
+        
         <main>
-          <Results />
+          {
+         !results.length 
+          ? <Results/>  
+          : <NoResults/> }
         </main>
-        <div className="sidebar2">
-          <Filterbar />
+        <div className="special-offers" style= {{border: "solid 3px red"}}>
+          <Pivot />
         </div>
       </div>
     </appContext.Provider>

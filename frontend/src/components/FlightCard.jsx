@@ -7,8 +7,8 @@ export default function FlightCard(props) {
 
   return (
     <div className="result">
-      <img src={flight.companyLogo} alt="logo" style={{ width: "6rem" }}></img>
-      <div>
+      <img id="company-logo" src={flight.companyLogo} alt="logo" style={{ width: "6rem" }}></img>
+      <div className="flight-info">
         <h3>{flight.hourOfStart}</h3>
         <p>{flight.departure}</p>
       </div>
@@ -21,7 +21,7 @@ export default function FlightCard(props) {
         </span>
       </div>
 
-      <div>
+      <div className="flight-info">
         <h3>{flight.hourOfLanding}</h3>
         <p>{flight.destination}</p>
       </div>
