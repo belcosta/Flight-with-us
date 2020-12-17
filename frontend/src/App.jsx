@@ -5,6 +5,7 @@ import appContext from "./context";
 import FormDisplay from "./components/FormDisplay";
 import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
+import SidebarSpecialOffers from "./components/SidebarSpecialOffer";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -113,6 +114,9 @@ function App() {
         <main>
           <Results />
         </main>
+        <aside className="offers">
+          <SidebarSpecialOffers />
+        </aside>
       </div>
     </appContext.Provider>
   );

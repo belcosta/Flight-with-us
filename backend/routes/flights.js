@@ -80,4 +80,20 @@ router.post("/result", (req, res, err) => {
   // res.json({ goFlights, backFlights });
 });
 
+//3 request for special offers
+
+/* router.get("./get/specialoffers", (req, res, next) => {
+  poolConnection.getConnection((err, con) => {
+    if (err) throw err;
+    con.query("SELECT * from flights where isSpecialOffer=1", (error, result, fields) => {
+      if (error) {
+        res.json({ msg: "no access to special offers" });
+      };
+      specialOffers = result;
+    console.log(result)});
+    });
+    con.release();
+  }); */
+
+
 module.exports = router;

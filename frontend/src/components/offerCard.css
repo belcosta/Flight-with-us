@@ -1,0 +1,13 @@
+.cardContainer {
+    width: 80%;
+    margin: 1rem auto;
+    box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+}
+
+.banner {
+    width: 90%;
+    margin: 1% auto;
+    height: 50px;
+    background-repeat: no-repeat;
+  
+}
