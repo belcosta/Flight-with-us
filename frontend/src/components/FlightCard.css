@@ -1,47 +1,56 @@
 .result {
   display: inline-flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  align-content: center;
   width: 100%;
-  /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-area: 
-    "information buyFlight" */
-}
-.information {
-  /* grid-area: information; */
-  display: flex;
-  flex-direction: column;
+  margin: 1rem 0;
+  padding: 1em;
+  flex-flow: row wrap;
   justify-content: space-around;
-  /* display: grid;
-  grid-template-columns: 2fr 2fr 1fr 2fr 2fr;
-  grid-template-rows: auto;
-  grid-area: "h31 p1 icon h32 p2"; */
+  align-items: center;
+  align-content: center;
+
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2),
+    -3px -3px 7px rgba(255, 255, 255, 0.2);
+
 }
-.buyFlight {
-  /* grid-area: buyFlight; */
-  background-color: aqua;
+.result h3 {
+  font-size: 1.5rem;
 }
-/* 
-.row h3:first-of-type {
-    grid-area: h31;
-    color:blue;
+.result p {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  text-align: center;
 }
-.row p:first-of-type {
-    grid-area: p1;
-    color:red;
+.extra {
+  text-align: center;
 }
-.row span {
-    grid-area: icon;
+.extra p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
 }
-.row h3:last-of-type {
-    grid-area: h32;
-    color:green;
+#airplane {
+  font-size: 2rem;
+  text-align: center;
 }
-.row p:last-of-type {
-    grid-area: p2;
-    color:yellow;
-} */
+.buyFlight button {
+  align-content: center;
+  background-color: var(--darkOrange);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 3px;
+  padding: 0.5em 0.5em;
+  width: 10rem;
+  letter-spacing: 2px;
+  border: none;
+  box-shadow: 0 0.125rem 0.3rem grey;
+  font-size: 1.5rem;
+}
+.buyFlight button:hover {
+  transition: all 0.3s linear;
+  background-color: #f8f9fa;
+  color: var(--darkOrange);
+  border: solid 3px var(--darkOrange);
+  box-shadow: 0 0.2rem 0.9rem var(--mainOrange);
+}
+
+

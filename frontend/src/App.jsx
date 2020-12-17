@@ -6,6 +6,8 @@ import FormDisplay from "./components/FormDisplay";
 import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
 import SidebarSpecialOffers from "./components/SidebarSpecialOffer";
+import NoResults from "./components/NoResults";
+import Pivot from "./components/Pivot";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -19,7 +21,8 @@ function App() {
         hourOfLanding: "20:00",
         duration: "13:30",
         price: "2300",
-        logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+        companyLogo:
+          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
       },
       {
         departure: "ABC",
@@ -28,7 +31,7 @@ function App() {
         hourOfLanding: "23:00",
         duration: "13:30",
         price: "800",
-        logo:
+        companyLogo:
           "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
       },
     ],
@@ -40,7 +43,8 @@ function App() {
         hourOfLanding: "14:00",
         duration: "13:30",
         price: "1300",
-        logo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+        companyLogo:
+          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
       },
       {
         departure: "DEF",
@@ -49,7 +53,7 @@ function App() {
         hourOfLanding: "5:00",
         duration: "13:30",
         price: "800",
-        logo:
+        companyLogo:
           "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
       },
     ],
@@ -87,7 +91,7 @@ function App() {
     })
       .then((res) => {
         console.log(res);
-        setResults({ ...results, goFlights: res.data });
+        setResults(res.data);
       })
       .catch((err) => console.log(err));
   };
@@ -101,22 +105,27 @@ function App() {
         setFilter,
         results,
         setResults,
-        getResults, //where is getResults defined? (Bel is asking Alice)
+        getResults,
       }}
     >
-      <div className="home">
+      <div className="home bg-light">
         <header>
           <FormDisplay />
         </header>
         <div className="sidebar">
           <Filterbar />
         </div>
+
         <main>
-          <Results />
+          {!results.goFlights.length && !results.backFlights.length ? (
+            <Results />
+          ) : (
+            <NoResults />
+          )}
         </main>
-        <aside className="offers">
-          <SidebarSpecialOffers />
-        </aside>
+        <div className="special-offers" style={{ border: "solid 3px red" }}>
+          <Pivot />
+        </div>
       </div>
     </appContext.Provider>
   );

@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Sarina&display=swap");
-
 .bgHead {
-  background-image: url("../assets/img/header.svg");
+  background-image: url("../assets/img/hero.jpg");
   min-height: 25vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,9 +7,14 @@
 }
 
 header h1 {
-  font-family: "Sarina", cursive;
+  font-family: var(--titlesFont);
   font-size: 5rem;
-  color: #cc5918;
+  color: var(--mainOrange);
+}
+
+header img {
+  width: 100px;
+  transform: translateY(-15%) translateX(-7%);
 }
 
 header p {
@@ -26,5 +29,5 @@ header p {
 header .btn {
   color: white;
   font-weight: 500;
-  background-color: #8e3e10;
+  background-color: var(--darkOrange);
 }

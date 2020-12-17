@@ -1,39 +1,33 @@
 import React, { useState, useContext } from "react";
-import appContext from "../context";
-import { FaArrowRight } from "react-icons/fa";
 import { IoAirplaneSharp } from "react-icons/io5";
 import "./FlightCard.css";
-
-import box from "../assets/img/box.png";
 
 export default function FlightCard(props) {
   const flight = props.flight;
 
   return (
-    // <>
     <div className="result">
-      <div className="information">
-        <div className="row">
-          <h3>{flight.hourOfStart}</h3>
-          <p>{flight.departure}</p>{" "}
-          <span>
-            <IoAirplaneSharp />
-          </span>
-          <h3>{flight.hourOfLanding}</h3>
-          <p>{flight.destination}</p>
-        </div>
-        <div className="row">
-          <img src={flight.logo} alt="logo" style={{ width: "4rem" }}></img>
-          <p>
-            {flight.duration.split(":")[0]}h {flight.duration.split(":")[1]}m{" "}
-          </p>
-        </div>
+      <img id="company-logo" src={flight.companyLogo} alt="logo" style={{ width: "6rem" }}></img>
+      <div className="flight-info">
+        <h3>{flight.hourOfStart}</h3>
+        <p>{flight.departure}</p>
+      </div>
+      <div className="extra">
+        <p>
+          {flight.duration.split(":")[0]}h {flight.duration.split(":")[1]}m{" "}
+        </p>
+        <span id="airplane">
+          <IoAirplaneSharp />
+        </span>
+      </div>
+
+      <div className="flight-info">
+        <h3>{flight.hourOfLanding}</h3>
+        <p>{flight.destination}</p>
       </div>
 
       <div className="buyFlight">
-        <button>
-          {flight.price}€ <FaArrowRight />
-        </button>
+        <button>{flight.price}€</button>
       </div>
     </div>
   );

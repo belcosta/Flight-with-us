@@ -1,5 +1,5 @@
 import react, { useState } from "react";
-import "./SidebarSpecialOffers.css";
+import "./pivot.css";
 import OfferCard from "./offerCard";
 
 export default function SidebarSpecialOffers() {
