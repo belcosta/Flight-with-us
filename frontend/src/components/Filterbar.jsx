@@ -35,49 +35,52 @@ export default function Filterbar() {
         {/* STOPS */}
         <div className="filter filter-stops">
           <h6>Stops</h6>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              id="noStop"
-              type="checkbox"
-              onClick={() => {
-                setStops(0);
-              }}
-            />
-            <label className="form-check-label" htmlFor="noStop">
-              Non-stop
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              id="1Stop"
-              type="checkbox"
-              onClick={() => {
-                setStops(1);
-              }}
-            />
-            <label className="form-check-label" htmlFor="1Stop">
-              1 stop
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              id="moreStops"
-              type="checkbox"
-              onClick={() => {
-                setStops(2);
-              }}
-            />
-            <label className="form-check-label" htmlFor="moreStops">
-              2+ stops
-            </label>
+          <div className="list-stops">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                id="noStop"
+                type="checkbox"
+                onClick={() => {
+                  setStops(0);
+                }}
+              />
+              <label className="form-check-label" htmlFor="noStop">
+                Non-stop
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                id="1Stop"
+                type="checkbox"
+                onClick={() => {
+                  setStops(1);
+                }}
+              />
+              <label className="form-check-label" htmlFor="1Stop">
+                1 stop
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                id="moreStops"
+                type="checkbox"
+                onClick={() => {
+                  setStops(2);
+                }}
+              />
+              <label className="form-check-label" htmlFor="moreStops">
+                2+ stops
+              </label>
+            </div>
           </div>
         </div>
         {/* PRICE */}
         <div className="filter filter-price">
           <h6>Price</h6>
+          <div className="price-range">
             <div className="priceInput">
               <label>From </label>
 
@@ -99,35 +102,38 @@ export default function Filterbar() {
                 }}
               />
             </div>
+          </div>
         </div>
         {/* COMPANIES */}
         <div className="filter filter-companies">
           <h6>Airlines</h6>
           <div className="list-companies">
-          {companies.map((companyName, index) => {
-            return (
-              <div className="form-check" key={index}>
-                <input
-                  className="form-check-input"
-                  id={companyName.companyName}
-                  type="checkbox"
-                  onClick={(e) => {
-                    setSelectedComp([...selectedComp, e.target.id]);
-                  }}
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor={companyName.companyName}
-                >
-                  {companyName.companyName.substr(0, 1).toUpperCase() +
-                    companyName.companyName.substr(
-                      1,
-                      companyName.companyName.length - 1
-                    )}
-                </label>
-              </div>
-            );
-          })}
+            {companies.map((companyName, index) => {
+              return (
+                <div key={index}>
+                  {/* <div> */}
+                  <input
+                    className="form-check-input"
+                    id={companyName.companyName}
+                    type="checkbox"
+                    onClick={(e) => {
+                      setSelectedComp([...selectedComp, e.target.id]);
+                    }}
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor={companyName.companyName}
+                  >
+                    {companyName.companyName.substr(0, 1).toUpperCase() +
+                      companyName.companyName.substr(
+                        1,
+                        companyName.companyName.length - 1
+                      )}
+                  </label>
+                </div>
+                // </div>
+              );
+            })}
           </div>
         </div>
       </div>
