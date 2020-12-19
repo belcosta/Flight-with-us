@@ -7,14 +7,20 @@ export default function FlightCard(props) {
 
   return (
     <div className="result">
-      <img id="company-logo" src={flight.companyLogo} alt="logo" style={{ width: "6rem" }}></img>
+      <img
+        id="company-logo"
+        src={flight.companyLogo}
+        alt="logo"
+        style={{ width: "6rem" }}
+      ></img>
       <div className="flight-info">
         <h3>{flight.hourOfStart}</h3>
         <p>{flight.departure}</p>
       </div>
       <div className="extra">
         <p>
-          {flight.duration.split(":")[0]}h {flight.duration.split(":")[1]}m{" "}
+          {flight.duration.split(":")[0]}h{" "}
+          {flight.duration.split(":")[1].substr(0, 2)} m{" "}
         </p>
         <span id="airplane">
           <IoAirplaneSharp />
