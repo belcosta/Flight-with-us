@@ -1,0 +1,9 @@
+article {
+  max-width: 500px;
+  height: 300px;
+  border: solid 1px black;
+}
+
+.covid {
+  color: red;
+}
