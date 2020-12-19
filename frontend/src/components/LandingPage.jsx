@@ -13,7 +13,7 @@ export default function LandingPage() {
     },
     {
       title: "Travel and entry requirements",
-      image: "../assets/img/requirements.png",
+      image: "../assets/img/requirements.jpg",
       alt: "row of the planes at airport",
       class: "requirements",
       text:
@@ -28,7 +28,7 @@ export default function LandingPage() {
     },
     {
       title: "Terms of service",
-      image: "../assets/img/terms.png",
+      image: "../assets/img/terms.jpg",
       alt: "people waiting at the airport",
       class: "terms",
       text: "Learn what are the rules of using this website.",
