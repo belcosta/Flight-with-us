@@ -7,6 +7,7 @@ import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
 import NoResults from "./components/NoResults";
 import Pivot from "./components/Pivot";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -63,7 +64,7 @@ function App() {
           ) : noResults ? (
             <NoResults />
           ) : (
-            <p>Welcome at our site</p>
+            <LandingPage />
           )}
         </main>
         <div className="special-offers" style={{ border: "solid 3px red" }}>
