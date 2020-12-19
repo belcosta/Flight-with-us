@@ -17,28 +17,6 @@ function App() {
   });
   const [noResults, setNoResults] = useState(false);
 
-  const [companies, setCompanies] = useState([]);
-
-  //useEffect for companies -> for the Filter component
-
-  useEffect(() => {
-    Axios({
-      method: "GET",
-      url: "http://localhost:3500/flights/get/companies",
-    })
-      .then((res) => {
-        console.log(res);
-        setCompanies(res.data.companies);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  const getValueFilter = (e) => {
-    setFilter((prevFilter) => {
-      return { ...prevFilter, [e.target.name]: e.target.value };
-    });
-  };
-
   const getResults = () => {
     console.log("Calling for results");
     console.log(search);
