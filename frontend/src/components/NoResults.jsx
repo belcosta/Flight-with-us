@@ -1,13 +1,13 @@
-import React from 'react'
-import "./NoResults.css"
-import {GoStop} from "react-icons/go"
+import React from "react";
+import "./NoResults.css";
+import noFlight from "../assets/img/no-flight.png";
 
 export default function NoResults() {
-    return (
-        <div className="noResults">
-            <h1 style={{color: "red", fontSize: "100px"}}><GoStop/></h1>
-            <h1>Sorry, there is no flight available in this route... </h1>
- <p>Please, make a new search.</p>
- </div>
-    )
+  return (
+    <div className="noResults">
+      <img src={noFlight} alt="empty departure board" />
+      <h2>Sorry, there is no flight available in this route... </h2>
+      <p>Please, make a new search.</p>
+    </div>
+  );
 }

@@ -3,18 +3,10 @@
   margin: 2rem auto;
   padding: 2rem;
   background-color: #f8f9fa;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2),
-    -3px -3px 7px rgba(255, 255, 255, 0.2);
-}
-.noResults h1 {
-  font-family: var(--titlesFont);
-  color: var(--darkGrey);
   text-align: center;
-  margin: 2rem auto;
-  font-size: 2rem;
 }
-.noResults p {
-  text-align: center;
-  color: red;
-  font-weight: 600;
+
+.noResults img {
+  width: 90%;
+  max-width: 300px;
 }
