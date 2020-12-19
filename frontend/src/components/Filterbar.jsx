@@ -18,8 +18,15 @@ export default function Filterbar() {
       url: "http://localhost:3500/flights/get/companies",
     })
       .then((res) => {
-        console.log(res);
-        setCompanies(res.data.companies);
+        let companiesSorted = res.data.companies.sort(function (a, b) {
+          var keyA = a.companyName.trim();
+          var keyB = b.companyName.trim();
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+        });
+        console.log(companiesSorted);
+        setCompanies(companiesSorted);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -78,56 +85,56 @@ export default function Filterbar() {
         {/* PRICE */}
         <div className="filter filter-price">
           <h6>Price</h6>
-            <div className="priceInput">
-              <label>From </label>
+          <div className="priceInput">
+            <label>From </label>
 
-              <input
-                type="number"
-                onInput={(e) => {
-                  e.preventDefault();
-                  setPrice({ ...price, from: +e.target.value });
-                }}
-              />
-            </div>
-            <div className="priceInput">
-              <label>To </label>
-              <input
-                type="number"
-                onInput={(e) => {
-                  e.preventDefault();
-                  setPrice({ ...price, to: +e.target.value });
-                }}
-              />
-            </div>
+            <input
+              type="number"
+              onInput={(e) => {
+                e.preventDefault();
+                setPrice({ ...price, from: +e.target.value });
+              }}
+            />
+          </div>
+          <div className="priceInput">
+            <label>To </label>
+            <input
+              type="number"
+              onInput={(e) => {
+                e.preventDefault();
+                setPrice({ ...price, to: +e.target.value });
+              }}
+            />
+          </div>
         </div>
         {/* COMPANIES */}
         <div className="filter filter-companies">
           <h6>Airlines</h6>
           <div className="list-companies">
-          {companies.map((companyName, index) => {
-            return (
-              <div className="form-check" key={index}>
-                <input
-                  className="form-check-input"
-                  id={companyName.companyName}
-                  type="checkbox"
-                  onClick={(e) => {
-                    setSelectedComp([...selectedComp, e.target.id]);
-                  }}
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor={companyName.companyName}
-                >
-                  {companyName.companyName.substr(0, 1).toUpperCase() +
-                    companyName.companyName.substr(
-                      1,
-                      companyName.companyName.length - 1
-                    )}
-                </label>
-              </div>
-            );
-          })}
+            {companies.map((companyName, index) => {
+              return (
+                <div className="form-check" key={index}>
+                  <input
+                    className="form-check-input"
+                    id={companyName.companyName}
+                    type="checkbox"
+                    onClick={(e) => {
+                      setSelectedComp([...selectedComp, e.target.id]);
+                    }}
+                  />
+                  <label
+                    className="form-check-label"
+                    htmlFor={companyName.companyName}
+                  >
+                    {companyName.companyName.substr(0, 1).toUpperCase() +
+                      companyName.companyName.substr(
+                        1,
+                        companyName.companyName.length - 1
+                      )}
+                  </label>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
