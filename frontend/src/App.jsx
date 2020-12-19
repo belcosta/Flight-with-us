@@ -15,6 +15,7 @@ function App() {
     goFlights: [],
     backFlights: [],
   });
+  const [noResults, setNoResults] = useState(false);
 
   const [companies, setCompanies] = useState([]);
 
@@ -41,13 +42,17 @@ function App() {
   const getResults = () => {
     console.log("Calling for results");
     console.log(search);
+    setNoResults(false);
     Axios({
       method: "POST",
       url: "http://localhost:3500/flights/result",
       data: search,
     })
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
+        if (!res.data.goFlights.length || !res.data.backFlights.length) {
+          setNoResults(true);
+        }
         setResults(res.data);
       })
       .catch((err) => console.log(err));
@@ -74,10 +79,13 @@ function App() {
         </div>
 
         <main>
-          {!results.goFlights.length && !results.backFlights.length ? (
+          {/* {noResults ? <NoResults /> : <Results />} */}
+          {results.goFlights.length || results.backFlights.length ? (
+            <Results />
+          ) : noResults ? (
             <NoResults />
           ) : (
-            <Results />
+            <p>Welcome at our site</p>
           )}
         </main>
         <div className="special-offers" style={{ border: "solid 3px red" }}>
