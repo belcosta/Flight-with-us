@@ -33,6 +33,8 @@ export default function Article(props) {
       style={{ backgroundImage: `url(${picture})` }}
     >
       <h3>{article.title}</h3>
+      <p>{article.text}</p>
+      <button className="btn btn-primary">Learn more</button>
     </article>
   );
 }
