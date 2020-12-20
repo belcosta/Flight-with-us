@@ -33,7 +33,7 @@ export default function LandingPage() {
       image: "../assets/img/terms.jpg",
       alt: "people waiting at the airport",
       class: "terms",
-      text: "Learn what are the rules of using this website.",
+      text: "Learn rules of using this service.",
     },
   ];
   return (
