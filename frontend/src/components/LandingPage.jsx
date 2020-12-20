@@ -5,7 +5,7 @@ import "./LandingPage.css";
 export default function LandingPage() {
   const articles = [
     {
-      title: "Safe travelling in time of Covid-19",
+      title: "Safe travelling",
       image: "../assets/img/covid.png",
       alt: "Women in mask staying before the plane",
       class: "covid",
@@ -25,7 +25,8 @@ export default function LandingPage() {
       image: "../assets/img/about.png",
       alt: "Silhouette women throwing paper plane",
       class: "about",
-      text: "Meet people responsible for this site",
+      text:
+        "Meet the team of Flight with us - what are they favorite destinations? And how much challenging was this project for them?",
     },
     {
       title: "Terms of service",
