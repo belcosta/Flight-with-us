@@ -1,5 +1,6 @@
 import React from "react";
 import Article from "./Article";
+import "./LandingPage.css";
 
 export default function LandingPage() {
   const articles = [
@@ -35,7 +36,7 @@ export default function LandingPage() {
     },
   ];
   return (
-    <section>
+    <section className="landing">
       {articles.map((article, index) => {
         return <Article article={article} key={index} />;
       })}

@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { Button } from "react-bootstrap";
 import "./Article.css";
 import covid from "../assets/img/covid.png";
 import requirement from "../assets/img/requirements.jpg";
@@ -34,7 +35,7 @@ export default function Article(props) {
     >
       <h3>{article.title}</h3>
       <p>{article.text}</p>
-      <button className="btn btn-primary">Learn more</button>
+      <button className="btn">Learn more</button>
     </article>
   );
 }
