@@ -1,0 +1,107 @@
+.info {
+  margin: 2em;
+  display: grid;
+}
+.travel-safely,
+.travel-requirements {
+  padding: 1em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+h3 {
+  text-align: center;
+  padding: 1.1em;
+}
+
+p {
+  padding: 1em;
+  text-align: justify;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.travel-safely {
+  background-image: url("../images/mask.jpg");
+}
+.travel-requirements {
+  background-image: url("../images/airplane.jpeg");
+}
+button {
+  align-self: flex-end;
+  font-weight: 400;
+  font-size: 1em;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+@media (min-width: 426px) and (max-width: 1024px) {
+    .info {
+      margin: 0.2em;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: auto;
+      grid-gap: 1em;
+    }
+    .travel-safely,
+    .travel-requirements {
+      justify-content: space-between;
+      padding: 0.6em;
+    }
+    h3 {
+      padding: 0.5;
+    }
+    .travel-safely p {
+        width: 90%;
+      }
+      .travel-requirements p {
+        width: 40%;
+        align-self: right;
+      }
+  }
+
+/* to use when this info go to side bar */
+/* @media (min-width: 426px) and (max-width: 1024px) {
+  .info {
+    margin: 0.2em;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: auto;
+    grid-gap: 1em;
+  }
+  .travel-safely,
+  .travel-requirements {
+    justify-content: start;
+    padding: 0.6em;
+  }
+  h3 {
+    font-size: 1em;
+    text-align: start;
+    padding: 0.3;
+  }
+  p {
+    font-size: 0.7em;
+  }
+  a {
+    font-size: 0.7em;
+  }
+} */
+
+@media (min-width: 1025px) {
+  .info {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+  .travel-safely,
+  .travel-requirements {
+    justify-content: space-between;
+  }
+  .travel-safely p {
+    width: 53%;
+    float: right;
+  }
+  .travel-requirements p {
+    width: 37%;
+  }
+}
