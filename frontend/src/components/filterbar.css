@@ -1,9 +1,9 @@
-
 form {
   height: 100%;
 }
 .filter-block {
   display: grid;
+  align-content: start;
   grid-template-rows: auto;
   background-color: #0c4363;
   width: 100%;
@@ -69,9 +69,9 @@ input::-webkit-inner-spin-button {
   .filter-block {
     grid-template-columns: auto auto;
     grid-template-rows: auto;
-    grid-template-areas: "stops price"
-    "companies companies";
-    
+    grid-template-areas:
+      "stops price"
+      "companies companies";
   }
   /* stops */
   .list-stops {
@@ -81,14 +81,14 @@ input::-webkit-inner-spin-button {
   .price-range {
     grid-area: price;
   }
-  .filter-companies{
+  .filter-companies {
     grid-area: companies;
   }
   .list-companies {
     grid-template-columns: auto auto;
     grid-column-gap: 1em;
     justify-content: space-evenly;
-    padding: 0.3em; 
+    padding: 0.3em;
   }
 }
 

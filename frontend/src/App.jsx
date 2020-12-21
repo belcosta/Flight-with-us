@@ -10,7 +10,6 @@ import Pivot from "./components/Pivot";
 import LandingPage from "./components/LandingPage";
 import Info from "./components/Info";
 
-
 function App() {
   const [search, setSearch] = useState({});
   const [filter, setFilter] = useState({});
@@ -51,10 +50,9 @@ function App() {
         getResults,
       }}
     >
+      <FormDisplay />
+
       <div className="home bg-light">
-        <header>
-          <FormDisplay />
-        </header>
         <div className="sidebar">
           <Filterbar />
         </div>
@@ -66,9 +64,10 @@ function App() {
           ) : noResults ? (
             <NoResults />
           ) : (
-            <div><LandingPage /> <Info/></div>
+            <div>
+              <LandingPage /> <Info />
+            </div>
           )}
-
         </main>
         <div className="special-offers" style={{ border: "solid 3px red" }}>
           <Pivot />
