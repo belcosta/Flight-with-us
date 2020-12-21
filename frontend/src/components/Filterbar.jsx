@@ -42,69 +42,73 @@ export default function Filterbar() {
         {/* STOPS */}
         <div className="filter filter-stops">
           <h6>Stops</h6>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              id="noStop"
-              type="checkbox"
-              onClick={() => {
-                setStops(0);
-              }}
-            />
-            <label className="form-check-label" htmlFor="noStop">
-              Non-stop
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              id="1Stop"
-              type="checkbox"
-              onClick={() => {
-                setStops(1);
-              }}
-            />
-            <label className="form-check-label" htmlFor="1Stop">
-              1 stop
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              id="moreStops"
-              type="checkbox"
-              onClick={() => {
-                setStops(2);
-              }}
-            />
-            <label className="form-check-label" htmlFor="moreStops">
-              2+ stops
-            </label>
+          <div className="list-stops">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                id="noStop"
+                type="checkbox"
+                onClick={() => {
+                  setStops(0);
+                }}
+              />
+              <label className="form-check-label" htmlFor="noStop">
+                Non-stop
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                id="1Stop"
+                type="checkbox"
+                onClick={() => {
+                  setStops(1);
+                }}
+              />
+              <label className="form-check-label" htmlFor="1Stop">
+                1 stop
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                id="moreStops"
+                type="checkbox"
+                onClick={() => {
+                  setStops(2);
+                }}
+              />
+              <label className="form-check-label" htmlFor="moreStops">
+                2+ stops
+              </label>
+            </div>
           </div>
         </div>
         {/* PRICE */}
         <div className="filter filter-price">
           <h6>Price</h6>
-          <div className="priceInput">
-            <label>From </label>
+          <div className="price-range">
+            <div className="priceInput">
+              <label>From </label>
 
-            <input
-              type="number"
-              onInput={(e) => {
-                e.preventDefault();
-                setPrice({ ...price, from: +e.target.value });
-              }}
-            />
-          </div>
-          <div className="priceInput">
-            <label>To </label>
-            <input
-              type="number"
-              onInput={(e) => {
-                e.preventDefault();
-                setPrice({ ...price, to: +e.target.value });
-              }}
-            />
+              <input
+                type="number"
+                onInput={(e) => {
+                  e.preventDefault();
+                  setPrice({ ...price, from: +e.target.value });
+                }}
+              />
+            </div>
+            <div className="priceInput">
+              <label>To </label>
+              <input
+                type="number"
+                onInput={(e) => {
+                  e.preventDefault();
+                  setPrice({ ...price, to: +e.target.value });
+                }}
+              />
+            </div>
           </div>
         </div>
         {/* COMPANIES */}
@@ -113,7 +117,9 @@ export default function Filterbar() {
           <div className="list-companies">
             {companies.map((companyName, index) => {
               return (
-                <div className="form-check" key={index}>
+                <div key={index}>
+
+
                   <input
                     className="form-check-input"
                     id={companyName.companyName}
@@ -133,6 +139,9 @@ export default function Filterbar() {
                       )}
                   </label>
                 </div>
+
+
+
               );
             })}
           </div>

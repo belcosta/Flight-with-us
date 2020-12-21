@@ -1,37 +1,42 @@
 .result {
-  display: inline-flex;
   width: 100%;
   margin: 1rem 0;
   padding: 1em;
+  display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
-  align-content: center;
-
+  align-items: space-between;
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2),
     -3px -3px 7px rgba(255, 255, 255, 0.2);
-
 }
-.result h3 {
+h3 {
   font-size: 1.5rem;
 }
-.result p {
+p {
   font-size: 1.2rem;
   font-weight: lighter;
   text-align: center;
 }
+/* flight-info */
+.flight-info1,
+.flight-info2,
+.extra {
+  padding: 0.5em;
+}
+/* extra */
 .extra {
   text-align: center;
 }
 .extra p {
-  font-size: 1.2rem;
   margin-bottom: 0;
 }
 #airplane {
   font-size: 2rem;
   text-align: center;
 }
-.buyFlight button {
+/* the end of extra */
+/* button */
+button {
   align-content: center;
   background-color: var(--darkOrange);
   color: white;
@@ -45,12 +50,55 @@
   box-shadow: 0 0.125rem 0.3rem grey;
   font-size: 1.5rem;
 }
-.buyFlight button:hover {
+button:hover {
   transition: all 0.3s linear;
-  background-color: #f8f9fa;
+  background-color: #eff2f5;
   color: var(--darkOrange);
   border: solid 3px var(--darkOrange);
-  box-shadow: 0 0.2rem 0.9rem var(--mainOrange);
+  box-shadow: 0 0.2rem 0.9rem grey;
 }
 
+@media (min-width: 320px) and (max-width: 425px) {
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  #airplane {
+    font-size: 1.2rem;
+  }
+  /* children's order */
+  .flight-info1 {
+    order: 1;
+  }
+  .extra {
+    order: 2;
+  }
+  .flight-info2 {
+    order: 3;
+  }
+  img {
+    order: 4;
+    padding: 0.5em;
+  }
+  button {
+    order: 5;
+  }
+}
 
+@media (min-width: 426px) and (max-width: 1024px) {
+  img,
+  button {
+    flex: 1 0 50%;
+  }
+  img {
+    order: 4;
+    padding: 0 1.7em;
+  }
+  button {
+    order: 5;
+    font-weight: 600;
+    width: 7rem;
+  }
+}
