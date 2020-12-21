@@ -1,3 +1,4 @@
+
 form {
   height: 100%;
 }
@@ -21,6 +22,7 @@ h6 {
   font-size: 1.3rem;
   text-align: center;
 }
+
 /* stops and prices*/
 .list-stops,
 .price-range {
@@ -61,6 +63,7 @@ input::-webkit-inner-spin-button {
   justify-content: start;
   padding: 1em 2em;
 }
+/* checkbox */
 
 @media (max-width: 425px) {
   .filter-block {
@@ -116,7 +119,10 @@ input::-webkit-inner-spin-button {
   .filter-block {
     grid-template-columns: auto;
     grid-template-rows: repeat (3, auto);
-    height: 100vh;
+    height: 100%;
+  }
+  .filter {
+    padding: 0;
   }
   h6 {
     text-align: start;

@@ -24,6 +24,16 @@ function FormDisplay() {
       return { ...prevSearch, [e.target.name]: e.target.value };
     });
   };
+  
+  const compare = ( a, b ) => {
+    if ( a.cityName < b.cityName ){
+      return -1;
+    }
+    if ( a.cityName > b.cityName ){
+      return 1;
+    }
+    return 0;
+  }
 
   useEffect(() => {
     Axios({
@@ -46,6 +56,7 @@ function FormDisplay() {
         <h1 className="mb-5">
           Fly with us <img src={logo} alt="" />
         </h1>
+        <div className="test">
         <Row className="m-2 p-2 justify-content-md-center">
           <Col xs md="4">
             <Form className="mb-3 ">
@@ -149,6 +160,7 @@ function FormDisplay() {
             Search
           </Button>
         </Row>
+        </div>
       </header>
     </>
   );

@@ -31,3 +31,10 @@ header .btn {
   font-weight: 500;
   background-color: var(--darkOrange);
 }
+.test {
+  box-shadow: 3px 3px 7px rgba(255, 255, 255, 1),
+  -3px -3px 7px rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.5);
+
+  padding: 2em;
+  }
