@@ -1,6 +1,29 @@
 .offersContainer {
-    border: 1px black solid;
-    background-color: #f9f9f9;
-    height: 100%
-    
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 0;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+
 }
+
+/* .card-enter {
+  transform: translateX(100%);
+}
+
+.card-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease-in;
+}
+
+.card-exit {
+  transform: translateX(0%);
+}
+
+.card-exit-active {
+  transform: translateX(-100%);
+  transition: all 500ms ease-in-out;
+} */

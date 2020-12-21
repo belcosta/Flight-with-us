@@ -5,7 +5,6 @@ import appContext from "./context";
 import FormDisplay from "./components/FormDisplay";
 import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
-import SidebarSpecialOffers from "./components/SidebarSpecialOffer";
 import NoResults from "./components/NoResults";
 import Pivot from "./components/Pivot";
 
@@ -123,7 +122,7 @@ function App() {
             <NoResults />
           )}
         </main>
-        <div className="special-offers" style={{ border: "solid 3px red" }}>
+        <div className="special-offers">
           <Pivot />
         </div>
       </div>

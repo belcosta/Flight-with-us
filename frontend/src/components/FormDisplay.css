@@ -9,7 +9,18 @@
 header h1 {
   font-family: var(--titlesFont);
   font-size: 5rem;
-  color: var(--mainOrange);
+  /* color: var(--mainOrange);*/
+
+  /*suggestion for gradient*/
+  width: 40%;
+  background: linear-gradient(
+    to right,
+    rgb(243, 162, 70),
+    #f3904f,
+    #cc5918 90%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header img {
