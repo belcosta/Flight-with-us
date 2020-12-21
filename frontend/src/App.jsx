@@ -5,7 +5,7 @@ import appContext from "./context";
 import FormDisplay from "./components/FormDisplay";
 import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
-import NoResults from "./components/NoResults"
+import NoResults from "./components/NoResults";
 import Pivot from "./components/Pivot";
 import Info from "./components/Info";
 
@@ -14,46 +14,48 @@ function App() {
   const [filter, setFilter] = useState({});
   const [results, setResults] = useState({
     goFlights: [
-      // {
-      //   departure: "ABC",
-      //   destination: " DEF",
-      //   hourOfStart: "6:30",
-      //   hourOfLanding: "20:00",
-      //   duration: "13:30",
-      //   price: "2300",
-      //   companyLogo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
-      // },
-      // {
-      //   departure: "ABC",
-      //   destination: " DEF",
-      //   hourOfStart: "9:30",
-      //   hourOfLanding: "23:00",
-      //   duration: "13:30",
-      //   price: "800",
-      //   companyLogo:
-      //     "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
-      // },
+      {
+        departure: "ABC",
+        destination: " DEF",
+        hourOfStart: "6:30",
+        hourOfLanding: "20:00",
+        duration: "13:30",
+        price: "2300",
+        companyLogo:
+          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+      },
+      {
+        departure: "ABC",
+        destination: " DEF",
+        hourOfStart: "9:30",
+        hourOfLanding: "23:00",
+        duration: "13:30",
+        price: "800",
+        companyLogo:
+          "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
+      },
     ],
     backFlights: [
-      // {
-      //   departure: "DEF",
-      //   destination: " ABC",
-      //   hourOfStart: "0:30",
-      //   hourOfLanding: "14:00",
-      //   duration: "13:30",
-      //   price: "1300",
-      //   companyLogo: "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
-      // },
-      // {
-      //   departure: "DEF",
-      //   destination: " ABC",
-      //   hourOfStart: "15:30",
-      //   hourOfLanding: "5:00",
-      //   duration: "13:30",
-      //   price: "800",
-      //   companyLogo:
-      //     "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
-      // },
+      {
+        departure: "DEF",
+        destination: " ABC",
+        hourOfStart: "0:30",
+        hourOfLanding: "14:00",
+        duration: "13:30",
+        price: "1300",
+        companyLogo:
+          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
+      },
+      {
+        departure: "DEF",
+        destination: " ABC",
+        hourOfStart: "15:30",
+        hourOfLanding: "5:00",
+        duration: "13:30",
+        price: "800",
+        companyLogo:
+          "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
+      },
     ],
   });
 
@@ -103,7 +105,7 @@ function App() {
         setFilter,
         results,
         setResults,
-        getResults, 
+        getResults,
       }}
     >
       <div className="home bg-light">
@@ -113,15 +115,16 @@ function App() {
         <div className="sidebar">
           <Filterbar />
         </div>
-        
+
         <main>
           <Info/>
           {
          !results.length 
           ? <Results/>  
           : <NoResults/> }
+
         </main>
-        <div className="special-offers" style= {{border: "solid 3px red"}}>
+        <div className="special-offers" style={{ border: "solid 3px red" }}>
           <Pivot />
         </div>
       </div>
