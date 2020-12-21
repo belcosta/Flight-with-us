@@ -14,7 +14,8 @@ export default function FlightCard(props) {
       </div>
       <div className="extra">
         <p>
-          {flight.duration.split(":")[0]}h {flight.duration.split(":")[1]}m{" "}
+          {flight.duration.split(":")[0]}h{" "}
+          {flight.duration.split(":")[1].substr(0, 2)} m{" "}
         </p>
         <span id="airplane">
           <IoAirplaneSharp />

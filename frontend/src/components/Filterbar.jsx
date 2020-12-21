@@ -18,8 +18,15 @@ export default function Filterbar() {
       url: "http://localhost:3500/flights/get/companies",
     })
       .then((res) => {
-        console.log(res);
-        setCompanies(res.data.companies);
+        let companiesSorted = res.data.companies.sort(function (a, b) {
+          var keyA = a.companyName.trim();
+          var keyB = b.companyName.trim();
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+        });
+        console.log(companiesSorted);
+        setCompanies(companiesSorted);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -111,7 +118,8 @@ export default function Filterbar() {
             {companies.map((companyName, index) => {
               return (
                 <div key={index}>
-                  {/* <div> */}
+
+
                   <input
                     className="form-check-input"
                     id={companyName.companyName}
@@ -131,7 +139,9 @@ export default function Filterbar() {
                       )}
                   </label>
                 </div>
-                // </div>
+
+
+
               );
             })}
           </div>

@@ -41,8 +41,15 @@ function FormDisplay() {
       url: "http://localhost:3500/flights/get/cities",
     })
       .then((res) => {
-        console.log(res.data.cities);
-        setCities(res.data.cities);
+        let citiesSorted = res.data.cities.sort(function (a, b) {
+          var keyA = a.cityName.trim();
+          var keyB = b.cityName.trim();
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+        });
+        console.log(citiesSorted);
+        setCities(citiesSorted);
       })
       .catch((err) => console.log(err));
   }, []);
