@@ -69,7 +69,7 @@ function App() {
             </div>
           )}
         </main>
-        <div className="special-offers" style={{ border: "solid 3px red" }}>
+        <div className="special-offers">
           <Pivot />
         </div>
       </div>
