@@ -5,12 +5,10 @@ const async = require("async");
 let poolConnection = mysql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  //?
   port: "3306",
   user: "root",
   password: "Password123!",
   database: "flight_search",
-  //?
 });
 //request for cities (for select) - return all city names from city table
 router.get("/get/cities", (req, res, next) => {

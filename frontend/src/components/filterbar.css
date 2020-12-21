@@ -1,23 +1,48 @@
+form {
+  height: 100%;
+}
 .filter-block {
+  display: grid;
+  align-content: start;
+  grid-template-rows: auto;
   background-color: #0c4363;
   width: 100%;
-  height: 90vh;
-
   margin: 0 auto;
-  padding: 2rem 0 2rem 1rem;
+  padding: 1em 0 1em 1rem;
   color: white;
 }
-.form-check {
-  display: flex;
-  align-content: space-around;
+.filter {
+  padding: 1em 0 0 0;
 }
 h6 {
   color: #f8d7c4;
   border-bottom: solid 3px #f8d7c4;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  /* color: var(--darkGrey); */
   font-size: 1.3rem;
+  text-align: center;
+}
+
+/* stops and prices*/
+.list-stops,
+.price-range {
+  display: grid;
+  justify-content: start;
+}
+/* stops */
+.list-stops {
+  padding: 1em;
+  row-gap: 0.5em;
+}
+/* price */
+.price-range div {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.price-range label {
+  margin: 0;
+  padding: 1em;
 }
 input[type="number"] {
   width: 6rem;
@@ -31,33 +56,75 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+/* companies */
+.list-companies {
+  display: grid;
+  grid-row-gap: 0.5em;
+  justify-content: start;
+  padding: 1em 2em;
+}
+/* checkbox */
 
-@media (max-width: 1024px) {
+@media (max-width: 425px) {
   .filter-block {
-    display: flex;
-    flex-flow: row wrap;
-    height: 40vh;
-    justify-content: space-between;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "stops price"
+      "companies companies";
+  }
+  /* stops */
+  .list-stops {
+    grid-area: stops;
+  }
+  /* price */
+  .price-range {
+    grid-area: price;
+  }
+  .filter-companies {
+    grid-area: companies;
+  }
+  .list-companies {
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
+    justify-content: space-evenly;
+    padding: 0.3em;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 1024px) {
+  /* filter-block */
+  .filter-block {
+    grid-template-columns: 1fr 1fr 2fr;
     width: 100%;
   }
-  .filter-stops, .filter-price{
-    flex-grow: 1;
-   }
-  .filter-companies {
-   flex-grow: 2;
-   border: solid green 2px;
+  /* stops and prices*/
+  .list-stops,
+  .price-range {
+    justify-content: space-around;
+    align-content: space-around;
   }
-.list-companies {
-  display: flex;
-  flex-flow: row wrap;
+
+  /* companies */
+  .list-companies {
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
+    justify-content: space-evenly;
+    padding: 0.3em;
+  }
 }
-}
+
 @media (min-width: 1025px) {
   .filter-block {
-    display: flex;
-    flex-direction: column;
-    float: left;
-    width: 100%;
-    height: 90vh;
+    grid-template-columns: auto;
+    grid-template-rows: repeat (3, auto);
+    height: 100%;
+  }
+  .filter {
+    padding: 0;
+  }
+  h6 {
+    text-align: start;
   }
 }

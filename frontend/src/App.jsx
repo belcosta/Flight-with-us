@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 import "./App.css";
 import appContext from "./context";
@@ -7,89 +7,32 @@ import Results from "./components/Results";
 import Filterbar from "./components/Filterbar";
 import NoResults from "./components/NoResults";
 import Pivot from "./components/Pivot";
+import LandingPage from "./components/LandingPage";
+import Info from "./components/Info";
 
 function App() {
   const [search, setSearch] = useState({});
   const [filter, setFilter] = useState({});
   const [results, setResults] = useState({
-    goFlights: [
-      {
-        departure: "ABC",
-        destination: " DEF",
-        hourOfStart: "6:30",
-        hourOfLanding: "20:00",
-        duration: "13:30",
-        price: "2300",
-        companyLogo:
-          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
-      },
-      {
-        departure: "ABC",
-        destination: " DEF",
-        hourOfStart: "9:30",
-        hourOfLanding: "23:00",
-        duration: "13:30",
-        price: "800",
-        companyLogo:
-          "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
-      },
-    ],
-    backFlights: [
-      {
-        departure: "DEF",
-        destination: " ABC",
-        hourOfStart: "0:30",
-        hourOfLanding: "14:00",
-        duration: "13:30",
-        price: "1300",
-        companyLogo:
-          "https://kprn.de/wp-content/uploads/2019/02/latam-logo.jpg",
-      },
-      {
-        departure: "DEF",
-        destination: " ABC",
-        hourOfStart: "15:30",
-        hourOfLanding: "5:00",
-        duration: "13:30",
-        price: "800",
-        companyLogo:
-          "https://www.flughafen-zuerich.ch/-/jssmedia/airport/portal/logos/airline/easy.svg?vs=1",
-      },
-    ],
+    goFlights: [],
+    backFlights: [],
   });
-
-  const [companies, setCompanies] = useState([]);
-
-  //useEffect for companies -> for the Filter component
-
-  useEffect(() => {
-    Axios({
-      method: "GET",
-      url: "http://localhost:3500/flights/get/companies",
-    })
-      .then((res) => {
-        console.log(res);
-        setCompanies(res.data.companies);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  const getValueFilter = (e) => {
-    setFilter((prevFilter) => {
-      return { ...prevFilter, [e.target.name]: e.target.value };
-    });
-  };
+  const [noResults, setNoResults] = useState(false);
 
   const getResults = () => {
     console.log("Calling for results");
     console.log(search);
+    setNoResults(false);
     Axios({
       method: "POST",
       url: "http://localhost:3500/flights/result",
       data: search,
     })
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
+        if (!res.data.goFlights.length || !res.data.backFlights.length) {
+          setNoResults(true);
+        }
         setResults(res.data);
       })
       .catch((err) => console.log(err));
@@ -107,19 +50,23 @@ function App() {
         getResults,
       }}
     >
+      <FormDisplay />
+
       <div className="home bg-light">
-        <header>
-          <FormDisplay />
-        </header>
         <div className="sidebar">
           <Filterbar />
         </div>
 
         <main>
-          {!results.goFlights.length && !results.backFlights.length ? (
+          {/* {noResults ? <NoResults /> : <Results />} */}
+          {results.goFlights.length || results.backFlights.length ? (
             <Results />
-          ) : (
+          ) : noResults ? (
             <NoResults />
+          ) : (
+            <div>
+              <LandingPage /> <Info />
+            </div>
           )}
         </main>
         <div className="special-offers">

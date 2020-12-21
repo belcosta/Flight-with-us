@@ -1,0 +1,12 @@
+.landing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3em;
+}
+
+@media screen and (min-width: 900px) {
+  .landing {
+    justify-content: space-around;
+  }
+}

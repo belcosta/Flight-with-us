@@ -1,0 +1,46 @@
+.landing article {
+  flex-basis: 500px;
+  margin-bottom: 2em;
+  background-size: cover;
+  background-position: center;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-weight: 900;
+}
+
+.landing p {
+  width: 50%;
+}
+
+.landing .btn {
+  background-color: var(--darkOrange);
+  color: white;
+  align-self: flex-end;
+}
+
+.landing .about {
+  background-size: 210%;
+  background-position: 0% bottom;
+}
+
+.landing .terms {
+  /* color: white; */
+  background-size: 280%;
+  background-position: 51% 47%;
+}
+
+@media screen and (min-width: 700px) {
+  .landing article {
+    height: 350px;
+  }
+  .terms p {
+    margin-top: -5em;
+  }
+  .landing .about {
+    background-size: 130%;
+    background-position: 30% bottom;
+  }
+}
