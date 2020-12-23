@@ -1,12 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import FlightCard from "./FlightCard";
 import appContext from "../context";
 import "./Results.css";
 
 function Results() {
-  const { results } = useContext(appContext);
+  const { results, setResults, filter } = useContext(appContext);
 
-  console.log(results);
+  useEffect(() => {
+    let filteredGoFlights = results.goFlights.filter(function (item) {
+      return (
+        item["price"] >= parseInt(filter.price.from) &&
+        item["price"] <= parseInt(filter.price.to)
+      );
+    });
+    let filteredBackFlights = results.backFlights.filter(function (item) {
+      return (
+        item["price"] >= parseInt(filter.price.from) &&
+        item["price"] <= parseInt(filter.price.to)
+      );
+    });
+    console.log(filteredGoFlights);
+
+    // filter companies !filter.selectedComp ?null  ?(console.log(object))
+
+    setResults({goFlights: filteredGoFlights, backFlights: filteredBackFlights})
+  
+  },[filter]);
+
   return (
     <React.Fragment>
       <section className="flights">

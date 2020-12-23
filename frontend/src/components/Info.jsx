@@ -11,10 +11,10 @@ export default function Info() {
           Check the latest information on country-region travel restrictions as
           well as visa and passport requirements
         </p>
-        <button class="learn-more">
+        <button className="learn-more">
           <a className="link"
             href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             Learn More
           </a>

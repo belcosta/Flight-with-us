@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import { IoAirplaneSharp } from "react-icons/io5";
 import "./FlightCard.css";
 
