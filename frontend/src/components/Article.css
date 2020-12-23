@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  font-weight: 900;
+  /* font-weight: 900; */
 }
 
 .landing p {
