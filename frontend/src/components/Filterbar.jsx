@@ -25,11 +25,15 @@ export default function Filterbar() {
           if (keyA > keyB) return 1;
           return 0;
         });
-        console.log(companiesSorted);
         setCompanies(companiesSorted);
       })
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    console.log("WHEN FILTER PRICE AND COMPANIE ARE UPDATED: price", price, "companies", selectedComp, "filter:ONE STEP BACK", filter);
+    setFilter({ price, selectedComp });
+  }, [price, selectedComp]);
 
   const getValueFilter = (e) => {
     setFilter((prevFilter) => {
@@ -38,9 +42,9 @@ export default function Filterbar() {
   };
   return (
     <form>
-      <div className="filter-block">
+      <section className="filter-block">
         {/* STOPS */}
-        <div className="filter filter-stops">
+        <article className="filter filter-stops">
           <h6>Stops</h6>
           <div className="list-stops">
             <div className="form-check">
@@ -83,9 +87,9 @@ export default function Filterbar() {
               </label>
             </div>
           </div>
-        </div>
+        </article>
         {/* PRICE */}
-        <div className="filter filter-price">
+        <article className="filter filter-price">
           <h6>Price</h6>
           <div className="price-range">
             <div className="priceInput">
@@ -93,7 +97,7 @@ export default function Filterbar() {
 
               <input
                 type="number"
-                onInput={(e) => {
+                onChange={(e) => {
                   e.preventDefault();
                   setPrice({ ...price, from: +e.target.value });
                 }}
@@ -103,29 +107,36 @@ export default function Filterbar() {
               <label>To </label>
               <input
                 type="number"
-                onInput={(e) => {
+                onChange={(e) => {
                   e.preventDefault();
                   setPrice({ ...price, to: +e.target.value });
                 }}
               />
             </div>
           </div>
-        </div>
+        </article>
         {/* COMPANIES */}
-        <div className="filter filter-companies">
+        <article className="filter filter-companies">
           <h6>Airlines</h6>
           <div className="list-companies">
             {companies.map((companyName, index) => {
               return (
                 <div key={index}>
-
-
                   <input
                     className="form-check-input"
                     id={companyName.companyName}
                     type="checkbox"
-                    onClick={(e) => {
-                      setSelectedComp([...selectedComp, e.target.id]);
+                    onChange={(e) => {
+                      let isChecked = document.getElementById(
+                        `${companyName.companyName}`
+                      ).checked;
+                      if (isChecked) {
+                        setSelectedComp([...selectedComp, e.target.id]);
+                      } else {
+                        setSelectedComp(
+                          selectedComp.filter((item) => item !== e.target.id)
+                        );
+                      }
                     }}
                   />
                   <label
@@ -139,14 +150,11 @@ export default function Filterbar() {
                       )}
                   </label>
                 </div>
-
-
-
               );
             })}
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
     </form>
   );
 }

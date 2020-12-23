@@ -5,14 +5,14 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: space-between;
+  align-items: baseline;
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2),
     -3px -3px 7px rgba(255, 255, 255, 0.2);
 }
-h3 {
+.time-flight {
   font-size: 1.5rem;
 }
-p {
+.city-code {
   font-size: 1.2rem;
   font-weight: lighter;
   text-align: center;
@@ -21,22 +21,31 @@ p {
 .flight-info1,
 .flight-info2,
 .extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0.5em;
+  justify-content: center;
 }
 /* extra */
 .extra {
   text-align: center;
 }
-.extra p {
+.duration {
   margin-bottom: 0;
 }
 #airplane {
   font-size: 2rem;
   text-align: center;
 }
+.buy-button,
+.company-logo {
+  align-self: center;
+}
 /* the end of extra */
-/* button */
-button {
+/* .buy-button */
+
+.buy-button {
   align-content: center;
   background-color: var(--darkOrange);
   color: white;
@@ -50,7 +59,7 @@ button {
   box-shadow: 0 0.125rem 0.3rem grey;
   font-size: 1.5rem;
 }
-button:hover {
+.buy-button:hover {
   transition: all 0.3s linear;
   background-color: #eff2f5;
   color: var(--darkOrange);
@@ -59,46 +68,48 @@ button:hover {
 }
 
 @media (min-width: 320px) and (max-width: 425px) {
-  h3 {
+  .flight-info1,
+  .flight-info2,
+  .extra {
+    flex: 1 0 30%;
+  }
+  .time-flight {
     font-size: 1rem;
   }
-  p {
-    font-size: 0.8rem;
+  .city-code {
+    font-size: 0.7rem;
+  }
+  .duration{
+    font-size: 0.7rem;
   }
   #airplane {
     font-size: 1.2rem;
   }
-  /* children's order */
-  .flight-info1 {
-    order: 1;
+  .company-logo , .buy-button{
+    flex: 0 1 40%;
   }
-  .extra {
-    order: 2;
-  }
-  .flight-info2 {
-    order: 3;
-  }
-  img {
+  .company-logo {
     order: 4;
     padding: 0.5em;
   }
-  button {
+  .buy-button {
     order: 5;
+    width: 6rem;
+    font-weight: 400;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 426px) and (max-width: 1024px) {
-  img,
-  button {
-    flex: 1 0 50%;
+  .flight-info1,
+  .flight-info2,
+  .extra {
+    flex: 1 0 33%;
   }
-  img {
+  .company-logo {
     order: 4;
-    padding: 0 1.7em;
   }
-  button {
+  .buy-button {
     order: 5;
-    font-weight: 600;
-    width: 7rem;
   }
 }

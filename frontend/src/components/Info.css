@@ -2,7 +2,6 @@
   margin: 2em;
   display: grid;
 }
-.travel-safely,
 .travel-requirements {
   padding: 1em;
   background-size: 100% 100%;
@@ -10,57 +9,55 @@
   display: flex;
   flex-direction: column;
 }
-h3 {
+.info-title {
   text-align: center;
   padding: 1.1em;
 }
 
-p {
+.info-text {
   padding: 1em;
   text-align: justify;
   font-size: 1em;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.travel-safely {
-  background-image: url("../images/mask.jpg");
-}
+
 .travel-requirements {
   background-image: url("../images/airplane.jpeg");
 }
-button {
+.learn-more {
   align-self: flex-end;
   font-weight: 400;
   font-size: 1em;
 }
-a {
+.link {
   color: inherit;
 }
-a:hover {
+.link:hover {
   text-decoration: none;
 }
 @media (min-width: 426px) and (max-width: 1024px) {
-    .info {
-      margin: 0.2em;
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-columns: auto;
-      grid-gap: 1em;
-    }
-    .travel-safely,
-    .travel-requirements {
-      justify-content: space-between;
-      padding: 0.6em;
-    }
-    h3 {
-      padding: 0.5;
-    }
-    .travel-safely p {
-        width: 90%;
-      }
-      .travel-requirements p {
-        width: 40%;
-        align-self: right;
-      }
+  .info {
+    margin: 0.2em;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: auto;
+    grid-gap: 1em;
   }
+  .travel-safely,
+  .travel-requirements {
+    justify-content: space-between;
+    padding: 0.6em;
+  }
+  .info-title {
+    padding: 0.5;
+  }
+  .travel-safely p {
+    width: 90%;
+  }
+  .travel-requirements p {
+    width: 40%;
+    align-self: right;
+  }
+}
 
 /* to use when this info go to side bar */
 /* @media (min-width: 426px) and (max-width: 1024px) {
@@ -75,7 +72,7 @@ a:hover {
     justify-content: start;
     padding: 0.6em;
   }
-  h3 {
+  .info-title {
     font-size: 1em;
     text-align: start;
     padding: 0.3;

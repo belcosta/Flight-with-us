@@ -25,16 +25,6 @@ function FormDisplay() {
     });
   };
 
-  const compare = (a, b) => {
-    if (a.cityName < b.cityName) {
-      return -1;
-    }
-    if (a.cityName > b.cityName) {
-      return 1;
-    }
-    return 0;
-  };
-
   useEffect(() => {
     Axios({
       method: "GET",
