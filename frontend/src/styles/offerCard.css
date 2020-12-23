@@ -1,0 +1,30 @@
+.cardContainer {
+  width: 100%;
+  height: 50em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 8em;
+  flex: 1 0 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(12, 67, 99, 0.7);
+    text-align: center;
+    color: #f8d7c4;
+    padding-bottom: 2em;
+}
+
+.banner {
+  width: 90%;
+  margin: 1% auto;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
