@@ -37,10 +37,16 @@ export default function LandingPage() {
     },
   ];
   return (
-    <section className="landing">
-      {articles.map((article, index) => {
-        return <Article article={article} key={index} />;
-      })}
-    </section>
+    <React.Fragment>
+      <p>
+        This is just mock up of the flight-searching site. We offer no real
+        services!
+      </p>
+      <section className="landing">
+        {articles.map((article, index) => {
+          return <Article article={article} key={index} />;
+        })}
+      </section>
+    </React.Fragment>
   );
 }
