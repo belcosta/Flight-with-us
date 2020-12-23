@@ -12,7 +12,9 @@
 }
 
 .landing p {
-  width: 50%;
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5em;
 }
 
 .landing .btn {
@@ -33,7 +35,7 @@
 .landing .terms {
   /* color: white; */
   background-size: 280%;
-  background-position: 51% 47%;
+  background-position: 51.5% 50%;
 }
 
 @media screen and (min-width: 700px) {
@@ -44,7 +46,7 @@
     margin-top: -5em;
   }
   .landing .about {
-    background-size: 130%;
-    background-position: 30% bottom;
+    background-size: 140%;
+    background-position: 35% bottom;
   }
 }
