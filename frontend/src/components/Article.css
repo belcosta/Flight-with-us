@@ -21,6 +21,10 @@
   align-self: flex-end;
 }
 
+.landing .requirements {
+  background-size: 150%;
+  background-position: 15%;
+}
 .landing .about {
   background-size: 210%;
   background-position: 0% bottom;
