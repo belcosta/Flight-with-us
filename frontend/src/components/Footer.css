@@ -1,0 +1,9 @@
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer img {
+  width: 7%;
+  transform: translateY(2%);
+}
