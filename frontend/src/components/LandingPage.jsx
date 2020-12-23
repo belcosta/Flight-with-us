@@ -14,7 +14,7 @@ export default function LandingPage() {
     },
     {
       title: "Travel and entry requirements",
-      image: "../assets/img/requirements.jpg",
+      image: "../images/airplane.jpeg",
       alt: "row of the planes at airport",
       class: "requirements",
       text:
