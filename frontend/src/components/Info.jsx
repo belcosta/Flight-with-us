@@ -3,9 +3,9 @@ import "./Info.css";
 
 export default function Info() {
   return (
-    <div className="info">
+    <section className="info">
      
-      <div className="travel-requirements">
+      <article className="travel-requirements">
         <h3 className="info-title">Travel and entry requirements</h3>
         <p className="info-text">
           Check the latest information on country-region travel restrictions as
@@ -19,7 +19,7 @@ export default function Info() {
             Learn More
           </a>
         </button>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }

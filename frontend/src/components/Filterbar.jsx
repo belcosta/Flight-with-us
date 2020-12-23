@@ -38,9 +38,9 @@ export default function Filterbar() {
   };
   return (
     <form>
-      <div className="filter-block">
+      <section className="filter-block">
         {/* STOPS */}
-        <div className="filter filter-stops">
+        <article className="filter filter-stops">
           <h6>Stops</h6>
           <div className="list-stops">
             <div className="form-check">
@@ -83,9 +83,9 @@ export default function Filterbar() {
               </label>
             </div>
           </div>
-        </div>
+        </article>
         {/* PRICE */}
-        <div className="filter filter-price">
+        <article className="filter filter-price">
           <h6>Price</h6>
           <div className="price-range">
             <div className="priceInput">
@@ -110,9 +110,9 @@ export default function Filterbar() {
               />
             </div>
           </div>
-        </div>
+        </article>
         {/* COMPANIES */}
-        <div className="filter filter-companies">
+        <article className="filter filter-companies">
           <h6>Airlines</h6>
           <div className="list-companies">
             {companies.map((companyName, index) => {
@@ -145,8 +145,8 @@ export default function Filterbar() {
               );
             })}
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
     </form>
   );
 }

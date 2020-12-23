@@ -6,7 +6,7 @@ export default function FlightCard(props) {
   const flight = props.flight;
 
   return (
-    <div className="result">
+    <article className="result">
       <img className="company-logo" id="company-logo" src={flight.companyLogo} alt="logo" style={{ width: "6rem" }}></img>
       <div className="flight-info1">
         <h3 className="time-flight">{flight.hourOfStart.slice(0,5)}</h3>
@@ -28,6 +28,6 @@ export default function FlightCard(props) {
       </div>
 
         <button className="buy-button">{flight.price}€</button>
-    </div>
+    </article>
   );
 }

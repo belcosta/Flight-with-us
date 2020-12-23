@@ -9,19 +9,19 @@ function Results() {
   console.log(results);
   return (
     <React.Fragment>
-      <div className="flights">
+      <section className="flights">
         <h2>Departing flights</h2>
         {results.goFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
-      </div>
+      </section>
 
-      <div className="flights">
+      <section className="flights">
         <h2>Returning flights</h2>
         {results.backFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
-      </div>
+      </section>
     </React.Fragment>
   );
 }

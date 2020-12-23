@@ -15,7 +15,7 @@ export default function OfferCard(props) {
 
   return (
    
-    <div className="cardContainer" style={{backgroundImage: `url(${offersArr.background})`}}>
+    <article className="cardContainer" style={{backgroundImage: `url(${offersArr.background})`}}>
       <div className="cardDetails">
         <div className="banner" style={{backgroundImage: `url(${offersArr.logo})`}}>
           </div>
@@ -27,7 +27,7 @@ export default function OfferCard(props) {
         <h3>From {offersArr.price} €</h3>
         <Button type="submit">Reserve Seat</Button>
       </div>
-    </div>
+    </article>
 
   );
 }
