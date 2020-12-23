@@ -99,11 +99,11 @@ export default function Pivot() {
 
   return (
 
-      <div className="offersContainer">
+      <section className="offersContainer">
         {displayedCards.map((item, index) => {
           return <OfferCard key={index} offersArr={item} /* style={cardStyle} slider={slider} *//>;
         })}
-      </div>
+      </section>
  
   );
 }
