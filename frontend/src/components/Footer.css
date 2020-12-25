@@ -1,9 +1,10 @@
 footer {
   display: flex;
   justify-content: center;
+  font-size: 0.8rem;
 }
 
 footer img {
-  width: 7%;
+  width: 25px;
   transform: translateY(2%);
 }
