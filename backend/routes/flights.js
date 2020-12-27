@@ -1,11 +1,14 @@
 var router = require("express").Router();
 const mysql = require("mysql");
 const async = require("async");
+const { dbPort } = require("../config");
+
+console.log(dbPort);
 
 let poolConnection = mysql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  port: "3306",
+  port: dbPort,
   user: "root",
   password: "Password123!",
   database: "flight_search",
@@ -131,6 +134,5 @@ router.post("/result", (req, res, err) => {
     });
     con.release();
   }); */
-
 
 module.exports = router;
