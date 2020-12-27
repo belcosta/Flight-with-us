@@ -4,7 +4,7 @@
 
 Group fullstack flight search project created during database module of our one year full-stack course. Uses mySQL as a database, Express.js for backend and React.js for frontend.
 
-**Authors:** Alice Rez (Frontend-lead), Isabel Costa (Backend-lead), Willoid (Database-lead)
+**Authors:** [Alice Rez](https://github.com/Alice-Rez) (Frontend-lead), [Isabel Costa](https://github.com/belccarvalho) (Backend-lead), [willoid](https://github.com/willoid) (Database-lead)
 
 **Technologies used:** mySQL, Express.js, React.js, React Transition group, React Hooks, React Context, Create React App, Bootstrap + ReactStrap, CSS, CSS Variables, HTML, SVG
 
