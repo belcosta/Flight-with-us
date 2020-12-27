@@ -8,7 +8,7 @@ Group fullstack flight search project created during database module of our one 
 
 **Technologies used:** mySQL, Express.js, React.js, React Transition group, React Hooks, React Context, Create React App, Bootstrap + ReactStrap, CSS, CSS Variables, HTML, SVG
 
-**Packages used:** mySQL for Express, async, Axios, cors
+**Packages used:** mySQL for Express, async, Axios, cors, nodemon
 
 **Implemented Features:**
 
@@ -30,6 +30,54 @@ Group fullstack flight search project created during database module of our one 
 
 ## Setup
 
-### Database
+1. Clone repository and go to new created directory
 
-1. If you have
+**Database:**
+
+2. If you use mySQL Shell, import database using:
+
+   ```
+   sudo mysql –u root –p dbName < <path>/flight_search.sql
+   ```
+
+   If you use XAMPP or other tools, use the way of importing database from their documentation
+
+3. Check in terminal on which port your mySQL/XAMPP/other tool operates using this command:
+
+   ```
+    sudo lsof -i -P -n | grep LISTEN
+   ```
+
+4. If the port number is different than 3306, change `dbPort` in `backend/config.js` on value of your port:
+
+   ```
+    module.exports.dbPort = "<your-mySQL-port-nr>";
+   ```
+
+**Backend:**
+
+5. Change directory to `backend` and start server by:
+
+   ```
+    nodemon start
+   ```
+
+**Frontend:**
+
+6. In directory `frontend`, start client side using:
+
+   ```
+    npm start
+   ```
+
+7. If your client runs at different port than default port number 3000, change `frontendPort` in `backend/config.js` on value of your port:
+
+   ```
+    module.exports.frontendPort = "<your-frontend-port-nr>";
+   ```
+
+8. Enjoy!
+
+## Acknowledgement
+
+Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
