@@ -1,5 +1,7 @@
 <h1><img align="center" src="./README_Materials/FWU-title.png" width="100%"> </h1>
 
+Explore application by [Setting it up](#setup) locally or look at previews in [Gallery](#gallery)
+
 ## Description
 
 Group fullstack flight search project created during database module of our one year full-stack course. Uses mySQL as a database, Express.js for backend and React.js for frontend.
@@ -9,6 +11,8 @@ Group fullstack flight search project created during database module of our one 
 **Technologies used:** mySQL, Express.js, React.js, React Transition group, React Hooks, React Context, Create React App, Bootstrap + ReactStrap, CSS, CSS Variables, HTML, SVG
 
 **Packages used:** mySQL for Express, async, Axios, cors, nodemon
+
+<img align="right" src="./README_Materials/FWU.jpg" width="60%">
 
 **Implemented Features:**
 
@@ -81,3 +85,29 @@ Group fullstack flight search project created during database module of our one 
 ## Acknowledgement
 
 Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Gallery
+
+**Fig.1** : Displayed search results for both directions
+
+<img align="center" src="./README_Materials/FWU-results.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.2** : More connection options for one direction
+
+<img align="center" src="./README_Materials/FWU-moreResults.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.3** : Warning message when no results were found
+
+<img align="center" src="./README_Materials/FWU-noresults.jpg" width="100%">
+
+</br>
+</br>
+</br>
