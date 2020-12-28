@@ -26,7 +26,7 @@ Group fullstack flight search project created during database module of our one 
 
 - connections shown for way to the destination and back separately
 
-- right sidebar showing special offers as an automatic carousel
+- right sidebar showing special offers as an automatic carousel, data are get from database of flights
 
 - left sidebar allows to filter results by price, company (and number of stops?)
 
