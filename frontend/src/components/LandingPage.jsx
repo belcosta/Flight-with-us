@@ -11,7 +11,7 @@ export default function LandingPage() {
       class: "covid",
       text:
         "Explore  new procedures implemented by airlines because of Covid-19 as well as tips on the most safety travelling in these days.",
-      url: "https://www.lufthansa.com/de/en/corona-testcenter",
+      url: "https://www.lufthansa.com/de/en/protection-measures",
     },
     {
       title: "Travel and entry requirements",
