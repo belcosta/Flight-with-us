@@ -4,8 +4,8 @@ import appContext from "../context";
 import "./filterbar.css";
 
 export default function Filterbar() {
-  const { filter, setFilter } = useContext(appContext);
-  const [stops, setStops] = useState({});
+  const { setFilter } = useContext(appContext);
+  const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 50000 });
   const [selectedComp, setSelectedComp] = useState([]);
   const [companies, setCompanies] = useState([]);
@@ -25,23 +25,30 @@ export default function Filterbar() {
           if (keyA > keyB) return 1;
           return 0;
         });
-        console.log(companiesSorted);
         setCompanies(companiesSorted);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  const getValueFilter = (e) => {
-    setFilter((prevFilter) => {
-      return { ...prevFilter, [e.target.name]: e.target.value };
-    });
-  };
+  useEffect(() => {
+    setFilter({ price, selectedComp });
+    // setResults((prevResult) => {
+    //   return { ...prevResult};
+    // });
+  }, [price, selectedComp]);
+
+  //may we delete it?
+  // const getValueFilter = (e) => {
+  //   setFilter((prevFilter) => {
+  //     return { ...prevFilter, [e.target.name]: e.target.value };
+  //   });
+  // };
   return (
     <form>
-      <div className="filter-block">
+      <section className="filter-block">
         {/* STOPS */}
-        <div className="filter filter-stops">
-          <h6>Stops</h6>
+        <article className="filter filter-stops">
+          <h6 className="filter-titles">Stops</h6>
           <div className="list-stops">
             <div className="form-check">
               <input
@@ -83,17 +90,17 @@ export default function Filterbar() {
               </label>
             </div>
           </div>
-        </div>
+        </article>
         {/* PRICE */}
-        <div className="filter filter-price">
-          <h6>Price</h6>
+        <article className="filter filter-price">
+          <h6 className="filter-titles">Price</h6>
           <div className="price-range">
             <div className="priceInput">
               <label>From </label>
 
               <input
                 type="number"
-                onInput={(e) => {
+                onChange={(e) => {
                   e.preventDefault();
                   setPrice({ ...price, from: +e.target.value });
                 }}
@@ -103,29 +110,36 @@ export default function Filterbar() {
               <label>To </label>
               <input
                 type="number"
-                onInput={(e) => {
+                onChange={(e) => {
                   e.preventDefault();
                   setPrice({ ...price, to: +e.target.value });
                 }}
               />
             </div>
           </div>
-        </div>
+        </article>
         {/* COMPANIES */}
-        <div className="filter filter-companies">
-          <h6>Airlines</h6>
+        <article className="filter filter-companies">
+          <h6 className="filter-titles">Airlines</h6>
           <div className="list-companies">
             {companies.map((companyName, index) => {
               return (
                 <div key={index}>
-
-
                   <input
                     className="form-check-input"
                     id={companyName.companyName}
                     type="checkbox"
-                    onClick={(e) => {
-                      setSelectedComp([...selectedComp, e.target.id]);
+                    onChange={(e) => {
+                      let isChecked = document.getElementById(
+                        `${companyName.companyName}`
+                      ).checked;
+                      if (isChecked) {
+                        setSelectedComp([...selectedComp, e.target.id]);
+                      } else {
+                        setSelectedComp(
+                          selectedComp.filter((item) => item !== e.target.id)
+                        );
+                      }
                     }}
                   />
                   <label
@@ -139,14 +153,11 @@ export default function Filterbar() {
                       )}
                   </label>
                 </div>
-
-
-
               );
             })}
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
     </form>
   );
 }

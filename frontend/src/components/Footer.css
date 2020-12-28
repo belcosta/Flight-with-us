@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  background-color: #f8f9fa;
+}
+
+footer img {
+  width: 25px;
+  transform: translateY(2%);
+}

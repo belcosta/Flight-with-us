@@ -8,7 +8,7 @@ import Filterbar from "./components/Filterbar";
 import NoResults from "./components/NoResults";
 import Pivot from "./components/Pivot";
 import LandingPage from "./components/LandingPage";
-import Info from "./components/Info";
+import Footer from "./components/Footer";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -48,6 +48,7 @@ function App() {
         results,
         setResults,
         getResults,
+        noResults,
       }}
     >
       <FormDisplay />
@@ -64,15 +65,14 @@ function App() {
           ) : noResults ? (
             <NoResults />
           ) : (
-            <div>
-              <LandingPage /> <Info />
-            </div>
+            <LandingPage />
           )}
         </main>
         <div className="special-offers">
           <Pivot />
         </div>
       </div>
+      <Footer />
     </appContext.Provider>
   );
 }

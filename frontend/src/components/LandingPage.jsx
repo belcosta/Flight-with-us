@@ -14,7 +14,7 @@ export default function LandingPage() {
     },
     {
       title: "Travel and entry requirements",
-      image: "../assets/img/requirements.jpg",
+      image: "../images/airplane.jpeg",
       alt: "row of the planes at airport",
       class: "requirements",
       text:
@@ -37,10 +37,16 @@ export default function LandingPage() {
     },
   ];
   return (
-    <section className="landing">
-      {articles.map((article, index) => {
-        return <Article article={article} key={index} />;
-      })}
-    </section>
+    <React.Fragment>
+      <p className="important">
+        Disclaimer: This is just mock up of the flight-searching site. We offer
+        no real services!
+      </p>
+      <section className="landing">
+        {articles.map((article, index) => {
+          return <Article article={article} key={index} />;
+        })}
+      </section>
+    </React.Fragment>
   );
 }

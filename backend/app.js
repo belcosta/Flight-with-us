@@ -7,6 +7,7 @@ var cors = require("cors");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var flightsRouter = require("./routes/flights");
+const { frontendPort } = require("./config");
 
 var app = express();
 
@@ -16,7 +17,7 @@ app.set("view engine", "hbs");
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: `http://localhost:${frontendPort}`,
   })
 );
 

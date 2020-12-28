@@ -1,6 +1,9 @@
 var router = require("express").Router();
 const mysql = require("mysql");
 const async = require("async");
+const { dbPort } = require("../config");
+
+console.log(dbPort);
 
 let poolConnection = mysql.createPool({
   connectionLimit: 100,

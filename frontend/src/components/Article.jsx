@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import "./Article.css";
 import covid from "../assets/img/covid.png";
-import requirement from "../assets/img/requirements.jpg";
+import requirement from "../assets/img/airplane.jpeg";
 import about from "../assets/img/about.png";
 import terms from "../assets/img/terms.jpg";
 
