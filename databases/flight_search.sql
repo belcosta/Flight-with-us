@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 03, 2020 at 12:09 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Generation Time: Dec 28, 2020 at 11:29 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,40 +30,41 @@ SET time_zone = "+00:00";
 CREATE TABLE `city` (
   `cityId` int(11) NOT NULL,
   `cityCode` varchar(255) NOT NULL,
-  `cityName` varchar(255) NOT NULL
+  `cityName` varchar(255) NOT NULL,
+  `background` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `city`
 --
 
-INSERT INTO `city` (`cityId`, `cityCode`, `cityName`) VALUES
-(1, 'LON', ' london'),
-(2, 'MAN', 'manchester'),
-(3, 'GLA', 'glasgow'),
-(4, 'PAR', 'paris'),
-(5, 'LYO', 'lyon'),
-(6, 'MAR', 'marseille'),
-(7, 'MAD', 'madrid'),
-(8, 'BCN', 'barcelona'),
-(9, 'BIL', 'bilbao'),
-(10, 'LIS', 'lisabon'),
-(11, 'BRU', 'brussels'),
-(12, 'AMS', 'amsterdam'),
-(13, 'STK', 'stockholm'),
-(14, 'BER', 'berlin'),
-(15, 'HAM', 'hamburg'),
-(16, 'CGN', 'cologne'),
-(17, 'MUN', 'munich'),
-(18, 'WAR', 'warsaw'),
-(19, 'PRG', 'prague'),
-(20, 'VIE', 'vienna'),
-(21, 'ANK', 'ankara'),
-(22, 'IST', 'istanbul'),
-(23, 'ROM', 'rome'),
-(24, 'MIL', 'milano'),
-(25, 'RDJ', 'rio de janeiro'),
-(26, 'SAN', 'santiago de chile');
+INSERT INTO `city` (`cityId`, `cityCode`, `cityName`, `background`) VALUES
+(1, 'LON', ' london', 'https://images.pexels.com/photos/1837591/pexels-photo-1837591.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'),
+(2, 'MAN', 'manchester', 'https://images.pexels.com/photos/5212818/pexels-photo-5212818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(3, 'GLA', 'glasgow', 'https://images.pexels.com/photos/3035106/pexels-photo-3035106.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(4, 'PAR', 'paris', 'https://images.pexels.com/photos/705764/pexels-photo-705764.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(5, 'LYO', 'lyon', 'https://images.pexels.com/photos/5868282/pexels-photo-5868282.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
+(6, 'MAR', 'marseille', 'https://images.pexels.com/photos/3651813/pexels-photo-3651813.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
+(7, 'MAD', 'madrid', 'https://images.pexels.com/photos/3722818/pexels-photo-3722818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(8, 'BCN', 'barcelona', 'https://images.pexels.com/photos/819764/pexels-photo-819764.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(9, 'BIL', 'bilbao', 'https://bit.ly/38UHvGX'),
+(10, 'LIS', 'lisabon', 'https://images.pexels.com/photos/3412019/pexels-photo-3412019.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(11, 'BRU', 'brussels', 'https://images.pexels.com/photos/1595086/pexels-photo-1595086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(12, 'AMS', 'amsterdam', 'https://images.pexels.com/photos/2901481/pexels-photo-2901481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(13, 'STK', 'stockholm', 'https://images.pexels.com/photos/2377432/pexels-photo-2377432.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(14, 'BER', 'berlin', 'https://images.pexels.com/photos/11742/pexels-photo-11742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(15, 'HAM', 'hamburg', 'https://images.pexels.com/photos/5477386/pexels-photo-5477386.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
+(16, 'CGN', 'cologne', 'https://images.pexels.com/photos/1744609/pexels-photo-1744609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(17, 'MUN', 'munich', 'https://images.pexels.com/photos/3523938/pexels-photo-3523938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(18, 'WAR', 'warsaw', 'https://images.pexels.com/photos/2613438/pexels-photo-2613438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
+(19, 'PRG', 'prague', 'https://images.pexels.com/photos/820735/pexels-photo-820735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(20, 'VIE', 'vienna', 'https://images.pexels.com/photos/2422253/pexels-photo-2422253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(21, 'ANK', 'ankara', 'https://bit.ly/2Kw3iMX'),
+(22, 'IST', 'istanbul', 'https://bit.ly/3nUNEci'),
+(23, 'ROM', 'rome', 'https://images.pexels.com/photos/2225442/pexels-photo-2225442.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'),
+(24, 'MIL', 'milano', 'https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(25, 'RDJ', 'rio de janeiro', 'https://images.pexels.com/photos/3648269/pexels-photo-3648269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+(26, 'SAN', 'santiago de chile', 'https://images.pexels.com/photos/3874262/pexels-photo-3874262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 
 -- --------------------------------------------------------
 

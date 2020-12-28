@@ -5,8 +5,8 @@ const async = require("async");
 let poolConnection = mysql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  port: "3306",
-  user: "root",
+  port: "3307",
+  user: "willy",
   password: "Password123!",
   database: "flight_search",
 });
@@ -119,18 +119,20 @@ router.post("/result", (req, res, err) => {
 
 //3 request for special offers
 
-/* router.get("./get/specialoffers", (req, res, next) => {
+router.get("/specialoffers", (req, res, next) => {
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
-    con.query("SELECT * from flights where isSpecialOffer=1", (error, result, fields) => {
-      if (error) {
-        res.json({ msg: "no access to special offers" });
-      };
-      specialOffers = result;
-    console.log(result)});
-    });
+    con.query(
+      "SELECT c.cityName as 'departure', d.cityName as 'destination', f.hourOfStart, f.hourOfLanding, f.price, co.companyLogo, d.background from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.isSpecialOffer = 1 ",
+      (error, result, fields) => {
+        if (error) {
+          res.json({ msg: "no access to special offers" });
+        }
+        res.send({ specialOffers: result });
+      }
+    );
     con.release();
-  }); */
-
+  });
+});
 
 module.exports = router;
