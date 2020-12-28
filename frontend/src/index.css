@@ -25,6 +25,7 @@ html {
 body {
   font-family: var(--textFont);
   font-weight: 300;
+  background-color: #f8f9fa;
 }
 
 code {
