@@ -48,6 +48,7 @@ function App() {
         results,
         setResults,
         getResults,
+        noResults,
       }}
     >
       <FormDisplay />

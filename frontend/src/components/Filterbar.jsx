@@ -4,8 +4,8 @@ import appContext from "../context";
 import "./filterbar.css";
 
 export default function Filterbar() {
-  const { filter, setFilter } = useContext(appContext);
-  const [stops, setStops] = useState({});
+  const { setFilter } = useContext(appContext);
+  const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 50000 });
   const [selectedComp, setSelectedComp] = useState([]);
   const [companies, setCompanies] = useState([]);
@@ -31,15 +31,18 @@ export default function Filterbar() {
   }, []);
 
   useEffect(() => {
-    console.log("WHEN FILTER PRICE AND COMPANIE ARE UPDATED: price", price, "companies", selectedComp, "filter:ONE STEP BACK", filter);
     setFilter({ price, selectedComp });
+    // setResults((prevResult) => {
+    //   return { ...prevResult};
+    // });
   }, [price, selectedComp]);
 
-  const getValueFilter = (e) => {
-    setFilter((prevFilter) => {
-      return { ...prevFilter, [e.target.name]: e.target.value };
-    });
-  };
+  //may we delete it?
+  // const getValueFilter = (e) => {
+  //   setFilter((prevFilter) => {
+  //     return { ...prevFilter, [e.target.name]: e.target.value };
+  //   });
+  // };
   return (
     <form>
       <section className="filter-block">
