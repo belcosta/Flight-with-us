@@ -122,17 +122,23 @@ router.post("/result", (req, res, err) => {
 
 //3 request for special offers
 
-/* router.get("/specialoffers", (req, res, next) => {
+router.get("/specialoffers", (req, res, next) => {
+  console.log("request for special offers");
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
-    con.query("SELECT * from flights where isSpecialOffer=1", (error, result, fields) => {
-      if (error) {
-        res.json({ msg: "no access to special offers" });
-      };
-      specialOffers = result;
-    console.log(result)});
-    });
+    console.log("connection with db");
+    con.query(
+      "SELECT c.cityName as 'departure', d.cityName as 'destination', f.hourOfStart, f.hourOfLanding, f.price, co.companyLogo, d.background from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.isSpecialOffer = 1 ",
+      (error, result, fields) => {
+        console.log(result);
+        if (error) {
+          throw error;
+        }
+        res.send({ specialOffers: result });
+      }
+    );
     con.release();
-  }); */
+  });
+});
 
 module.exports = router;

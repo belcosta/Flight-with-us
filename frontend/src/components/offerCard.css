@@ -16,7 +16,7 @@
   background: rgba(12, 67, 99, 0.7);
   text-align: center;
   color: #f8d7c4;
-  padding-bottom: 2em;
+  padding: 2em 0;
 }
 
 .banner {
@@ -25,4 +25,20 @@
   height: 50px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.cityName {
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 3vw;
+}
+
+h3 {
+  font-size: 2vw;
+}
+
+h4 {
+  font-size: 1vw;
 }
