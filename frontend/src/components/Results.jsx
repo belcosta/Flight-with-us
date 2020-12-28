@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect} from "react";
 import FlightCard from "./FlightCard";
 import appContext from "../context";
 import "./Results.css";
 
 function Results() {
-  const { results, setResults, filter, noResults, setNoResults } = useContext(
+  const { results, setResults, filter, } = useContext(
     appContext
   );
 
@@ -21,29 +21,16 @@ function Results() {
         item["price"] <= parseInt(filter.price.to)
       );
     });
-    setResults({
-      goFlights: filteredGoFlights,
-      backFlights: filteredBackFlights,
-    });
+    
     //filter based of specific selected company
     if (filter.selectedComp.length) {
-      filter.selectedComp.map((company) => {
-        let filteredGoFlights2 = [];
-        let filteredBackFlights2 = [];
+      let filteredGoFlights2 = [];
+      let filteredBackFlights2 = [];
+      filter.selectedComp.map((company) =>{
         //map throught goflights
         filteredGoFlights.forEach((elem) => {
           if (elem.companyName === company) {
             filteredGoFlights2.push(elem);
-
-            setResults({
-              goFlights: filteredGoFlights2,
-              backFlights: filteredBackFlights,
-            });
-          } else {
-            setResults({
-              goFlights: filteredGoFlights2,
-              backFlights: filteredBackFlights,
-            });
           }
         });
 
@@ -51,26 +38,19 @@ function Results() {
         filteredBackFlights.forEach((elem) => {
           if (elem.companyName === company) {
             filteredBackFlights2.push(elem);
-
-            setResults({
-              goFlights: filteredGoFlights2,
-              backFlights: filteredBackFlights2,
-            });
-          } else {
-            setResults({
-              goFlights: filteredGoFlights2,
-              backFlights: filteredBackFlights2,
-            });
           }
         });
       });
-    } else {
+      setResults({
+        goFlights: filteredGoFlights2,
+        backFlights: filteredBackFlights2,
+      });
+    }else {
       setResults({
         goFlights: filteredGoFlights,
         backFlights: filteredBackFlights,
       });
     }
-    console.log("results", results);
   }, [filter]);
 
   return (
