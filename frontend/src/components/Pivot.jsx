@@ -12,16 +12,18 @@ export default function Pivot() {
       url: "http://localhost:3500/flights/specialoffers",
     })
       .then((res) => {
-        let specialOffers = res.data.specialOffers;
-        console.log(specialOffers);
-        setOffers(specialOffers);
+        console.log(res);
+        if (res.data.specialOffers) {
+          let specialOffers = res.data.specialOffers;
+          console.log(specialOffers);
+          setOffers(specialOffers);
+        }
       })
       .catch((err) => console.log(err));
   }, []);
 
   const [cardIndex, setCardIndex] = useState(0);
 
-  
   const len = offers.length;
 
   const shuffle = () => {
@@ -52,9 +54,9 @@ export default function Pivot() {
 
   return (
     <div className="offersContainer">
-     {displayedCards.map((item, index) => {
+      {displayedCards.map((item, index) => {
         return <OfferCard key={index} offers={item} />;
-      })} 
+      })}
     </div>
   );
 }
