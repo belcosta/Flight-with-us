@@ -5,20 +5,22 @@ form {
   display: grid;
   align-content: start;
   grid-template-rows: auto;
-  background-color: #0c4363;
-  width: 100%;
+  /* background-color: rgba(12,67,99, 0.5); */
+  background-image: url("../assets//img/sky.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 100%; */
   margin: 0 auto;
-  padding: 1em 0 1em 1rem;
   color: white;
 }
 .filter {
-  padding: 1em 0 0 0;
+  padding:1em;
+  background-color: rgba(12,67,99, 0.5);
 }
-h6 {
+.filter-titles {
   color: #f8d7c4;
   border-bottom: solid 3px #f8d7c4;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
   font-size: 1.3rem;
   text-align: center;
 }
@@ -124,7 +126,7 @@ input::-webkit-inner-spin-button {
   .filter {
     padding: 0;
   }
-  h6 {
+  .filter-titles {
     text-align: start;
   }
 }

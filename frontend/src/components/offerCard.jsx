@@ -1,4 +1,3 @@
-import react from "react";
 import "./offerCard.css"
 import {Button} from "react-bootstrap";
 
