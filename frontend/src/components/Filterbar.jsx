@@ -4,8 +4,8 @@ import appContext from "../context";
 import "./filterbar.css";
 
 export default function Filterbar() {
-  const { filter, setFilter } = useContext(appContext);
-  const [stops, setStops] = useState({});
+  const { setFilter } = useContext(appContext);
+  const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 50000 });
   const [selectedComp, setSelectedComp] = useState([]);
   const [companies, setCompanies] = useState([]);
@@ -31,21 +31,24 @@ export default function Filterbar() {
   }, []);
 
   useEffect(() => {
-    console.log("WHEN FILTER PRICE AND COMPANIE ARE UPDATED: price", price, "companies", selectedComp, "filter:ONE STEP BACK", filter);
     setFilter({ price, selectedComp });
+    // setResults((prevResult) => {
+    //   return { ...prevResult};
+    // });
   }, [price, selectedComp]);
 
-  const getValueFilter = (e) => {
-    setFilter((prevFilter) => {
-      return { ...prevFilter, [e.target.name]: e.target.value };
-    });
-  };
+  //may we delete it?
+  // const getValueFilter = (e) => {
+  //   setFilter((prevFilter) => {
+  //     return { ...prevFilter, [e.target.name]: e.target.value };
+  //   });
+  // };
   return (
     <form>
       <section className="filter-block">
         {/* STOPS */}
         <article className="filter filter-stops">
-          <h6>Stops</h6>
+          <h6 className="filter-titles">Stops</h6>
           <div className="list-stops">
             <div className="form-check">
               <input
@@ -90,7 +93,7 @@ export default function Filterbar() {
         </article>
         {/* PRICE */}
         <article className="filter filter-price">
-          <h6>Price</h6>
+          <h6 className="filter-titles">Price</h6>
           <div className="price-range">
             <div className="priceInput">
               <label>From </label>
@@ -117,7 +120,7 @@ export default function Filterbar() {
         </article>
         {/* COMPANIES */}
         <article className="filter filter-companies">
-          <h6>Airlines</h6>
+          <h6 className="filter-titles">Airlines</h6>
           <div className="list-companies">
             {companies.map((companyName, index) => {
               return (
