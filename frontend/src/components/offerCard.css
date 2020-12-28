@@ -1,6 +1,6 @@
 .cardContainer {
   width: 100%;
-  height: 50em;
+  height: var(--sidebarHeight);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 8em;
@@ -9,14 +9,14 @@
 }
 
 .cardDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(12, 67, 99, 0.7);
-    text-align: center;
-    color: #f8d7c4;
-    padding-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(12, 67, 99, 0.7);
+  text-align: center;
+  color: #f8d7c4;
+  padding-bottom: 2em;
 }
 
 .banner {
@@ -26,5 +26,3 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-
-

@@ -1,5 +1,4 @@
 .filter-form {
-  height: 50em;
   background-image: url("../assets//img/sky.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -116,6 +115,10 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 1025px) {
+  .filter-form {
+    height: var(--sidebarHeight);
+  }
+
   .filter-block {
     grid-template-columns: auto;
     grid-template-rows: repeat (3, auto);
