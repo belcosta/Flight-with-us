@@ -30,3 +30,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.btn {
+  background-color: var(--darkOrange);
+  color: white;
+}
+
+.btn:hover {
+  transition: all 0.3s linear;
+  background-color: #eff2f5;
+  color: var(--darkOrange);
+  border: solid 3px var(--darkOrange);
+  box-shadow: 0 0.2rem 0.9rem grey;
+}

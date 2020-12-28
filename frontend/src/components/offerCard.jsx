@@ -1,11 +1,9 @@
-import "./offerCard.css"
-import {Button} from "react-bootstrap";
-
+import "./offerCard.css";
+import { Button } from "react-bootstrap";
 
 export default function OfferCard(props) {
   const offersArr = props.offersArr;
   /* const style = props.style; */
-  
 
   /* useEffect(()=>{
     props.slider();
@@ -13,11 +11,15 @@ export default function OfferCard(props) {
   */
 
   return (
-   
-    <article className="cardContainer" style={{backgroundImage: `url(${offersArr.background})`}}>
+    <article
+      className="cardContainer"
+      style={{ backgroundImage: `url(${offersArr.background})` }}
+    >
       <div className="cardDetails">
-        <div className="banner" style={{backgroundImage: `url(${offersArr.logo})`}}>
-          </div>
+        <div
+          className="banner"
+          style={{ backgroundImage: `url(${offersArr.logo})` }}
+        ></div>
         <h2>
           {offersArr.departure} to {offersArr.destination}
         </h2>
@@ -27,6 +29,5 @@ export default function OfferCard(props) {
         <Button type="submit">Reserve Seat</Button>
       </div>
     </article>
-
   );
 }

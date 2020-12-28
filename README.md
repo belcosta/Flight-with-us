@@ -1,87 +1,113 @@
-# Database
+<h1><img align="center" src="./README_Materials/FWU-title.png" width="100%"> </h1>
 
-- Willy, Hasan
+Explore application by [Setting it up](#setup) locally or look at previews in [Gallery](#gallery)
 
-- PORT 3306? check:
-  `sudo lsof -i -P -n | grep LISTEN` - find mysql
+## Description
 
-- According to the image
+Group fullstack flight search project created during database module of our one year full-stack course. Uses mySQL as a database, Express.js for backend and React.js for frontend.
 
-- name of the columns kebabCase
+**Authors:** [Alice Rez](https://github.com/Alice-Rez) (Frontend-lead), [Isabel Costa](https://github.com/belccarvalho) (Backend-lead), [willoid](https://github.com/willoid) (Database-lead)
 
-- data in database - all lowercase, no capital first letter
+**Technologies used:** mySQL, Express.js, React.js, React Transition group, React Hooks, React Context, Create React App, Bootstrap + ReactStrap, CSS, CSS Variables, HTML, SVG
 
-- test the queries for the backend
+**Packages used:** mySQL for Express, async, Axios, cors, nodemon
 
-- export the database and push it on GH (database folder?)
+<img align="right" src="./README_Materials/FWU.jpg" width="60%">
 
-# Backend
+**Implemented Features:**
 
-- Bel, later Willy (after finishing database)
+- dynamic adding cities/companies list from database to React
 
-- [x] PORT 3500 
+- city selected for departure can not be selected for destination
 
-- [x] install mysql
+- database contains 3 different tables (one for flights, one for companies and one for cities) - for the search of flights, joining of the tables is used
 
-- [x] create route flights
+- cors package is used in backend to manage from where can be sent request to backend
 
-- [x] allow cors
+- connections shown for way to the destination and back separately
 
-- [x]
-2. router for request for cities (for select) - return all city names from city table
+- right sidebar showing special offers as an automatic carousel
+
+- left sidebar allows to filter results by price, company (and number of stops?)
+
+- if no connection is found, warning massage will be shown
+
+## Setup
+
+1. Clone repository and go to new created directory
+
+**Database:**
+
+2. If you use mySQL Shell, import database using:
 
    ```
-   select cityNames from city
+   sudo mysql –u root –p dbName < <path>/flight_search.sql
    ```
- [x]
-3. router for request for companies (for checkboxes) - return all companies names from company table
 
-```
-   select companyNames from companies
-```
+   If you use XAMPP or other tools, use the way of importing database from their documentation
 
-4. router for request for flights (for results) - return all contain of the flight table
+3. Check in terminal on which port your mySQL/XAMPP/other tool operates using this command:
 
-   search will be done in 2 steps:
+   ```
+    sudo lsof -i -P -n | grep LISTEN
+   ```
 
-   - [x] use departure from Frontend as start and arrival as destination
-   - [x] opposite direction
+4. If the port number is different than 3306, change `dbPort` in `backend/config.js` on value of your port:
 
-```
-select cityNames, cityCode companyName, companyLogo,.... from flights natural join city natural join company where start=? and destination=?
-```
+   ```
+    module.exports.dbPort = "<your-mySQL-port-nr>";
+   ```
 
-5. later added filters - stops, price and companies (on thursday) - not in backend
+**Backend:**
 
-# Frontend
+5. Change directory to `backend` and start server by:
 
-- David, Alice
+   ```
+    nodemon start
+   ```
 
-- PORT 3000
+**Frontend:**
 
-- data from inputs to lowercase - not necessary, predefined values will be in lower case
+6. In directory `frontend`, start client side using:
 
-- using React Hooks & Context
+   ```
+    npm start
+   ```
 
-- Bootstrap for styling
+7. If your client runs at different port than default port number 3000, change `frontendPort` in `backend/config.js` on value of your port:
 
-- components:
+   ```
+    module.exports.frontendPort = "<your-frontend-port-nr>";
+   ```
 
-  1. Form - for the data about flight search (departure/destination selects, date from/to inputs, search button), can be in header
+8. Enjoy!
 
-  2. Results - section for displaying results (container) - contain cards for different flights option
+## Acknowledgement
 
-     - cards - like Fahim's mock-up
+Frontend of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-     - some container for card?
+## Gallery
 
-  3. - [x] right sidebar - for displaying of the actions, one action = one card
-  4. left sidebar - for the filtering form (how many stops - checkboxes, price - inputs, companies - checkboxes)
+**Fig.1** : Displayed search results for both directions
 
-  5. main - html wrapping element for the results and sidebars to make layout
+<img align="center" src="./README_Materials/FWU-results.jpg" width="100%">
 
-- app state :
+</br>
+</br>
+</br>
 
-  1. array for results
-  2. object for filter options
-  3. object with the inputs from search form
+**Fig.2** : More connection options for one direction
+
+<img align="center" src="./README_Materials/FWU-moreResults.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.3** : Warning message when no results were found
+
+<img align="center" src="./README_Materials/FWU-noresults.jpg" width="100%">
+
+</br>
+</br>
+</br>
