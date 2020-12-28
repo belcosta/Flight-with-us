@@ -1,21 +1,19 @@
-form {
-  height: 100%;
-}
-.filter-block {
-  display: grid;
-  align-content: start;
-  grid-template-rows: auto;
-  /* background-color: rgba(12,67,99, 0.5); */
+.filter-form {
+  height: 50em;
   background-image: url("../assets//img/sky.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.filter-block {
+  display: grid;
+  grid-template-rows: auto;
   /* width: 100%; */
   margin: 0 auto;
   color: white;
 }
 .filter {
-  padding:1em;
-  background-color: rgba(12,67,99, 0.5);
+  padding: 1em;
+  background-color: rgba(12, 67, 99, 0.5);
 }
 .filter-titles {
   color: #f8d7c4;

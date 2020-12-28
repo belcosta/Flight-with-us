@@ -44,7 +44,7 @@ export default function Filterbar() {
   //   });
   // };
   return (
-    <form>
+    <form className="filter-form">
       <section className="filter-block">
         {/* STOPS */}
         <article className="filter filter-stops">
