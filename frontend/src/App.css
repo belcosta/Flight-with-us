@@ -32,7 +32,7 @@ main {
 @media (min-width: 426px) and (max-width: 1024px) {
   .home {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
       "header header"
