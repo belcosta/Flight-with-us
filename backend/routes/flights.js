@@ -1,16 +1,16 @@
 var router = require("express").Router();
 const mysql = require("mysql");
 const async = require("async");
-const { dbPort } = require("../config");
+const { dbPort, dbUser, dbPassword } = require("../config");
 
 console.log(dbPort);
 
 let poolConnection = mysql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  port: "3306",
-  user: "root",
-  password: "Password123!",
+  port: dbPort,
+  user: dbUser,
+  password: dbPassword,
   database: "flight_search",
 });
 //request for cities (for select) - return all city names from city table
@@ -122,20 +122,17 @@ router.post("/result", (req, res, err) => {
 
 //3 request for special offers
 
-router.get("/specialoffers", (req, res, next) => {
+/* router.get("/specialoffers", (req, res, next) => {
   poolConnection.getConnection((err, con) => {
     if (err) throw err;
-    con.query(
-      "SELECT c.cityName as 'departure', d.cityName as 'destination', f.hourOfStart, f.hourOfLanding, f.price, co.companyLogo, d.background from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.isSpecialOffer = 1 ",
-      (error, result, fields) => {
-        if (error) {
-          res.json({ msg: "no access to special offers" });
-        }
-        res.send({ specialOffers: result });
-      }
-    );
+    con.query("SELECT * from flights where isSpecialOffer=1", (error, result, fields) => {
+      if (error) {
+        res.json({ msg: "no access to special offers" });
+      };
+      specialOffers = result;
+    console.log(result)});
+    });
     con.release();
-  });
-});
+  }); */
 
 module.exports = router;
