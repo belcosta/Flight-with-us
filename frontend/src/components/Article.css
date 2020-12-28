@@ -32,8 +32,21 @@
 
 .landing .terms {
   /* color: white; */
-  background-size: 280%;
-  background-position: 51.5% 50%;
+  background-size: 320%;
+  background-position: 46% 50%;
+}
+
+@media screen and (max-width: 400px) {
+  .landing p {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .landing .about {
+    background-size: cover;
+    background-position: 20% 70%;
+  }
 }
 
 @media screen and (min-width: 700px) {
