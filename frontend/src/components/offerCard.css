@@ -31,3 +31,15 @@
   text-transform: capitalize;
 }
 
+h2 {
+  font-size: 3vw;
+}
+
+h3 {
+  font-size: 2vw;
+}
+
+h4 {
+  font-size: 1vw;
+}
+

@@ -8,8 +8,8 @@ console.log(dbPort);
 let poolConnection = mysql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  port: "3306",
-  user: "root",
+  port: "3307",
+  user: "willy",
   password: "Password123!",
   database: "flight_search",
 });
