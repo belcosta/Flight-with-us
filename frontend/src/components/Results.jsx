@@ -2,9 +2,10 @@ import React, { useContext, useEffect} from "react";
 import FlightCard from "./FlightCard";
 import appContext from "../context";
 import "./Results.css";
+import { FaRegCalendarAlt } from 'react-icons/fa';
 
 function Results() {
-  const { results, setResults, filter, } = useContext(
+  const { results, setResults, filter, search} = useContext(
     appContext
   );
 
@@ -57,6 +58,7 @@ function Results() {
     <React.Fragment>
       <section className="flights">
         <h2>Departing flights</h2>
+        <h5 className="date"><FaRegCalendarAlt/> {search.dateFrom}</h5>
         {results.goFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
@@ -67,6 +69,7 @@ function Results() {
 
       <section className="flights">
         <h2>Returning flights</h2>
+        <h5 className="date"><FaRegCalendarAlt/> {search.dateTo}</h5>
         {results.backFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
