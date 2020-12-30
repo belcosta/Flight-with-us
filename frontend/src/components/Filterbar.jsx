@@ -32,9 +32,7 @@ export default function Filterbar() {
 
   useEffect(() => {
     setFilter({ price, selectedComp });
-    // setResults((prevResult) => {
-    //   return { ...prevResult};
-    // });
+   
   }, [price, selectedComp]);
 
   //may we delete it?

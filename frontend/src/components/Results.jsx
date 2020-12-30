@@ -5,18 +5,20 @@ import "./Results.css";
 import { FaRegCalendarAlt } from 'react-icons/fa';
 
 function Results() {
-  const { results, setResults, filter, search} = useContext(
+  const { results, setResults, filter, resultsToBeFiltered, setResultsToBeFiltered, search} = useContext(
     appContext
   );
 
   useEffect(() => {
-    let filteredGoFlights = results.goFlights.filter(function (item) {
+    console.log("useEffect runned");
+    setResultsToBeFiltered({results});
+    let filteredGoFlights = resultsToBeFiltered.goFlights.filter(function (item) {
       return (
         item["price"] >= parseInt(filter.price.from) &&
         item["price"] <= parseInt(filter.price.to)
       );
     });
-    let filteredBackFlights = results.backFlights.filter(function (item) {
+    let filteredBackFlights = resultsToBeFiltered.backFlights.filter(function (item) {
       return (
         item["price"] >= parseInt(filter.price.from) &&
         item["price"] <= parseInt(filter.price.to)
@@ -42,12 +44,12 @@ function Results() {
           }
         });
       });
-      setResults({
+      setResultsToBeFiltered({
         goFlights: filteredGoFlights2,
         backFlights: filteredBackFlights2,
       });
     }else {
-      setResults({
+      setResultsToBeFiltered({
         goFlights: filteredGoFlights,
         backFlights: filteredBackFlights,
       });
@@ -59,10 +61,10 @@ function Results() {
       <section className="flights">
         <h2>Departing flights</h2>
         <h5 className="date"><FaRegCalendarAlt/> {search.dateFrom}</h5>
-        {results.goFlights.map((flight, index) => (
+        {resultsToBeFiltered.goFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
-        {results.goFlights.length ? null : (
+        {resultsToBeFiltered.goFlights.length ? null : (
           <h5 className="noFlights">No flights available...</h5>
         )}
       </section>
@@ -70,10 +72,10 @@ function Results() {
       <section className="flights">
         <h2>Returning flights</h2>
         <h5 className="date"><FaRegCalendarAlt/> {search.dateTo}</h5>
-        {results.backFlights.map((flight, index) => (
+        {resultsToBeFiltered.backFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
-        {results.backFlights.length ? null : (
+        {resultsToBeFiltered.backFlights.length ? null : (
           <h5 className="noFlights">No flights available...</h5>
         )}
       </section>
