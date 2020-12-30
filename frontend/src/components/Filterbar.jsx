@@ -6,7 +6,7 @@ import "./filterbar.css";
 export default function Filterbar() {
   const { setFilter } = useContext(appContext);
   const [setStops] = useState({});
-  const [price, setPrice] = useState({ from: 0, to: 50000 });
+  const [price, setPrice] = useState({ from: 0, to: 5000 });
   const [selectedComp, setSelectedComp] = useState([]);
   const [companies, setCompanies] = useState([]);
 

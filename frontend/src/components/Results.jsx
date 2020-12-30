@@ -7,7 +7,6 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 function Results() {
   const {
     results,
-    setResults,
     filter,
     resultsToBeFiltered,
     setResultsToBeFiltered,
@@ -16,7 +15,10 @@ function Results() {
 
   useEffect(() => {
     console.log("useEffect runned");
+    // setResultsToBeFiltered(results);
     let filteredResults = { ...results };
+    console.log(filter, results, filteredResults);
+    console.log(filter.price.from, filter.price.to);
     let filteredGoFlights = filteredResults.goFlights.filter(function (item) {
       return (
         item["price"] >= parseInt(filter.price.from) &&
@@ -31,6 +33,8 @@ function Results() {
         item["price"] <= parseInt(filter.price.to)
       );
     });
+
+    console.log(filteredGoFlights, filteredBackFlights);
 
     //filter based of specific selected company
     if (filter.selectedComp.length) {
