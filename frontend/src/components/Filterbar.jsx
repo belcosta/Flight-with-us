@@ -35,12 +35,6 @@ export default function Filterbar() {
    
   }, [price, selectedComp]);
 
-  //may we delete it?
-  // const getValueFilter = (e) => {
-  //   setFilter((prevFilter) => {
-  //     return { ...prevFilter, [e.target.name]: e.target.value };
-  //   });
-  // };
   return (
     <form>
       <section className="filter-block">
@@ -110,7 +104,13 @@ export default function Filterbar() {
                 type="number"
                 onChange={(e) => {
                   e.preventDefault();
-                  setPrice({ ...price, to: +e.target.value });
+                  let value;
+                  if (e.target.value === "") {
+                    value = 50000;
+                  } else {
+                    value = +e.target.value;
+                  }
+                  setPrice({ ...price, to: value });
                 }}
               />
             </div>
