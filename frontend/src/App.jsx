@@ -39,8 +39,6 @@ function App() {
         }
         setResultsToBeFiltered(res.data);
         setResults(res.data);
-        
-        
       })
           .catch((err) => console.log(err));
   };
