@@ -1,66 +1,80 @@
-import React, { useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import FlightCard from "./FlightCard";
 import appContext from "../context";
 import "./Results.css";
-import { FaRegCalendarAlt } from 'react-icons/fa';
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 function Results() {
-  const { results, setResults, filter, resultsToBeFiltered, setResultsToBeFiltered, search} = useContext(
-    appContext
-  );
+  const {
+    results,
+    filter,
+    resultsToBeFiltered,
+    setResultsToBeFiltered,
+    search,
+  } = useContext(appContext);
 
   useEffect(() => {
     console.log("useEffect runned");
-    setResultsToBeFiltered({results});
-    let filteredGoFlights = resultsToBeFiltered.goFlights.filter(function (item) {
+    // setResultsToBeFiltered(results);
+    let filteredResults = { ...results };
+    console.log(filter, results, filteredResults);
+    console.log(filter.price.from, filter.price.to);
+    let filteredGoFlights = filteredResults.goFlights.filter(function (item) {
       return (
         item["price"] >= parseInt(filter.price.from) &&
         item["price"] <= parseInt(filter.price.to)
       );
     });
-    let filteredBackFlights = resultsToBeFiltered.backFlights.filter(function (item) {
+    let filteredBackFlights = filteredResults.backFlights.filter(function (
+      item
+    ) {
       return (
         item["price"] >= parseInt(filter.price.from) &&
         item["price"] <= parseInt(filter.price.to)
       );
     });
-    
+
+    console.log(filteredGoFlights, filteredBackFlights);
+
     //filter based of specific selected company
     if (filter.selectedComp.length) {
       let filteredGoFlights2 = [];
       let filteredBackFlights2 = [];
-      filter.selectedComp.map((company) =>{
+      filter.selectedComp.map((company) => {
         //map throught goflights
         filteredGoFlights.forEach((elem) => {
           if (elem.companyName === company) {
-            filteredGoFlights2.push(elem);
+            return filteredGoFlights2.push(elem);
           }
         });
 
         //map throught backFlights
         filteredBackFlights.forEach((elem) => {
           if (elem.companyName === company) {
-            filteredBackFlights2.push(elem);
+            return filteredBackFlights2.push(elem);
           }
         });
       });
-      setResultsToBeFiltered({
+      filteredResults = {
         goFlights: filteredGoFlights2,
         backFlights: filteredBackFlights2,
-      });
-    }else {
-      setResultsToBeFiltered({
+      };
+    } else {
+      filteredResults = {
         goFlights: filteredGoFlights,
         backFlights: filteredBackFlights,
-      });
+      };
     }
+    setResultsToBeFiltered(filteredResults);
   }, [filter]);
 
   return (
     <React.Fragment>
       <section className="flights">
         <h2>Departing flights</h2>
-        <h5 className="date"><FaRegCalendarAlt/> {search.dateFrom}</h5>
+        <h5 className="date">
+          <FaRegCalendarAlt /> {search.dateFrom}
+        </h5>
         {resultsToBeFiltered.goFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
@@ -71,7 +85,9 @@ function Results() {
 
       <section className="flights">
         <h2>Returning flights</h2>
-        <h5 className="date"><FaRegCalendarAlt/> {search.dateTo}</h5>
+        <h5 className="date">
+          <FaRegCalendarAlt /> {search.dateTo}
+        </h5>
         {resultsToBeFiltered.backFlights.map((flight, index) => (
           <FlightCard key={index} flight={flight} />
         ))}
