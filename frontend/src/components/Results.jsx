@@ -66,6 +66,7 @@ function Results() {
       };
     }
     setResultsToBeFiltered(filteredResults);
+    filteredResults = {};
   }, [filter]);
 
   return (
