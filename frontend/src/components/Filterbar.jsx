@@ -112,7 +112,13 @@ export default function Filterbar() {
                 type="number"
                 onChange={(e) => {
                   e.preventDefault();
-                  setPrice({ ...price, to: +e.target.value });
+                  let value;
+                  if (e.target.value === "") {
+                    value = 50000;
+                  } else {
+                    value = +e.target.value;
+                  }
+                  setPrice({ ...price, to: value });
                 }}
               />
             </div>
