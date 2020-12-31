@@ -17,8 +17,6 @@ main {
 }
 .special-offers {
   grid-area: special-offers;
-
-
 }
 @media (min-width: 320px) and (max-width: 425em) {
   .home {
@@ -34,12 +32,12 @@ main {
 @media (min-width: 426px) and (max-width: 1024px) {
   .home {
     display: grid;
-    grid-template-columns: 18% 64% 18%;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "header header header"
-      "sidebar sidebar sidebar"
-      "main main special-offers";
+      "header header"
+      "sidebar sidebar"
+      "main special-offers";
   }
 }
 @media (min-width: 1025px) {
@@ -47,7 +45,6 @@ main {
     display: grid;
     grid-template-columns: 18% 64% 18%;
     grid-template-rows: auto;
-    grid-template-areas:
-      "sidebar main special-offers";
+    grid-template-areas: "sidebar main special-offers";
   }
 }

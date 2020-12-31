@@ -35,7 +35,7 @@ export default function Filterbar() {
   }, [price, selectedComp]);
 
   return (
-    <form>
+    <form className="filter-form">
       <section className="filter-block">
         {/* STOPS */}
         <article className="filter filter-stops">

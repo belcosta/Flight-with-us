@@ -20,10 +20,13 @@ html {
   --darkGrey: rgb(63, 60, 60);
   --titlesFont: "Sarina", cursive;
   --textFont: "Signika", sans-serif;
+  --sidebarHeight: 100%;
+  --sidebarHeightMax: 65rem;
 }
 body {
   font-family: var(--textFont);
   font-weight: 300;
+  background-color: #f8f9fa;
 }
 
 code {

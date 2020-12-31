@@ -1,5 +1,5 @@
 .landing article {
-  flex-basis: 500px;
+  flex-basis: 370px;
   margin-bottom: 2em;
   background-size: cover;
   background-position: center;
@@ -32,19 +32,53 @@
 
 .landing .terms {
   /* color: white; */
-  background-size: 280%;
-  background-position: 51.5% 50%;
+  background-size: 320%;
+  background-position: 46% 50%;
+}
+
+@media screen and (max-width: 400px) {
+  .landing p {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .landing .about {
+    background-size: cover;
+    background-position: 20% 70%;
+  }
 }
 
 @media screen and (min-width: 700px) {
   .landing article {
-    height: 350px;
+    height: 370px;
   }
   .terms p {
     margin-top: -5em;
   }
   .landing .about {
+    background-size: 180%;
+    background-position: 60% bottom;
+  }
+  .landing .terms {
+    background-size: 380%;
+    background-position: 45% 52%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .landing article {
+    flex-basis: 500px;
+    height: 350px;
+  }
+
+  .landing .about {
     background-size: 140%;
     background-position: 35% bottom;
+  }
+  .landing .terms {
+    /* color: white; */
+    background-size: 280%;
+    background-position: 51.5% 50%;
   }
 }

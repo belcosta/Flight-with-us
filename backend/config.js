@@ -1,4 +1,3 @@
-
 module.exports.dbPort = "3306";
 module.exports.dbUser = "root";
 module.exports.dbPassword = "Password123!";

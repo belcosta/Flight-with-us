@@ -26,7 +26,7 @@ Group fullstack flight search project created during database module of our one 
 
 - connections shown for way to the destination and back separately
 
-- right sidebar showing special offers as an automatic carousel
+- right sidebar showing special offers as an automatic carousel, data are get from database of flights
 
 - left sidebar allows to filter results by price, company (and number of stops?)
 
@@ -36,7 +36,7 @@ Group fullstack flight search project created during database module of our one 
 
 1. Clone repository and go to new created directory
 
-**Database:**
+   **Database:**
 
 2. If you use mySQL Shell, import database using:
 
@@ -58,29 +58,36 @@ Group fullstack flight search project created during database module of our one 
     module.exports.dbPort = "<your-mySQL-port-nr>";
    ```
 
-**Backend:**
+5. Add your user name (`dbUser`) and password (`dbPassword`) to mySQL databases in `backend/config.js`:
 
-5. Change directory to `backend` and start server by:
+   ```
+   module.exports.dbUser = "<your-mySQL-username>";
+   module.exports.dbPassword = "<your-mySQL-password>";
+   ```
+
+   **Backend:**
+
+6. Change directory to `backend` and start server by:
 
    ```
     nodemon start
    ```
 
-**Frontend:**
+   **Frontend:**
 
-6. In directory `frontend`, start client side using:
+7. In directory `frontend`, start client side using:
 
    ```
     npm start
    ```
 
-7. If your client runs at different port than default port number 3000, change `frontendPort` in `backend/config.js` on value of your port:
+8. If your client runs at different port than default port number 3000, change `frontendPort` in `backend/config.js` on value of your port:
 
    ```
     module.exports.frontendPort = "<your-frontend-port-nr>";
    ```
 
-8. Enjoy!
+9. Enjoy!
 
 ## Acknowledgement
 

@@ -7,7 +7,7 @@ export default function Footer() {
     <footer>
       <p>
         &#169;2020 <img className="logo" src={logo} alt="Alice Rez logo" />{" "}
-        Alice Rez & Isabel Costa & willoid
+        Alice Rez & Isabel Costa & Willoid
       </p>
     </footer>
   );

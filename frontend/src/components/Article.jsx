@@ -35,7 +35,9 @@ export default function Article(props) {
     >
       <h3>{article.title}</h3>
       <p>{article.text}</p>
-      <button className="btn">Learn more</button>
+      <a href={article.url} target="blank" className="btn">
+        Learn more
+      </a>
     </article>
   );
 }
