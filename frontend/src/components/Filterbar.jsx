@@ -32,7 +32,6 @@ export default function Filterbar() {
 
   useEffect(() => {
     setFilter({ price, selectedComp });
-   
   }, [price, selectedComp]);
 
   return (
