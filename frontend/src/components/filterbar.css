@@ -117,6 +117,7 @@ input::-webkit-inner-spin-button {
 @media (min-width: 1025px) {
   .filter-form {
     height: var(--sidebarHeight);
+    height: var(--sidebarHeightMax);
   }
 
   .filter-block {

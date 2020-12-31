@@ -1,6 +1,7 @@
 .cardContainer {
   width: 100%;
   height: var(--sidebarHeight);
+  max-height: var(--sidebarHeightMax);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 8em;
