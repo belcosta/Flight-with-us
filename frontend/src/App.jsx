@@ -17,6 +17,10 @@ function App() {
     goFlights: [],
     backFlights: [],
   });
+  const [resultsToBeFiltered, setResultsToBeFiltered] = useState({
+    goFlights: [],
+    backFlights: [],
+  });
   const [noResults, setNoResults] = useState(false);
 
   const getResults = () => {
@@ -29,13 +33,14 @@ function App() {
       data: search,
     })
       .then((res) => {
-        console.log(res.data);
+        console.log("res.data", res.data);
         if (!res.data.goFlights.length || !res.data.backFlights.length) {
           setNoResults(true);
         }
+        setResultsToBeFiltered(res.data);
         setResults(res.data);
       })
-      .catch((err) => console.log(err));
+          .catch((err) => console.log(err));
   };
 
   return (
@@ -49,6 +54,8 @@ function App() {
         setResults,
         getResults,
         noResults,
+        resultsToBeFiltered,
+        setResultsToBeFiltered,
       }}
     >
       <FormDisplay />
