@@ -24,6 +24,12 @@ function FormDisplay() {
       return { ...prevSearch, [e.target.name]: e.target.value };
     });
   };
+  const getDateValue = (e) => {
+    setSearch((prevSearch) => {
+      let date = e.target.value.split("-").reverse().join("-");
+      return { ...prevSearch, [e.target.name]: date };
+    });
+  };
 
   useEffect(() => {
     Axios({
@@ -128,7 +134,7 @@ function FormDisplay() {
                   size="sm"
                   className="border border-dark"
                   name="dateFrom"
-                  onChange={getValue}
+                  onChange={getDateValue}
                 />
               </InputGroup>
             </Col>
@@ -142,7 +148,7 @@ function FormDisplay() {
                   size="sm"
                   className="border border-dark"
                   name="dateTo"
-                  onChange={getValue}
+                  onChange={getDateValue}
                 />
               </InputGroup>
             </Col>

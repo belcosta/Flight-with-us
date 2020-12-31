@@ -122,6 +122,7 @@ router.post("/result", (req, res, err) => {
 
 //3 request for special offers
 
+
 router.get("/specialoffers", (req, res, next) => {
   console.log("request for special offers");
   poolConnection.getConnection((err, con) => {
@@ -139,6 +140,5 @@ router.get("/specialoffers", (req, res, next) => {
     );
     con.release();
   });
-});
 
 module.exports = router;

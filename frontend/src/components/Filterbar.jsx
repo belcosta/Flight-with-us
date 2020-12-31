@@ -6,7 +6,7 @@ import "./filterbar.css";
 export default function Filterbar() {
   const { setFilter } = useContext(appContext);
   const [setStops] = useState({});
-  const [price, setPrice] = useState({ from: 0, to: 50000 });
+  const [price, setPrice] = useState({ from: 0, to: 5000 });
   const [selectedComp, setSelectedComp] = useState([]);
   const [companies, setCompanies] = useState([]);
 
@@ -32,17 +32,8 @@ export default function Filterbar() {
 
   useEffect(() => {
     setFilter({ price, selectedComp });
-    // setResults((prevResult) => {
-    //   return { ...prevResult};
-    // });
   }, [price, selectedComp]);
 
-  //may we delete it?
-  // const getValueFilter = (e) => {
-  //   setFilter((prevFilter) => {
-  //     return { ...prevFilter, [e.target.name]: e.target.value };
-  //   });
-  // };
   return (
     <form className="filter-form">
       <section className="filter-block">
