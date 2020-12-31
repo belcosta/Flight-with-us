@@ -18,6 +18,7 @@ main {
 .special-offers {
   grid-area: special-offers;
 }
+
 @media (min-width: 320px) and (max-width: 425em) {
   .home {
     grid-template-columns: 18% 64% 18%;
