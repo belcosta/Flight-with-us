@@ -36,6 +36,7 @@ function App() {
       data: search,
     })
       .then((res) => {
+        setOutOfService(false);
         console.log("res.data", res.data);
         if (!res.data.goFlights.length || !res.data.backFlights.length) {
           setNoResults(true);
@@ -43,7 +44,10 @@ function App() {
         setResultsToBeFiltered(res.data);
         setResults(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setOutOfService(true);
+      });
   };
 
   return (
