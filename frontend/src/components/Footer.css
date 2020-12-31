@@ -1,11 +1,17 @@
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 0.8rem;
   background-color: #f8f9fa;
+  height: 4em;
 }
 
 footer img {
   width: 25px;
   transform: translateY(2%);
+}
+
+footer p {
+  margin-bottom: 0;
 }
