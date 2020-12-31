@@ -43,7 +43,7 @@ export default function LandingPage() {
   return (
     <React.Fragment>
       <p className="important">
-        Disclaimer: This is just mock up of the flight-searching site. We offer
+        Disclaimer: This is just a mock up of a flight-searching site. We offer
         no real services!
       </p>
       <section className="landing">
