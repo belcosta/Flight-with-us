@@ -44,7 +44,7 @@ export default function LandingPage() {
     <React.Fragment>
       <p className="important">
         Disclaimer: This is just a mock up of a flight-searching site. We offer
-        no real services!
+        no real services! Also there is no affiliation with any airlines!
       </p>
       <section className="landing">
         {articles.map((article, index) => {
