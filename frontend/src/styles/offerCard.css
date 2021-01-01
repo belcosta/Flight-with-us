@@ -13,9 +13,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(12, 67, 99, 0.7);
+    background: rgba(248, 215, 196, 0.7);
     text-align: center;
-    color: #f8d7c4;
+    color: rgba(12, 67, 99, 1);
     padding-bottom: 2em;
 }
 
