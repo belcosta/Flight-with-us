@@ -59,7 +59,7 @@ router.post("/result", (req, res, err) => {
       [
         function (parallel_done) {
           con.query(
-            "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
+            "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=? order by hourOfStart asc",
             [Number(departure), Number(destination)],
             (err, result, fields) => {
               if (err) return parallel_done(err);
@@ -72,7 +72,7 @@ router.post("/result", (req, res, err) => {
         },
         function (parallel_done) {
           con.query(
-            "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=?",
+            "select c.citycode as 'departure', c.cityName as 'departureName', d.citycode as 'destination', d.cityName as 'destinationName', co.companyLogo, co.companyName, f.hourOfStart, f.hourOfLanding, f.duration, f.price from flights f inner join city c on f.departure=c.cityId inner join city d on f.destination=d.cityId inner join company co on f.companyId = co.companyId where f.departure =? AND f.destination=? order by hourOfStart asc",
             [destination, departure],
             (err, result, fields) => {
               if (err) return parallel_done(err);
