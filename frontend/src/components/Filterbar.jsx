@@ -41,7 +41,7 @@ export default function Filterbar() {
     <form className="filter-form">
       <section className="filter-block">
         {/* STOPS */}
-        <article className="filter filter-stops">
+        {/* <article className="filter filter-stops">
           <h6 className="filter-titles">Stops</h6>
           <div className="list-stops">
             <div className="form-check">
@@ -84,7 +84,7 @@ export default function Filterbar() {
               </label>
             </div>
           </div>
-        </article>
+        </article> */}
         {/* PRICE */}
         <article className="filter filter-price">
           <h6 className="filter-titles">Price</h6>
