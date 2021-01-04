@@ -26,6 +26,8 @@ function App() {
 
   const [outOfService, setOutOfService] = useState(false);
 
+  const [clean, setClean] = useState(false);
+
   const getResults = () => {
     console.log("Calling for results");
     console.log(search);
@@ -64,6 +66,8 @@ function App() {
         resultsToBeFiltered,
         setResultsToBeFiltered,
         setOutOfService,
+        clean,
+        setClean,
       }}
     >
       <FormDisplay />
