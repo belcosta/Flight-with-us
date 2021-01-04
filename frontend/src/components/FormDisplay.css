@@ -4,7 +4,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 4em;
 }
 
 header h1 {
@@ -51,4 +50,22 @@ header .btn {
   background-color: rgba(255, 255, 255, 0.5);
 
   padding: 2em;
+}
+
+@media (max-width: 599px) {
+  .home {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "special-offers";
+  }
+}
+
+@media (min-width: 1200px) {
+  .bgHead {
+    margin-bottom: 4em;
+  }
 }
