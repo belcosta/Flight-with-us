@@ -4,7 +4,7 @@ import appContext from "../context";
 import "./filterbar.css";
 
 export default function Filterbar() {
-  const { setFilter } = useContext(appContext);
+  const { setFilter, setOutOfService } = useContext(appContext);
   const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 5000 });
   const [selectedComp, setSelectedComp] = useState([]);
@@ -27,7 +27,10 @@ export default function Filterbar() {
         });
         setCompanies(companiesSorted);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setOutOfService(true);
+      });
   }, []);
 
   useEffect(() => {

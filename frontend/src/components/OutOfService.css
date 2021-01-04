@@ -1,0 +1,10 @@
+.out-of-service {
+  text-align: center;
+  color: #c90000;
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+
+.out-of-service img {
+  width: 300px;
+}

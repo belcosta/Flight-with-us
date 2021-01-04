@@ -15,7 +15,9 @@ import "./FormDisplay.css";
 import logo from "../assets/img/logo.svg";
 
 function FormDisplay() {
-  const { search, setSearch, getResults } = useContext(appContext);
+  const { search, setSearch, getResults, setOutOfService } = useContext(
+    appContext
+  );
 
   const [cities, setCities] = useState([]);
 
@@ -47,7 +49,10 @@ function FormDisplay() {
         console.log(citiesSorted);
         setCities(citiesSorted);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setOutOfService(true);
+      });
   }, []);
 
   return (

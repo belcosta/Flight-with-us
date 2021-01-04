@@ -9,6 +9,7 @@ import NoResults from "./components/NoResults";
 import Pivot from "./components/Pivot";
 import LandingPage from "./components/LandingPage";
 import Footer from "./components/Footer";
+import OutOfService from "./components/OutOfService";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -23,6 +24,8 @@ function App() {
   });
   const [noResults, setNoResults] = useState(false);
 
+  const [outOfService, setOutOfService] = useState(false);
+
   const getResults = () => {
     console.log("Calling for results");
     console.log(search);
@@ -33,6 +36,7 @@ function App() {
       data: search,
     })
       .then((res) => {
+        setOutOfService(false);
         console.log("res.data", res.data);
         if (!res.data.goFlights.length || !res.data.backFlights.length) {
           setNoResults(true);
@@ -40,7 +44,10 @@ function App() {
         setResultsToBeFiltered(res.data);
         setResults(res.data);
       })
-          .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setOutOfService(true);
+      });
   };
 
   return (
@@ -56,6 +63,7 @@ function App() {
         noResults,
         resultsToBeFiltered,
         setResultsToBeFiltered,
+        setOutOfService,
       }}
     >
       <FormDisplay />
@@ -66,7 +74,7 @@ function App() {
         </div>
 
         <main>
-          {/* {noResults ? <NoResults /> : <Results />} */}
+          {outOfService ? <OutOfService /> : null}
           {results.goFlights.length || results.backFlights.length ? (
             <Results />
           ) : noResults ? (
