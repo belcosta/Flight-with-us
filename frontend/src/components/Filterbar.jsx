@@ -4,7 +4,7 @@ import appContext from "../context";
 import "./filterbar.css";
 
 export default function Filterbar() {
-  const { setFilter, setOutOfService,  clean} = useContext(appContext);
+  const { setFilter, setOutOfService,  cleanFilter, setResultsToBeFiltered, resultsToBeFiltered} = useContext(appContext);
   const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 5000 });
   const [selectedComp, setSelectedComp] = useState([]);
@@ -38,10 +38,15 @@ export default function Filterbar() {
   }, [price, selectedComp]);
 
   useEffect(()=>{
+    //why is it not working?
+    setResultsToBeFiltered({
+      goFlights: [],
+      backFlights: [],
+    });
     setPrice({ from: 0, to: 5000 });
     setSelectedComp([]);
     document.getElementsByClassName("filter-form")[0].reset();
-  }, [clean]);
+  }, [cleanFilter]);
 
   return (
     <form className="filter-form">

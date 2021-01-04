@@ -15,7 +15,7 @@ import "./FormDisplay.css";
 import logo from "../assets/img/logo.svg";
 
 function FormDisplay() {
-  const { search, setSearch, getResults, setOutOfService, clean, setClean } = useContext(
+  const { search, setSearch, getResults, setOutOfService, cleanFilter, setCleanFilter } = useContext(
     appContext
   );
 
@@ -23,8 +23,7 @@ function FormDisplay() {
 
   const getValue = (e) => {
     setSearch((prevSearch) => {
-      setClean(!clean);
-      console.log("clean", clean);
+      setCleanFilter(!cleanFilter);
       return { ...prevSearch, [e.target.name]: e.target.value };
      
     });
