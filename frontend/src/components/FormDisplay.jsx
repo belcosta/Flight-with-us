@@ -28,7 +28,7 @@ function FormDisplay() {
   };
   const getDateValue = (e) => {
     setSearch((prevSearch) => {
-      let date = e.target.value.split("-").reverse().join("-");
+      let date = e.target.value.split("-").reverse().join("-").replaceAll("-", ".");
       return { ...prevSearch, [e.target.name]: date };
     });
   };
