@@ -18,7 +18,7 @@
   background: rgba(248, 215, 196, 0.7);
   text-align: center;
   color: rgba(12, 67, 99, 1);
-  padding: 2em 0;
+  padding: 2em 0.5em;
 }
 
 .banner {
@@ -48,25 +48,12 @@
   font-size: 1.25rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 900px) {
   .cardDetails > h2 {
-    font-size: 3rem;
+    font-size: 3vw;
   }
 
   .cardDetails > h3 {
-    font-size: 2.5rem;
-  }
-
-  .cardDetails > h4 {
-    font-size: 1.7rem;
-  }
-
-  .banner {
-    width: 90%;
-    margin: 1% auto;
-    height: 50px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    font-size: 2vw;
   }
 }
