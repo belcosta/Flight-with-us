@@ -8,9 +8,9 @@ console.log(dbPort);
 let poolConnection = mysql.createPool({
   connectionLimit: 100,
   host: "localhost",
-  port: dbPort,
-  user: dbUser,
-  password: dbPassword,
+  port: 3307,
+  user: "willy",
+  password: "ana307922",
   database: "flight_search",
 });
 //request for cities (for select) - return all city names from city table
