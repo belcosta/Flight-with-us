@@ -137,7 +137,7 @@ function FormDisplay() {
                 <FormControl
                   type="date"
                   placeholder="From"
-                  aria-label="from wich date"
+                  aria-label="from which date"
                   size="sm"
                   className="border border-dark"
                   name="dateFrom"

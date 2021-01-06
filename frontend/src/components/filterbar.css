@@ -53,7 +53,7 @@ input::-webkit-inner-spin-button {
 /* companies */
 .filter-companies {
   grid-area: companies;
-  padding: 0.5em
+  padding: 0.5em;
 }
 .list-companies {
   display: grid;
@@ -85,16 +85,22 @@ input::-webkit-inner-spin-button {
     justify-content: center;
   }
   .filter-companies {
-    padding: 1em
+    padding: 1em;
   }
-  
 }
 @media (min-width: 1200px) {
+  .filter-form {
+    height: var(--sidebarHeight);
+    height: var(--sidebarHeightMax);
+  }
   .filter-block {
-    grid-template-columns: 1fr;
+    padding-top: 2em;
+    grid-template-rows: auto auto 1fr;
+    gap: 5em;
     grid-template-areas:
       "price"
       "companies";
+    height: 100%;
   }
   .price-range {
     justify-content: start;
@@ -106,17 +112,6 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width: 1800px) {
-  .filter-form {
-    height: var(--sidebarHeight);
-    height: var(--sidebarHeightMax);
-  }
-
-  .filter-block {
-    padding-top: 2em;
-    grid-template-rows: auto auto 1fr;
-    gap: 5em;
-    height: 100%;
-  }
   .filter {
     padding: 0;
   }
