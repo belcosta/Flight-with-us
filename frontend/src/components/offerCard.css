@@ -22,7 +22,7 @@
 }
 
 .banner {
-  width: 90%;
+  width: 70%;
   margin: 1% auto;
   height: 50px;
   background-repeat: no-repeat;
@@ -35,13 +35,38 @@
 }
 
 .cardDetails > h2 {
-  font-size: 3rem;
+  font-size: 2rem;
+  margin: 0.5em 0;
 }
 
 .cardDetails > h3 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  margin: 0.5em 0 1em;
 }
 
 .cardDetails > h4 {
-  font-size: 1.7rem;
+  font-size: 1.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .cardDetails > h2 {
+    font-size: 3rem;
+  }
+
+  .cardDetails > h3 {
+    font-size: 2.5rem;
+  }
+
+  .cardDetails > h4 {
+    font-size: 1.7rem;
+  }
+
+  .banner {
+    width: 90%;
+    margin: 1% auto;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
 }
