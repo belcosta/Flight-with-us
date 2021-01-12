@@ -134,3 +134,43 @@ Frontend of this project was bootstrapped with [Create React App](https://github
 </br>
 </br>
 </br>
+
+**Fig.6** : Out of Order message for case the server crashed
+
+<img align="center" src="./README_Materials/FWU-OOO.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.7** : Landing page
+
+<img align="center" src="./README_Materials/FWU-landing.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.8** : End of the landing page
+
+<img align="center" src="./README_Materials/FWU-landing-end.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.9** : Displayed search results for both directions
+
+<img align="center" src="./README_Materials/FWU-moreResults.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.10** : More connection options for one direction
+
+<img align="center" src="./README_Materials/FWU-results.jpg" width="100%">
+
+</br>
+</br>
+</br>
