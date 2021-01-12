@@ -12,7 +12,7 @@ Group fullstack flight search project created during database module of our one 
 
 **Packages used:** mySQL for Express, async, Axios, cors, nodemon
 
-<img align="right" src="./README_Materials/FWU.jpg" width="60%">
+<img align="right" src="./README_Materials/FWU-general.gif" width="60%">
 
 **Implemented Features:**
 
