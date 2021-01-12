@@ -28,7 +28,7 @@ Group fullstack flight search project created during database module of our one 
 
 - right sidebar showing special offers as an automatic carousel, data are get from database of flights
 
-- left sidebar allows to filter results by price, company (and number of stops?)
+- left sidebar allows to filter results by price or company
 
 - if no connection is found, warning massage will be shown
 
