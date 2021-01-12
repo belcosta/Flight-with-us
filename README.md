@@ -111,7 +111,23 @@ Frontend of this project was bootstrapped with [Create React App](https://github
 </br>
 </br>
 
-**Fig.3** : Warning message when no results were found
+**Fig.3** : More filtering through results
+
+<img align="center" src="./README_Materials/FWU-filtering-more.gif" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.2** : Part of special offers carousel display
+
+<img align="center" src="./README_Materials/FWU-special-offers.gif" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.5** : Warning message when no results were found
 
 <img align="center" src="./README_Materials/FWU-noresults.jpg" width="100%">
 
