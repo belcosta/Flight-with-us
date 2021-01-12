@@ -95,17 +95,17 @@ Frontend of this project was bootstrapped with [Create React App](https://github
 
 ## Gallery
 
-**Fig.1** : Displayed search results for both directions
+**Fig.1** : Basic searching function
 
-<img align="center" src="./README_Materials/FWU-results.jpg" width="100%">
+<img align="center" src="./README_Materials/FWU-general.gif" width="100%">
 
 </br>
 </br>
 </br>
 
-**Fig.2** : More connection options for one direction
+**Fig.2** : Filtering through the results
 
-<img align="center" src="./README_Materials/FWU-moreResults.jpg" width="100%">
+<img align="center" src="./README_Materials/FWU-filtering.gif" width="100%">
 
 </br>
 </br>
