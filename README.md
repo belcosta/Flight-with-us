@@ -134,7 +134,7 @@ Frontend of this project was bootstrapped with [Create React App](https://github
 
 **Fig.5** : Responsiveness of the website
 
-<img align="center" src="./README_Materials/FWU-special-offers.gif" width="100%">
+<img align="center" src="./README_Materials/FWU-responsive.gif" width="100%">
 
 </br>
 </br>
@@ -174,7 +174,7 @@ Frontend of this project was bootstrapped with [Create React App](https://github
 
 **Fig.10** : Displayed search results for both directions
 
-<img align="center" src="./README_Materials/FWU-responsive.gif" width="100%">
+<img align="center" src="./README_Materials/FWU-both-ways.jpg" width="100%">
 
 </br>
 </br>
