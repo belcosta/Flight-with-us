@@ -19,7 +19,7 @@ main {
   grid-area: special-offers;
 }
 
-@media (min-width: 320px) and (max-width: 425em) {
+@media (min-width: 320px) and (max-width: 600em) {
   .home {
     grid-template-columns: 18% 64% 18%;
     grid-template-rows: auto;
@@ -30,7 +30,7 @@ main {
       "special-offers special-offers special-offers";
   }
 }
-@media (min-width: 426px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1200px) {
   .home {
     display: grid;
     grid-template-columns: 2.5fr 1fr;
