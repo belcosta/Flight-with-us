@@ -1,15 +1,21 @@
 import React from "react";
 import { IoAirplaneSharp } from "react-icons/io5";
-import "./MainResultsCards.css";
+import "../styles/MainResultsCards.css";
 
 export default function MainResultsCard(props) {
   const flight = props.flight;
 
   return (
     <article className="result">
-      <img className="company-logo" id="company-logo" src={flight.companyLogo} alt="logo" style={{ width: "6rem" }}></img>
+      <img
+        className="company-logo"
+        id="company-logo"
+        src={flight.companyLogo}
+        alt="logo"
+        style={{ width: "6rem" }}
+      ></img>
       <div className="flight-info1">
-        <h3 className="time-flight">{flight.hourOfStart.slice(0,5)}</h3>
+        <h3 className="time-flight">{flight.hourOfStart.slice(0, 5)}</h3>
         <p className="city-code">{flight.departure}</p>
       </div>
       <div className="extra">
@@ -23,11 +29,11 @@ export default function MainResultsCard(props) {
       </div>
 
       <div className="flight-info2">
-        <h3 className="time-flight">{flight.hourOfLanding.slice(0,5)}</h3>
+        <h3 className="time-flight">{flight.hourOfLanding.slice(0, 5)}</h3>
         <p className="city-code">{flight.destination}</p>
       </div>
 
-        <button className="buy-button">{flight.price}€</button>
+      <button className="buy-button">{flight.price}€</button>
     </article>
   );
 }

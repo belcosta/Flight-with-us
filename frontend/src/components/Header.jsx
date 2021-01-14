@@ -10,13 +10,18 @@ import {
   Spinner,
   Form,
 } from "react-bootstrap";
-import "./Header.css";
+import "../styles/Header.css";
 import logo from "../assets/img/logo.svg";
 
 function Header() {
-  const { search, setSearch, getResults, setOutOfService, cleanFilter, setCleanFilter } = useContext(
-    appContext
-  );
+  const {
+    search,
+    setSearch,
+    getResults,
+    setOutOfService,
+    cleanFilter,
+    setCleanFilter,
+  } = useContext(appContext);
 
   const [cities, setCities] = useState([]);
 
@@ -24,12 +29,15 @@ function Header() {
     setSearch((prevSearch) => {
       setCleanFilter(!cleanFilter);
       return { ...prevSearch, [e.target.name]: e.target.value };
-     
     });
   };
   const getDateValue = (e) => {
     setSearch((prevSearch) => {
-      let date = e.target.value.split("-").reverse().join("-").replaceAll("-", ".");
+      let date = e.target.value
+        .split("-")
+        .reverse()
+        .join("-")
+        .replaceAll("-", ".");
       return { ...prevSearch, [e.target.name]: date };
     });
   };

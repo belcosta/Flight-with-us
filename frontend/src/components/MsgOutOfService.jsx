@@ -1,5 +1,5 @@
 import React from "react";
-import "./MsgOutOfService.css";
+import "../styles/MsgOutOfService.css";
 import outOfServiceLogo from "../assets/img/out-of-service.png";
 
 export default function MsgOutOfService() {

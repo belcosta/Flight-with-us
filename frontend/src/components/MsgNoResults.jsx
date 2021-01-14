@@ -1,5 +1,5 @@
 import React from "react";
-import "./MsgNoResults.css";
+import "../styles/MsgNoResults.css";
 import noFlight from "../assets/img/no-flight.png";
 
 export default function MsgNoResults() {

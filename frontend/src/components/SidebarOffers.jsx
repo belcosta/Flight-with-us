@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./SidebarOffers.css";
+import "../styles/SidebarOffers.css";
 import SidebarOffersCards from "./SidebarOffersCards";
 import Axios from "axios";
 
