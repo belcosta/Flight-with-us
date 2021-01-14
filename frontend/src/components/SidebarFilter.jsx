@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import Axios from "axios";
 import appContext from "../context";
-import "./filterbar.css";
+import "./SidebarFilter.css";
 
-export default function Filterbar() {
+export default function SidebarFilter() {
   const { setFilter, setOutOfService,  cleanFilter, setResultsToBeFiltered, resultsToBeFiltered} = useContext(appContext);
   const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 5000 });

@@ -1,8 +1,8 @@
 import React from "react";
-import Article from "./Article";
-import "./LandingPage.css";
+import MainInfo from "./MainInfo";
+import "./Main.css";
 
-export default function LandingPage() {
+export default function Main() {
   const articles = [
     {
       title: "Safe travelling",
@@ -48,7 +48,7 @@ export default function LandingPage() {
       </p>
       <section className="landing">
         {articles.map((article, index) => {
-          return <Article article={article} key={index} />;
+          return <MainInfo article={article} key={index} />;
         })}
       </section>
     </React.Fragment>

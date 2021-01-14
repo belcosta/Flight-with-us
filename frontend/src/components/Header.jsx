@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import Axios from "axios";
-import "./FormDisplay.css";
 import appContext from "../context";
 import {
   Button,
@@ -11,10 +10,10 @@ import {
   Spinner,
   Form,
 } from "react-bootstrap";
-import "./FormDisplay.css";
+import "./Header.css";
 import logo from "../assets/img/logo.svg";
 
-function FormDisplay() {
+function Header() {
   const { search, setSearch, getResults, setOutOfService, cleanFilter, setCleanFilter } = useContext(
     appContext
   );
@@ -177,4 +176,4 @@ function FormDisplay() {
   );
 }
 
-export default FormDisplay;
+export default Header;

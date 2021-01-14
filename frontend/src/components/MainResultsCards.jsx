@@ -1,8 +1,8 @@
 import React from "react";
 import { IoAirplaneSharp } from "react-icons/io5";
-import "./FlightCard.css";
+import "./MainResultsCards.css";
 
-export default function FlightCard(props) {
+export default function MainResultsCard(props) {
   const flight = props.flight;
 
   return (

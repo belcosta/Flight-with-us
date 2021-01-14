@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Axios from "axios";
 import "./App.css";
 import appContext from "./context";
-import FormDisplay from "./components/FormDisplay";
-import Results from "./components/Results";
-import Filterbar from "./components/Filterbar";
-import NoResults from "./components/NoResults";
-import Pivot from "./components/Pivot";
-import LandingPage from "./components/LandingPage";
+import Header from "./components/Header";
+import MainResults from "./components/MainResults";
+import SidebarFilter from "./components/SidebarFilter";
+import MsgNoResults from "./components/MsgNoResults";
+import SidebarOffers from "./components/SidebarOffers";
+import Main from "./components/Main";
 import Footer from "./components/Footer";
-import OutOfService from "./components/OutOfService";
+import MsgOutOfService from "./components/MsgOutOfService";
 
 function App() {
   const [search, setSearch] = useState({});
@@ -70,25 +70,25 @@ function App() {
         setCleanFilter,
       }}
     >
-      <FormDisplay />
+      <Header />
 
       <div className="home bg-light">
-        <div className="sidebar">
-          <Filterbar />
+        <div className="sidebarFilter">
+          <SidebarFilter />
         </div>
 
         <main>
-          {outOfService ? <OutOfService /> : null}
+          {outOfService ? <MsgOutOfService /> : null}
           {results.goFlights.length || results.backFlights.length ? (
-            <Results />
+            <MainResults />
           ) : noResults ? (
-            <NoResults />
+            <MsgNoResults />
           ) : (
-            <LandingPage />
+            <Main />
           )}
         </main>
-        <div className="special-offers">
-          <Pivot />
+        <div className="sidebarOffers">
+          <SidebarOffers />
         </div>
       </div>
       <Footer />

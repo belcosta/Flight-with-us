@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./pivot.css";
-import OfferCard from "./offerCard";
+import "./SidebarOffers.css";
+import SidebarOffersCards from "./SidebarOffersCards";
 import Axios from "axios";
 
-export default function Pivot() {
+export default function SidebarOffers() {
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Pivot() {
   return (
     <div className="offersContainer">
       {displayedCards.map((item, index) => {
-        return <OfferCard key={index} offers={item} />;
+        return <SidebarOffersCards key={index} offers={item} />;
       })}
     </div>
   );

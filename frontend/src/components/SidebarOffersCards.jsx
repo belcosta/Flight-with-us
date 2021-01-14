@@ -1,7 +1,7 @@
-import "./offerCard.css";
+import "./SidebarOffersCards.css";
 import { Button } from "react-bootstrap";
 
-export default function OfferCard(props) {
+export default function SidebarOffersCards(props) {
   const offer = props.offers;
 
   return (
