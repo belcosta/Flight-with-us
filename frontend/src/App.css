@@ -22,6 +22,7 @@ main {
       "sidebarOffers";
   }
 }
+
 @media (min-width: 600px) {
   .home {
     display: grid;
@@ -36,6 +37,7 @@ main {
     margin-top: 4em;
   }
 }
+
 @media (min-width: 900px) {
   .home {
     display: grid;
@@ -47,6 +49,7 @@ main {
       "main sidebarOffers";
   }
 }
+
 @media (min-width: 1200px) {
   .home {
     display: grid;

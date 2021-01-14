@@ -4,15 +4,16 @@ Explore application by [Setting it up](#setup) locally or look at previews in [G
 
 ## Description
 
-Group fullstack flight search project created during database module of our one year full-stack course. Uses mySQL as a database, Express.js for backend and React.js for frontend.
+Group fullstack mockup of the flight-search application created during database module of our one year full-stack training. Uses mySQL as a database, Express.js for backend and React.js for frontend.
 
-**Authors:** [Alice Rez](https://github.com/Alice-Rez) (Frontend-lead), [Isabel Costa](https://github.com/belccarvalho) (Backend-lead), [willoid](https://github.com/willoid) (Database-lead)
+**Authors:** [Alice Rez](https://github.com/Alice-Rez) (Frontend-lead, main debugging help), [Isabel Costa](https://github.com/belccarvalho) (Backend-lead), [willoid](https://github.com/willoid) (Database-lead).
+All authors worked on all aspects, just the main responsiveness was divided as depicted above.
 
 **Technologies used:** mySQL, Express.js, React.js, React Transition group, React Hooks, React Context, Create React App, Bootstrap + ReactStrap, CSS, CSS Variables, HTML, SVG
 
 **Packages used:** mySQL for Express, async, Axios, cors, nodemon
 
-<img align="right" src="./README_Materials/FWU.jpg" width="60%">
+<img align="right" src="./README_Materials/FWU-general.gif" width="70%">
 
 **Implemented Features:**
 
@@ -26,11 +27,15 @@ Group fullstack flight search project created during database module of our one 
 
 - connections shown for way to the destination and back separately
 
+- left sidebar allows to filter results by price or company
+
 - right sidebar showing special offers as an automatic carousel, data are get from database of flights
 
-- left sidebar allows to filter results by price, company (and number of stops?)
+- if no connection is found, warning message will be shown
 
-- if no connection is found, warning massage will be shown
+- if the backend do not correspond (server probably crashed), information about service being out of order is displayed
+
+- of course the whole site is responsive
 
 ## Setup
 
@@ -95,25 +100,89 @@ Frontend of this project was bootstrapped with [Create React App](https://github
 
 ## Gallery
 
-**Fig.1** : Displayed search results for both directions
+**Fig.1** : Basic searching function
 
-<img align="center" src="./README_Materials/FWU-results.jpg" width="100%">
-
-</br>
-</br>
-</br>
-
-**Fig.2** : More connection options for one direction
-
-<img align="center" src="./README_Materials/FWU-moreResults.jpg" width="100%">
+<img align="center" src="./README_Materials/FWU-general.gif" width="100%">
 
 </br>
 </br>
 </br>
 
-**Fig.3** : Warning message when no results were found
+**Fig.2** : Filtering through the results
+
+<img align="center" src="./README_Materials/FWU-filtering.gif" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.3** : More filtering through results
+
+<img align="center" src="./README_Materials/FWU-filtering-more.gif" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.4** : Part of special offers carousel display
+
+<img align="center" src="./README_Materials/FWU-special-offers.gif" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.5** : Responsiveness of the website
+
+<img align="center" src="./README_Materials/FWU-responsive.gif" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.6** : Warning message when no results were found
 
 <img align="center" src="./README_Materials/FWU-noresults.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.7** : Out of Order message for case the server crashed
+
+<img align="center" src="./README_Materials/FWU-OOO.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.8** : Landing page
+
+<img align="center" src="./README_Materials/FWU-landing.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.9** : End of the landing page
+
+<img align="center" src="./README_Materials/FWU-landing-end.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.10** : Displayed search results for both directions
+
+<img align="center" src="./README_Materials/FWU-both-ways.jpg" width="100%">
+
+</br>
+</br>
+</br>
+
+**Fig.11** : More connection options for one direction
+
+<img align="center" src="./README_Materials/FWU-results.jpg" width="100%">
 
 </br>
 </br>
