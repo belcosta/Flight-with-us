@@ -1,10 +1,16 @@
 import React, { useContext, useState, useEffect } from "react";
 import Axios from "axios";
 import appContext from "../context";
-import "./SidebarFilter.css";
+import "../styles/SidebarFilter.css";
 
 export default function SidebarFilter() {
-  const { setFilter, setOutOfService,  cleanFilter, setResultsToBeFiltered, resultsToBeFiltered} = useContext(appContext);
+  const {
+    setFilter,
+    setOutOfService,
+    cleanFilter,
+    setResultsToBeFiltered,
+    resultsToBeFiltered,
+  } = useContext(appContext);
   const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 5000 });
   const [selectedComp, setSelectedComp] = useState([]);
@@ -37,7 +43,7 @@ export default function SidebarFilter() {
     setFilter({ price, selectedComp });
   }, [price, selectedComp]);
 
-  useEffect(()=>{
+  useEffect(() => {
     //why is it not working?
     setResultsToBeFiltered({
       goFlights: [],
