@@ -22,6 +22,7 @@ main {
       "special-offers";
   }
 }
+
 @media (min-width: 600px) {
   .home {
     display: grid;
@@ -32,10 +33,11 @@ main {
       "sidebar sidebar"
       "main special-offers";
   }
-  .special-offers{
+  .special-offers {
     margin-top: 4em;
   }
 }
+
 @media (min-width: 900px) {
   .home {
     display: grid;
@@ -47,6 +49,7 @@ main {
       "main special-offers";
   }
 }
+
 @media (min-width: 1200px) {
   .home {
     display: grid;
@@ -54,7 +57,7 @@ main {
     grid-template-rows: auto;
     grid-template-areas: "sidebar main special-offers";
   }
-  .special-offers{
+  .special-offers {
     margin-top: 0;
   }
 }
