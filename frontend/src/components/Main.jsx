@@ -1,6 +1,6 @@
 import React from "react";
 import MainInfo from "./MainInfo";
-import "./Main.css";
+import "../styles/Main.css";
 
 export default function Main() {
   const articles = [

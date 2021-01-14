@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import MainResultsCards from "./MainResultsCards";
 import appContext from "../context";
-import "./MainResults.css";
+import "../styles/MainResults.css";
 import { FaRegCalendarAlt } from "react-icons/fa";
 
 function MainResults() {
@@ -90,7 +90,7 @@ function MainResults() {
           <FaRegCalendarAlt /> {search.dateTo}
         </h5>
         {resultsToBeFiltered.backFlights.map((flight, index) => (
-          <MainResultsCards  key={index} flight={flight} />
+          <MainResultsCards key={index} flight={flight} />
         ))}
         {resultsToBeFiltered.backFlights.length ? null : (
           <h5 className="noFlights">No flights available...</h5>

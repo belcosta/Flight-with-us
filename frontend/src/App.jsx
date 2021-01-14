@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import "./App.css";
+import "./styles/App.css";
 import appContext from "./context";
 import Header from "./components/Header";
 import MainResults from "./components/MainResults";
