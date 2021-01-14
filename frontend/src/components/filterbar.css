@@ -4,10 +4,13 @@
   background-size: cover;
 }
 .filter-block {
-  display: grid;
   background-color: rgba(12, 67, 99, 0.5);
   margin: 0 auto;
   color: white;
+  display: grid;
+  grid-template-areas:
+    "price"
+    "companies";
 }
 .filter {
   padding: 1em;
@@ -20,22 +23,16 @@
   text-align: center;
 }
 
-/* stops and prices*/
-.list-stops,
+/*prices*/
 .price-range {
   display: grid;
-  justify-content: start;
+  grid-area: price;
 }
-/* stops */
-.list-stops {
-  padding: 1em;
-  row-gap: 0.5em;
-}
-/* price */
 .price-range div {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  padding: 0.3em 1em;
 }
 .price-range label {
   margin: 0;
@@ -54,75 +51,67 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 /* companies */
+.filter-companies {
+  grid-area: companies;
+  padding: 0.5em;
+}
 .list-companies {
   display: grid;
+  grid-template-columns: auto auto;
   grid-row-gap: 0.5em;
-  justify-content: start;
-  padding: 1em 2em;
+  justify-content: space-evenly;
+  padding: 1em 0em;
 }
-/* checkbox */
 
-@media (max-width: 425px) {
-  .filter-block {
-    grid-template-areas:
-      "price"
-      "companies";
-  }
-  /* stops */
-  .list-stops {
-    grid-area: stops;
-  }
-  /* price */
+@media (min-width: 430px) {
   .price-range {
-    grid-area: price;
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+  .list-companies {
+    grid-column-gap: 1em;
+    padding: 0.3em;
+  }
+}
+
+@media (min-width: 600px) {
+  .filter-block {
+    width: 100%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "price companies";
+  }
+  .price-range {
+    grid-template-columns: auto;
+    justify-content: center;
   }
   .filter-companies {
-    grid-area: companies;
-  }
-  .list-companies {
-    grid-template-columns: auto auto;
-    grid-column-gap: 1em;
-    justify-content: space-evenly;
-    padding: 0.3em;
+    padding: 1em;
   }
 }
-
-@media (min-width: 426px) and (max-width: 1024px) {
-  /* filter-block */
-  .filter-block {
-    grid-template-columns: 1fr 2fr;
-    width: 100%;
-  }
-  /* stops and prices*/
-  .list-stops,
-  .price-range {
-    justify-content: space-around;
-    align-content: space-around;
-  }
-
-  /* companies */
-  .list-companies {
-    grid-template-rows: auto;
-    grid-template-columns: auto auto;
-    grid-column-gap: 1em;
-    justify-content: space-evenly;
-    padding: 0.3em;
-  }
-}
-
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
   .filter-form {
     height: var(--sidebarHeight);
     height: var(--sidebarHeightMax);
   }
-
   .filter-block {
     padding-top: 2em;
-    grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
     gap: 5em;
+    grid-template-areas:
+      "price"
+      "companies";
     height: 100%;
   }
+  .price-range {
+    justify-content: start;
+  }
+  .list-companies {
+    grid-template-columns: auto;
+    justify-content: start;
+    padding: 1em 3em;
+  }
+}
+@media (min-width: 1800px) {
   .filter {
     padding: 0;
   }

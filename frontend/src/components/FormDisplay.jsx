@@ -15,7 +15,7 @@ import "./FormDisplay.css";
 import logo from "../assets/img/logo.svg";
 
 function FormDisplay() {
-  const { search, setSearch, getResults, setOutOfService } = useContext(
+  const { search, setSearch, getResults, setOutOfService, cleanFilter, setCleanFilter } = useContext(
     appContext
   );
 
@@ -23,12 +23,14 @@ function FormDisplay() {
 
   const getValue = (e) => {
     setSearch((prevSearch) => {
+      setCleanFilter(!cleanFilter);
       return { ...prevSearch, [e.target.name]: e.target.value };
+     
     });
   };
   const getDateValue = (e) => {
     setSearch((prevSearch) => {
-      let date = e.target.value.split("-").reverse().join("-");
+      let date = e.target.value.split("-").reverse().join("-").replaceAll("-", ".");
       return { ...prevSearch, [e.target.name]: date };
     });
   };
@@ -135,7 +137,7 @@ function FormDisplay() {
                 <FormControl
                   type="date"
                   placeholder="From"
-                  aria-label="from wich date"
+                  aria-label="from which date"
                   size="sm"
                   className="border border-dark"
                   name="dateFrom"
