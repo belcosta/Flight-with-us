@@ -1,8 +1,8 @@
 import React from "react";
-import "./NoResults.css";
+import "./MsgNoResults.css";
 import noFlight from "../assets/img/no-flight.png";
 
-export default function NoResults() {
+export default function MsgNoResults() {
   return (
     <article className="noResults">
       <img src={noFlight} alt="empty departure board" />

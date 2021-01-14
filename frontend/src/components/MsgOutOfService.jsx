@@ -1,8 +1,8 @@
 import React from "react";
-import "./OutOfService.css";
+import "./MsgOutOfService.css";
 import outOfServiceLogo from "../assets/img/out-of-service.png";
 
-export default function OutOfService() {
+export default function MsgOutOfService() {
   return (
     <div className="out-of-service">
       <img src={outOfServiceLogo} alt="" />

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import FlightCard from "./FlightCard";
+import MainResultsCards from "./MainResultsCards";
 import appContext from "../context";
-import "./Results.css";
+import "./MainResults.css";
 import { FaRegCalendarAlt } from "react-icons/fa";
 
-function Results() {
+function MainResults() {
   const {
     results,
     filter,
@@ -77,7 +77,7 @@ function Results() {
           <FaRegCalendarAlt /> {search.dateFrom}
         </h5>
         {resultsToBeFiltered.goFlights.map((flight, index) => (
-          <FlightCard key={index} flight={flight} />
+          <MainResultsCards key={index} flight={flight} />
         ))}
         {resultsToBeFiltered.goFlights.length ? null : (
           <h5 className="noFlights">No flights available...</h5>
@@ -90,7 +90,7 @@ function Results() {
           <FaRegCalendarAlt /> {search.dateTo}
         </h5>
         {resultsToBeFiltered.backFlights.map((flight, index) => (
-          <FlightCard key={index} flight={flight} />
+          <MainResultsCards  key={index} flight={flight} />
         ))}
         {resultsToBeFiltered.backFlights.length ? null : (
           <h5 className="noFlights">No flights available...</h5>
@@ -100,4 +100,4 @@ function Results() {
   );
 }
 
-export default Results;
+export default MainResults;
