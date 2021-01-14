@@ -9,14 +9,14 @@
 }
 
 .cardDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(248, 215, 196, 0.7);
-    text-align: center;
-    color: rgba(12, 67, 99, 1);
-    padding-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(248, 215, 196, 0.7);
+  text-align: center;
+  color: rgba(12, 67, 99, 1);
+  padding-bottom: 2em;
 }
 
 .banner {
@@ -27,5 +27,3 @@
   background-position: center;
   background-size: cover;
 }
-
-
