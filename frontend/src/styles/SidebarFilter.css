@@ -96,7 +96,6 @@ input::-webkit-inner-spin-button {
   .filter-block {
     padding-top: 2em;
     grid-template-rows: auto auto 1fr;
-    gap: 5em;
     grid-template-areas:
       "price"
       "companies";
