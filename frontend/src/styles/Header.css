@@ -31,10 +31,7 @@ header img {
 }
 
 header p {
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin: 0;
-  text-align: center;
+  display: none;
 }
 
 .btn {
@@ -46,8 +43,8 @@ header form {
   background-color: rgba(255, 255, 255, 0.5);
 }
 header form h4 {
-  font-family: var(--textFont);
   padding: 1em;
+  font-size: 2rem;
 }
 header .btn {
   color: white;
@@ -72,7 +69,6 @@ header .btn {
   grid-template-columns: 1fr;
   grid-gap: 1em;
   justify-self: stretch;
-  height: fit-content;
   padding: 1em;
 }
 .box-input {
@@ -87,10 +83,9 @@ header .btn {
 .box-input select {
   border: none;
   background-color: transparent;
-  padding: 0.2em 0.4em;
 }
 .box-input select {
-  padding: 0.9em;
+  padding: 0;
   width: inherit;
 }
 
@@ -141,18 +136,35 @@ header .btn {
     justify-content: center;
     grid-template-areas: "route date searchButton";
   }
+  .route {
+    grid-template-columns: 1fr 0.2fr 1fr;
+    height: fit-content;
+    padding: 0.3em;
+  }
+  header p {
+    display: inline;
+    font-size: 2rem;
+    align-self: center;
+    justify-self: center;
+  }
 
-  .date {
-    height: 100%;
-    align-self: stretch;
-    grid-template-columns: repeat(2, 1fr);
-  }
   .date > .box-input {
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    min-width: 300px;
   }
+  .box-input label {
+    padding: 0.5em;
+  }
+
   .button {
     justify-self: flex-start;
     align-self: center;
     padding: 1em;
+  }
+}
+@media (min-width: 1200px) {
+  .date {
+    align-self: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

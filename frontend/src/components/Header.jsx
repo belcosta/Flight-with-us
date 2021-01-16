@@ -3,7 +3,7 @@ import Axios from "axios";
 import appContext from "../context";
 import "../styles/Header.css";
 import logo from "../assets/img/logo.svg";
-
+import { RiArrowLeftRightFill } from "react-icons/ri";
 function Header() {
   const {
     search,
@@ -82,7 +82,9 @@ function Header() {
                   ))}
                 </select>
               </div>
-              {/* <p>&#8826; &#8827;</p> */}
+              <p>
+                <RiArrowLeftRightFill />
+              </p>
               <div className='box-input'>
                 <select custom name='destination' onChange={getValue}>
                   <option value=''>DESTINATION</option>

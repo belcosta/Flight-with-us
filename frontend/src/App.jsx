@@ -28,7 +28,8 @@ function App() {
 
   const [cleanFilter, setCleanFilter] = useState(false);
 
-  const getResults = () => {
+  const getResults = (e) => {
+    e.preventDefault();
     console.log("Calling for results");
     console.log(search);
     setNoResults(false);
@@ -72,8 +73,8 @@ function App() {
     >
       <Header />
 
-      <div className="home bg-light">
-        <div className="sidebarFilter">
+      <div className='home bg-light'>
+        <div className='sidebarFilter'>
           <SidebarFilter />
         </div>
 
@@ -87,7 +88,7 @@ function App() {
             <Main />
           )}
         </main>
-        <div className="sidebarOffers">
+        <div className='sidebarOffers'>
           <SidebarOffers />
         </div>
       </div>

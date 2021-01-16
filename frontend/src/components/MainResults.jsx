@@ -71,29 +71,29 @@ function MainResults() {
 
   return (
     <React.Fragment>
-      <section className="flights">
+      <section className='flights'>
         <h2>Departing flights</h2>
-        <h5 className="date">
+        <h5>
           <FaRegCalendarAlt /> {search.dateFrom}
         </h5>
         {resultsToBeFiltered.goFlights.map((flight, index) => (
           <MainResultsCards key={index} flight={flight} />
         ))}
         {resultsToBeFiltered.goFlights.length ? null : (
-          <h5 className="noFlights">No flights available...</h5>
+          <h5 className='noFlights'>No flights available...</h5>
         )}
       </section>
 
-      <section className="flights">
+      <section className='flights'>
         <h2>Returning flights</h2>
-        <h5 className="date">
+        <h5>
           <FaRegCalendarAlt /> {search.dateTo}
         </h5>
         {resultsToBeFiltered.backFlights.map((flight, index) => (
           <MainResultsCards key={index} flight={flight} />
         ))}
         {resultsToBeFiltered.backFlights.length ? null : (
-          <h5 className="noFlights">No flights available...</h5>
+          <h5 className='noFlights'>No flights available...</h5>
         )}
       </section>
     </React.Fragment>
