@@ -5,7 +5,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+header {
+  padding: 5em 5em 8em;
+}
 header h1 {
   font-family: var(--titlesFont);
   font-size: 5rem;
@@ -30,13 +32,6 @@ header img {
   transform: translateY(-15%) translateX(-7%);
 }
 
-header p {
-  display: none;
-}
-
-.btn {
-  text-transform: uppercase;
-}
 header form {
   box-shadow: 3px 3px 7px rgba(255, 255, 255, 1),
     -3px -3px 7px rgba(255, 255, 255, 1);
@@ -46,20 +41,11 @@ header form h4 {
   padding: 1em;
   font-size: 2rem;
 }
-header .btn {
-  color: white;
-  font-weight: 500;
-  background-color: var(--darkOrange);
-  justify-self: center;
-  height: fit-content;
-}
+
 .search {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr 0.4fr;
-  /* justify-content: center;
-  align-content: center; */
-  justify-items: center;
+  grid-template-rows: 1.4fr 1fr 0.4fr;
   height: fit-content;
 }
 
@@ -67,9 +53,23 @@ header .btn {
 .date {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1em;
   justify-self: stretch;
   padding: 1em;
+}
+
+.date {
+  grid-gap: 1em;
+}
+.route p {
+  font-size: 2rem;
+  align-self: center;
+  justify-self: center;
+  margin: 0;
+  height: fit-content;
+  cursor: pointer;
+}
+.route p:nth-child(3) {
+  display: none;
 }
 .box-input {
   display: grid;
@@ -86,11 +86,10 @@ header .btn {
 }
 .box-input select {
   padding: 0;
-  width: inherit;
 }
 
 .box-input label {
-  font-weight: 390;
+  font-weight: 400;
   text-align: left;
   margin: 0;
 }
@@ -98,15 +97,18 @@ header .btn {
   align-self: center;
   justify-self: center;
 }
+header .btn {
+  color: white;
+  font-weight: 500;
+  background-color: var(--darkOrange);
+  justify-self: center;
+  height: fit-content;
+  text-transform: uppercase;
+}
 @media (min-width: 650px) {
-  .route {
-    grid-area: route;
-  }
-  .date {
-    grid-area: date;
-  }
-  .searchButton {
-    grid-area: searchButton;
+  header form h4 {
+    padding: 0.5em;
+    margin: 0;
   }
   .search {
     grid-template-columns: 1fr 1fr;
@@ -116,15 +118,22 @@ header .btn {
       "searchButton searchButton";
     align-items: center;
   }
-  header form h4 {
-    padding: 0.5em;
-    margin: 0;
-  }
+
   .route {
+    grid-area: route;
+    grid-gap: 1em;
     height: 100%;
   }
+  .route p:nth-child(2) {
+    display: none;
+  }
+  .date {
+    grid-area: date;
+  }
+  .searchButton {
+    grid-area: searchButton;
+  }
 }
-
 @media (min-width: 900px) {
   .bgHead {
     margin-bottom: 4em;
@@ -134,37 +143,42 @@ header .btn {
     grid-template-columns: 1fr 1fr 0.5fr;
     grid-template-rows: auto;
     justify-content: center;
+    align-content: center;
     grid-template-areas: "route date searchButton";
   }
   .route {
     grid-template-columns: 1fr 0.2fr 1fr;
     height: fit-content;
-    padding: 0.3em;
+    padding: 1em;
   }
-  header p {
+  .route p:nth-child(3) {
     display: inline;
-    font-size: 2rem;
-    align-self: center;
-    justify-self: center;
   }
 
   .date > .box-input {
     grid-template-columns: 1fr 1fr;
-    min-width: 300px;
+    min-width: 280px;
   }
   .box-input label {
     padding: 0.5em;
   }
 
-  .button {
-    justify-self: flex-start;
-    align-self: center;
+  .searchButton {
     padding: 1em;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .date {
     align-self: center;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .route .box-input {
+    align-self: center;
+  }
+  .route select {
+    padding: 0.5em;
+  }
+  .search .btn {
+    padding: 0.65em;
   }
 }

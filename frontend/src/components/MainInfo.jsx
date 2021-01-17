@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import "../styles/MainInfo.css";
 import covid from "../assets/img/covid.png";
 import requirement from "../assets/img/airplane.jpeg";
@@ -35,7 +34,7 @@ export default function MainInfo(props) {
     >
       <h3>{article.title}</h3>
       <p>{article.text}</p>
-      <a href={article.url} target="blank" className="btn">
+      <a href={article.url} target='blank' className='btn'>
         Learn more
       </a>
     </article>

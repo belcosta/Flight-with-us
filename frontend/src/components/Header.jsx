@@ -3,7 +3,7 @@ import Axios from "axios";
 import appContext from "../context";
 import "../styles/Header.css";
 import logo from "../assets/img/logo.svg";
-import { RiArrowLeftRightFill } from "react-icons/ri";
+import { RiArrowLeftRightFill, RiArrowUpDownLine } from "react-icons/ri";
 function Header() {
   const {
     search,
@@ -15,6 +15,7 @@ function Header() {
   } = useContext(appContext);
 
   const [cities, setCities] = useState([]);
+  const [newDestination, setNewDestination] = useState({});
 
   const getValue = (e) => {
     setSearch((prevSearch) => {
@@ -22,6 +23,13 @@ function Header() {
       return { ...prevSearch, [e.target.name]: e.target.value };
     });
   };
+
+  const invertRoute = () => {
+    setNewDestination(search.departure);
+    console.log(newDestination);
+    setSearch({ departure: search.destination, destination: newDestination });
+  };
+
   const getDateValue = (e) => {
     setSearch((prevSearch) => {
       let date = e.target.value
@@ -60,7 +68,7 @@ function Header() {
       {/* <Spinner animation="border" role="status">
                 <span className="sr-only">Loading...</span>
             </Spinner> */}
-      <header className='bgHead p-5 container-fluid'>
+      <header className='bgHead container-fluid'>
         <h1 className='mb-5'>
           <span className='gradient'>Fly with us</span>{" "}
           <img src={logo} alt='' />
@@ -82,7 +90,11 @@ function Header() {
                   ))}
                 </select>
               </div>
-              <p>
+              <p onClick={invertRoute}>
+                <RiArrowUpDownLine />
+              </p>
+
+              <p onClick={invertRoute}>
                 <RiArrowLeftRightFill />
               </p>
               <div className='box-input'>
@@ -121,7 +133,7 @@ function Header() {
                 />
               </div>
               <div className='box-input'>
-                <label htmlFor='dateTo'>Return Flight</label>
+                <label htmlFor='dateTo'>Return</label>
                 <input
                   type='date'
                   placeholder='to'

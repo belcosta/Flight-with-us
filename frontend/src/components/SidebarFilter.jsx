@@ -9,9 +9,7 @@ export default function SidebarFilter() {
     setOutOfService,
     cleanFilter,
     setResultsToBeFiltered,
-    resultsToBeFiltered,
   } = useContext(appContext);
-  const [setStops] = useState({});
   const [price, setPrice] = useState({ from: 0, to: 5000 });
   const [selectedComp, setSelectedComp] = useState([]);
   const [companies, setCompanies] = useState([]);
@@ -55,8 +53,8 @@ export default function SidebarFilter() {
   }, [cleanFilter]);
 
   return (
-    <form className="filter-form">
-      <section className="filter-block">
+    <form className='filter-form'>
+      <section className='filter-block'>
         {/* STOPS */}
         {/* <article className="filter filter-stops">
           <h6 className="filter-titles">Stops</h6>
@@ -103,24 +101,24 @@ export default function SidebarFilter() {
           </div>
         </article> */}
         {/* PRICE */}
-        <article className="filter filter-price">
-          <h6 className="filter-titles">Price</h6>
-          <div className="price-range">
-            <div className="priceInput">
+        <article className='filter filter-price'>
+          <h6 className='filter-titles'>Price</h6>
+          <div className='price-range'>
+            <div className='priceInput'>
               <label>From </label>
 
               <input
-                type="number"
+                type='number'
                 onChange={(e) => {
                   e.preventDefault();
                   setPrice({ ...price, from: +e.target.value });
                 }}
               />
             </div>
-            <div className="priceInput">
+            <div className='priceInput'>
               <label>To </label>
               <input
-                type="number"
+                type='number'
                 onChange={(e) => {
                   e.preventDefault();
                   let value;
@@ -136,16 +134,16 @@ export default function SidebarFilter() {
           </div>
         </article>
         {/* COMPANIES */}
-        <article className="filter filter-companies">
-          <h6 className="filter-titles">Airlines</h6>
-          <div className="list-companies">
+        <article className='filter filter-companies'>
+          <h6 className='filter-titles'>Airlines</h6>
+          <div className='list-companies'>
             {companies.map((companyName, index) => {
               return (
                 <div key={index}>
                   <input
-                    className="form-check-input"
+                    className='form-check-input'
                     id={companyName.companyName}
-                    type="checkbox"
+                    type='checkbox'
                     onChange={(e) => {
                       let isChecked = document.getElementById(
                         `${companyName.companyName}`
@@ -160,7 +158,7 @@ export default function SidebarFilter() {
                     }}
                   />
                   <label
-                    className="form-check-label"
+                    className='form-check-label'
                     htmlFor={companyName.companyName}
                   >
                     {companyName.companyName.substr(0, 1).toUpperCase() +
