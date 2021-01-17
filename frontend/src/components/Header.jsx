@@ -15,7 +15,7 @@ function Header() {
   } = useContext(appContext);
 
   const [cities, setCities] = useState([]);
-  const [newDestination, setNewDestination] = useState({});
+  // const [newDestination, setNewDestination] = useState({});
 
   const getValue = (e) => {
     setSearch((prevSearch) => {
@@ -25,8 +25,7 @@ function Header() {
   };
 
   const invertRoute = () => {
-    setNewDestination(search.departure);
-    console.log(newDestination);
+    let newDestination = search.departure;
     setSearch({ departure: search.destination, destination: newDestination });
   };
 
