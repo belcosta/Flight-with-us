@@ -25,8 +25,10 @@ function Header() {
   };
 
   const invertRoute = () => {
+    let newDeparture = search.destination;
     let newDestination = search.departure;
-    setSearch({ departure: search.destination, destination: newDestination });
+
+    setSearch({ departure: newDeparture, destination: newDestination });
   };
 
   const getDateValue = (e) => {
@@ -117,6 +119,11 @@ function Header() {
                         <option
                           value={city.cityId}
                           key={`dest-${city.cityName}`}
+                          selected={
+                            parseInt(search.destination) === city.cityId
+                              ? "selected"
+                              : "false"
+                          }
                         >
                           {city.cityName.trim().substr(0, 1).toUpperCase() +
                             city.cityName

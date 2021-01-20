@@ -54,7 +54,7 @@ header form h4 {
   display: grid;
   grid-template-columns: 1fr;
   justify-self: stretch;
-  padding: 1em;
+  padding: 1em 3em;
 }
 
 .date {
