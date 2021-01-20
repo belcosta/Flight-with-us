@@ -121,12 +121,9 @@ header .btn {
 
   .route {
     grid-area: route;
-    grid-gap: 1em;
     height: 100%;
   }
-  .route p:nth-child(2) {
-    display: none;
-  }
+
   .date {
     grid-area: date;
   }
@@ -146,10 +143,14 @@ header .btn {
     align-content: center;
     grid-template-areas: "route date searchButton";
   }
+  .route p:nth-child(2) {
+    display: none;
+  }
   .route {
     grid-template-columns: 1fr 0.2fr 1fr;
     height: fit-content;
     padding: 1em;
+    grid-gap: 1em;
   }
   .route p:nth-child(3) {
     display: inline;

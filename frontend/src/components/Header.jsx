@@ -62,6 +62,10 @@ function Header() {
       });
   }, []);
 
+  useEffect(() => {
+    console.log("search changed");
+  }, [search]);
+
   return (
     <>
       {/* <Spinner animation="border" role="status">
@@ -80,7 +84,15 @@ function Header() {
                 <select custom name='departure' onChange={getValue}>
                   <option value=''>DEPARTURE</option>
                   {cities.map((city) => (
-                    <option value={city.cityId} key={`dep-${city.cityName}`}>
+                    <option
+                      value={city.cityId}
+                      key={`dep-${city.cityName}`}
+                      selected={
+                        parseInt(search.departure) === city.cityId
+                          ? "selected"
+                          : "false"
+                      }
+                    >
                       {city.cityName.trim().substr(0, 1).toUpperCase() +
                         city.cityName
                           .trim()
