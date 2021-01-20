@@ -36,6 +36,7 @@ header form {
   box-shadow: 3px 3px 7px rgba(255, 255, 255, 1),
     -3px -3px 7px rgba(255, 255, 255, 1);
   background-color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 2em;
 }
 header form h4 {
   padding: 1em;
@@ -112,7 +113,7 @@ header .btn {
   }
   .search {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 0.4fr;
+    grid-template-rows: 1fr 0.6fr;
     grid-template-areas:
       "route date"
       "searchButton searchButton";
@@ -143,18 +144,6 @@ header .btn {
     align-content: center;
     grid-template-areas: "route date searchButton";
   }
-  .route p:nth-child(2) {
-    display: none;
-  }
-  .route {
-    grid-template-columns: 1fr 0.2fr 1fr;
-    height: fit-content;
-    padding: 1em;
-    grid-gap: 1em;
-  }
-  .route p:nth-child(3) {
-    display: inline;
-  }
 
   .date > .box-input {
     grid-template-columns: 1fr 1fr;
@@ -169,9 +158,25 @@ header .btn {
   }
 }
 @media (min-width: 1300px) {
+  header form {
+    padding-bottom: 3em;
+  }
   .date {
     align-self: center;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .route {
+    grid-template-columns: 1fr 0.2fr 1fr;
+    height: fit-content;
+    padding: 1em;
+    grid-gap: 1em;
+  }
+  .route p:nth-child(3) {
+    display: inline;
+  }
+
+  .route p:nth-child(2) {
+    display: none;
   }
   .route .box-input {
     align-self: center;
