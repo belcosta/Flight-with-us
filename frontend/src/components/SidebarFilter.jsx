@@ -55,51 +55,6 @@ export default function SidebarFilter() {
   return (
     <form className='filter-form'>
       <section className='filter-block'>
-        {/* STOPS */}
-        {/* <article className="filter filter-stops">
-          <h6 className="filter-titles">Stops</h6>
-          <div className="list-stops">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                id="noStop"
-                type="checkbox"
-                onClick={() => {
-                  setStops(0);
-                }}
-              />
-              <label className="form-check-label" htmlFor="noStop">
-                Non-stop
-              </label>
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                id="1Stop"
-                type="checkbox"
-                onClick={() => {
-                  setStops(1);
-                }}
-              />
-              <label className="form-check-label" htmlFor="1Stop">
-                1 stop
-              </label>
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                id="moreStops"
-                type="checkbox"
-                onClick={() => {
-                  setStops(2);
-                }}
-              />
-              <label className="form-check-label" htmlFor="moreStops">
-                2+ stops
-              </label>
-            </div>
-          </div>
-        </article> */}
         {/* PRICE */}
         <article className='filter filter-price'>
           <h6 className='filter-titles'>Price</h6>
