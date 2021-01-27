@@ -9,7 +9,7 @@ Group fullstack mockup of the flight-search application created during database 
 **Authors:** [Alice Rez](https://github.com/Alice-Rez) (Frontend-lead, main debugging help), [Isabel Costa](https://github.com/belccarvalho) (Backend-lead), [willoid](https://github.com/willoid) (Database-lead).
 All authors worked on all aspects, just the main responsiveness was divided as depicted above.
 
-**Technologies used:** mySQL, Express.js, React.js, React Transition group, React Hooks, React Context, Create React App, Bootstrap + ReactStrap, CSS, CSS Variables, HTML, SVG
+**Technologies used:** mySQL, Express.js, React.js, React Transition group, React Hooks, React Context, Create React App, Bootstrap, CSS, CSS Variables, HTML, SVG
 
 **Packages used:** mySQL for Express, async, Axios, cors, nodemon
 
@@ -35,7 +35,7 @@ All authors worked on all aspects, just the main responsiveness was divided as d
 
 - if the backend do not correspond (server probably crashed), information about service being out of order is displayed
 
-- of course the whole site is responsive
+- the whole site is responsive
 
 ## Setup
 
