@@ -12,10 +12,8 @@ export default function SidebarOffers() {
       url: "http://localhost:3500/flights/specialoffers",
     })
       .then((res) => {
-        console.log(res);
         if (res.data.specialOffers) {
           let specialOffers = res.data.specialOffers;
-          console.log(specialOffers);
           setOffers(specialOffers);
         }
       })
@@ -53,7 +51,7 @@ export default function SidebarOffers() {
       : activeCards;
 
   return (
-    <div className="offersContainer">
+    <div className='offersContainer'>
       {displayedCards.map((item, index) => {
         return <SidebarOffersCards key={index} offers={item} />;
       })}

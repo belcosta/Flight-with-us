@@ -55,7 +55,6 @@ function Header() {
           if (keyA > keyB) return 1;
           return 0;
         });
-        console.log(citiesSorted);
         setCities(citiesSorted);
       })
       .catch((err) => {
@@ -64,9 +63,7 @@ function Header() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log("search changed");
-  }, [search]);
+  useEffect(() => {}, [search]);
 
   return (
     <>

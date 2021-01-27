@@ -30,8 +30,6 @@ function App() {
 
   const getResults = (e) => {
     e.preventDefault();
-    console.log("Calling for results");
-    console.log(search);
     setNoResults(false);
     Axios({
       method: "POST",
@@ -40,7 +38,6 @@ function App() {
     })
       .then((res) => {
         setOutOfService(false);
-        console.log("res.data", res.data);
         if (!res.data.goFlights.length || !res.data.backFlights.length) {
           setNoResults(true);
         }

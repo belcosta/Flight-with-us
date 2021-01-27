@@ -14,11 +14,8 @@ function MainResults() {
   } = useContext(appContext);
 
   useEffect(() => {
-    console.log("useEffect runned");
     // setResultsToBeFiltered(results);
     let filteredResults = { ...results };
-    console.log(filter, results, filteredResults);
-    console.log(filter.price.from, filter.price.to);
     let filteredGoFlights = filteredResults.goFlights.filter(function (item) {
       return (
         item["price"] >= parseInt(filter.price.from) &&
@@ -33,8 +30,6 @@ function MainResults() {
         item["price"] <= parseInt(filter.price.to)
       );
     });
-
-    console.log(filteredGoFlights, filteredBackFlights);
 
     //filter based of specific selected company
     if (filter.selectedComp.length) {
